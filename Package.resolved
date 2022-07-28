@@ -1,0 +1,77 @@
+{
+  "pins" : [
+    {
+      "identity" : "devicekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/devicekit/DeviceKit",
+      "state" : {
+        "revision" : "8e2432f99915c6aa03d73b50152bf64dc87d0813",
+        "version" : "4.6.1"
+      }
+    },
+    {
+      "identity" : "hyperconnectivity",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rwbutler/Hyperconnectivity",
+      "state" : {
+        "revision" : "c0dbcfb6c20e59599b5cdc14f151430866322a7e",
+        "version" : "1.1.1"
+      }
+    },
+    {
+      "identity" : "marqueelabel",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cbpowell/MarqueeLabel",
+      "state" : {
+        "revision" : "f2c72a5f8568579dade6350dc26a482076d3d346",
+        "version" : "4.3.0"
+      }
+    },
+    {
+      "identity" : "notificationbanner",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Daltron/NotificationBanner",
+      "state" : {
+        "revision" : "e856a462053daf80c7936056d64246983f3f4d14",
+        "version" : "3.1.0"
+      }
+    },
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit",
+      "state" : {
+        "revision" : "f222cbdf325885926566172f6f5f06af95473158",
+        "version" : "5.6.0"
+      }
+    },
+    {
+      "identity" : "swiftdate",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/malcommac/SwiftDate.git",
+      "state" : {
+        "revision" : "6190d0cefff3013e77ed567e6b074f324e5c5bf5",
+        "version" : "6.3.1"
+      }
+    },
+    {
+      "identity" : "swiftlocation",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/malcommac/SwiftLocation",
+      "state" : {
+        "revision" : "f8ec8e97095eb3a5312370ad94b921768217625f",
+        "version" : "5.1.0"
+      }
+    },
+    {
+      "identity" : "wlmodels",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/b7anka/WLModels",
+      "state" : {
+        "revision" : "da383a58d5cb235fb026b2e5c7e07f61f489a67a",
+        "version" : "1.2.8"
+      }
+    }
+  ],
+  "version" : 2
+}

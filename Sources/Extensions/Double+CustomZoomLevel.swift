@@ -11,9 +11,9 @@ import Foundation
 public extension Double {
     
     // default map zoom
-    public static let defaultMapZoom: Double = 12.0
+    static let defaultMapZoom: Double = 12.0
     
-    public func numberOfDecimalPlaces(maxPlaces: Int = 4) -> Int {
+    func numberOfDecimalPlaces(maxPlaces: Int = 4) -> Int {
         guard self > 0 else {return 0}
         let components: [String] = "\(self)".components(separatedBy: ".")
         guard components.count == 2, var decimalPlaces: String = components.last else {return 0}

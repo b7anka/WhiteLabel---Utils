@@ -125,5 +125,7 @@ public extension String {
     static let sessionRatingGiven: String = "sessionRatingGiven"
     static let resetWebView: String = "resetWebView"
     static let evsUpdated: String = "evsUpdated"
+    static let userInvalid: String = "userInvalid"
+    static let userNeedsToUpdateApp: String = "userNeedsToUpdateApp"
     
 }

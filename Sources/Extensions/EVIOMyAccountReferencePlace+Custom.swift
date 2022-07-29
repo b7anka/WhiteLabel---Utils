@@ -14,9 +14,9 @@ public extension EVIOMyAccountReferencePlace {
     
     private static let workRef: EVIOMyAccountReferencePlace = EVIOMyAccountReferencePlace(id: nil, name: EVIOLanguageManager.shared.language.myAccountWork, address: EVIOLanguageManager.shared.language.myAccountNoWork, type: .work, geometry: nil, _address: nil, isDefault: true)
     
-    public static let defaultRefPlaces: [EVIOMyAccountReferencePlace] = [Self.homeRef, Self.workRef]
+    static let defaultRefPlaces: [EVIOMyAccountReferencePlace] = [Self.homeRef, Self.workRef]
     
-    public static func imageForReferenceType(type: EVIOReferencePlaceType) -> String {
+    static func imageForReferenceType(type: EVIOReferencePlaceType) -> String {
         switch type {
         case .work:
             return .workRefPlaceIcon

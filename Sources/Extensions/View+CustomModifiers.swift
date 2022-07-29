@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WLModels
 
 /// # EXTENSION THAT ADDS FUNCTIONS TO THE SWIFT UI'S BUILT IN VIEW STRUCT
 public extension View {

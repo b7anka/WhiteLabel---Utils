@@ -9,7 +9,7 @@ import SwiftUI
 
 public extension Color {
     
-    public var uiColor: UIColor {
+    var uiColor: UIColor {
         return UIColor(self)
     }
     

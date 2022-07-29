@@ -67,4 +67,6 @@ public extension Notification.Name {
     static let sessionRatingGiven: Notification.Name = Notification.Name(rawValue: .sessionRatingGiven)
     static let resetWebView: Notification.Name = Notification.Name(rawValue: .resetWebView)
     static let evsUpdated: Notification.Name = Notification.Name(rawValue: .evsUpdated)
+    static let userInvalid: Notification.Name = Notification.Name(rawValue: .userInvalid)
+    static let userNeedsToUpdateApp: Notification.Name = Notification.Name(rawValue: .userNeedsToUpdateApp)
 }

@@ -57,19 +57,19 @@ public final class EVIOLocalNotificationsManager {
 // MARK: - NOTIFICATION BANNER DELEGATE METHODS
 extension EVIOLocalNotificationsManager: NotificationBannerDelegate {
     
-    func notificationBannerWillAppear(_ banner: BaseNotificationBanner) {
+    public func notificationBannerWillAppear(_ banner: BaseNotificationBanner) {
         // not needed
     }
     
-    func notificationBannerDidAppear(_ banner: BaseNotificationBanner) {
+    public func notificationBannerDidAppear(_ banner: BaseNotificationBanner) {
         // not needed
     }
     
-    func notificationBannerWillDisappear(_ banner: BaseNotificationBanner) {
+    public func notificationBannerWillDisappear(_ banner: BaseNotificationBanner) {
         // not needed
     }
     
-    func notificationBannerDidDisappear(_ banner: BaseNotificationBanner) {
+    public func notificationBannerDidDisappear(_ banner: BaseNotificationBanner) {
         // calls this function to toggle the isShowingBanner property back to it's default once the previous banner disappears
         self.toggleIsShowingBanner()
     }

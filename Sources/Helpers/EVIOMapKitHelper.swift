@@ -14,7 +14,7 @@ public final class EVIOMapKitHelper: NSObject {
     
     private let geocoder: CLGeocoder
     private var completer: MKLocalSearchCompleter
-    private var region: MKCoordinateRegion!
+    public var region: MKCoordinateRegion!
     private var completion: (([EVIOSearchLocation], Error?) -> Void)
     private var array: Set<EVIOSearchLocation>
     
@@ -33,42 +33,6 @@ public final class EVIOMapKitHelper: NSObject {
         self.completer.region = self.region
         self.completer.queryFragment = query.trimmingCharacters(in: .whitespacesAndNewlines)
         self.completer.resultTypes = [.address, .pointOfInterest, .query]
-    }
-    
-    public func search(using completion: MKLocalSearchCompletion, completionBlock: @escaping (EVIOSearchLocation?, Error?) -> Void) {
-        let searchRequest = MKLocalSearch.Request(completion: completion)
-        searchRequest.region = self.region
-        
-        searchRequest.resultTypes = [.pointOfInterest, .address]
-        
-        let localSearch = MKLocalSearch(request: searchRequest)
-        localSearch.start { (response, error) in
-            guard error == nil else {
-                completionBlock(nil, error)
-                return
-            }
-            guard let item = response?.mapItems.first else {
-                completionBlock(nil, nil)
-                return
-            }
-            let location: EVIOSearchLocation = EVIOSearchLocation(with: item)
-            completionBlock(location, nil)
-        }
-    }
-    
-    public func geocode(with location: CLLocationCoordinate2D) {
-        self.geocoder.reverseGeocodeLocation(CLLocation(latitude: location.latitude, longitude: location.longitude)) { placemarks, error in
-            if let placemarks = placemarks {
-                for p in placemarks {
-                    let searchLocation: EVIOSearchLocation = EVIOSearchLocation(with: p)
-                    self.array.insert(searchLocation)
-                }
-                self.completion(self.array.toArray, nil)
-                self.array.removeAll()
-            } else {
-                self.completion([], error)
-            }
-        }
     }
     
 }

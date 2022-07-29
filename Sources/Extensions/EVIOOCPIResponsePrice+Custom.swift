@@ -1,5 +1,5 @@
 //
-//  EVIOOCPIResponsePrice.swift
+//  EVIOOCPIResponsePrice+Custom.swift
 //  EVIO - WhiteLabel
 //
 //  Created by Tiago Moreira on 19/01/2022.

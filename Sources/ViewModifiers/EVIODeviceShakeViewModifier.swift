@@ -12,6 +12,10 @@ public struct EVIODeviceShakeViewModifier: ViewModifier {
     
     // the callback to execute
     public var action: (() -> Void)
+    
+    public init(action: @escaping () -> Void) {
+        self.action = action
+    }
 
     // the body of the modifier
     public func body(content: Content) -> some View {

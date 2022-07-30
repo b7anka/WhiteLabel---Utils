@@ -13,7 +13,7 @@ public struct EVIONoObjectsDefaultTitleModifier: ViewModifier {
     public var textAligment: TextAlignment = .center
     public var lineLimit: Int?
     
-    public init(color: Color = .secondaryTextColor, textAligment: TextAlignment = .center, lineLimit: Int?) {
+    public init(color: Color = .secondaryTextColor, textAligment: TextAlignment = .center, lineLimit: Int? = nil) {
         self.color = color
         self.textAligment = textAligment
         self.lineLimit = lineLimit

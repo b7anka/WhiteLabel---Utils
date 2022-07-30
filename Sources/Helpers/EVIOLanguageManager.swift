@@ -35,7 +35,7 @@ public struct EVIOLanguageManager {
     // MARK: - PUBLIC METHODS
     /// # METHOD TO UPDATE THE IN-MEMORY DICTIONARY OF THE APP'S TRANSLATIONS
     /// - Parameter dictionary: the dictionary to be updated with
-    mutating func updateLanguageWith(dictionary: [String: String]) {
+    public mutating func updateLanguageWith(dictionary: [String: String]) {
         // updates the dictionary with the one received
         self.languageDict = dictionary
     }

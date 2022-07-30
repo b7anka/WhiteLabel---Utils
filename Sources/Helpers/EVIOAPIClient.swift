@@ -11,23 +11,23 @@ import WLModels
 /// ### APIClient Helper struct
 /// it is responsible for the `CRUD` operations
 /// on the `API` web service
-final class EVIOAPIClient: ObservableObject {
+public final class EVIOAPIClient: ObservableObject {
     
     // MARK: - STATIC PROPERTIES
     // the shared property that makes this struct a singleton
-    static let shared: EVIOAPIClient = EVIOAPIClient()
+    public static let shared: EVIOAPIClient = EVIOAPIClient()
     
     // the server being used
-    @Published var serverInUse: String
+    @Published public var serverInUse: String
     // the timeout being used for the url requests
-    @Published var timeoutInUse: String
+    @Published public var timeoutInUse: String
     
     // MARK: - PUBLIC PROPERTIES
     // the headers used by the app
-    var headers: EVIOHeaders = EVIOHeaders(apiKey: nil, evioAppVersion: nil, mobileBrand: nil, mobileModel: nil, mobileVersion: nil, refreshToken: nil, token: nil)
+    public var headers: EVIOHeaders = EVIOHeaders(apiKey: nil, evioAppVersion: nil, mobileBrand: nil, mobileModel: nil, mobileVersion: nil, refreshToken: nil, token: nil)
     #if DEBUG
     // the server url being used in debug
-    var serverUrl: EVIOServerAddresses = .preUnsecure {
+    public var serverUrl: EVIOServerAddresses = .preUnsecure {
         didSet {
             // once this variable is set we ask the root view model to update the server url property
             self.serverInUse = self.serverUrl.description
@@ -35,7 +35,7 @@ final class EVIOAPIClient: ObservableObject {
     }
     #else
     // the server url being used in production
-    var serverUrl: EVIOServerAddresses = .pre {
+    public var serverUrl: EVIOServerAddresses = .pre {
         didSet {
             // once this variable is set we ask the root view model to update the server url property
             self.serverInUse = self.serverUrl.description
@@ -46,7 +46,7 @@ final class EVIOAPIClient: ObservableObject {
     // MARK: - PRIVATE PROPERTIES
     #if DEBUG
     // the timeout for the url requests being used in debug
-    var timeout: TimeInterval = .timeoutForDevelopment {
+    public var timeout: TimeInterval = .timeoutForDevelopment {
         didSet {
             // once this variable is set we ask the root view model to update the timeout property
             self.timeoutInUse = "\(Int(self.timeout)) second\(self.timeout == 1 ? "" : "s")"
@@ -54,7 +54,7 @@ final class EVIOAPIClient: ObservableObject {
     }
     #else
     // the timeout for the url requests being used in production
-    var timeout: TimeInterval = .timeoutForProduction {
+    public var timeout: TimeInterval = .timeoutForProduction {
         didSet {
             // once this variable is set we ask the root view model to update the timeout property
             self.timeoutInUse = "\(Int(self.timeout)) second\(self.timeout == 1 ? "" : "s")"
@@ -66,7 +66,7 @@ final class EVIOAPIClient: ObservableObject {
     private let decoder: JSONDecoder
     
     // MARK: - INIT
-    init() {
+    public init() {
         // initialize the list as an empty list
         self.runningTasks = []
         self.decoder = JSONDecoder()
@@ -77,7 +77,7 @@ final class EVIOAPIClient: ObservableObject {
     // MARK: - PUBLIC METHODS
     /// # METHOD TO LOGOUT AN USER FROM THE WEB SERVICE
     /// - Parameter completion: the callback to be executed once the server responds to the request
-    func logout(completion: @escaping (EVIOServerMessage?, EVIOServerMessage?, Int?) -> Void) {
+    public func logout(completion: @escaping (EVIOServerMessage?, EVIOServerMessage?, Int?) -> Void) {
         _ = self.patchRequest(urlString: .logoutEndpoint, params: [:]) { response in
             // checks whether the response object inside the main response object exist, checks if the status code is equal to 400 and if the data object exists
             if let res = response.response, res.statusCode == HTTPStatusCode.badRequest, let data = response.data {
@@ -117,7 +117,7 @@ final class EVIOAPIClient: ObservableObject {
     ///   - params: the body of the request to be sent (defraults to nil)
     ///   - completion: the completion block to fire upon response received
     /// - Returns: an object of type URLSessionDataTask representing the url request being made or nil if an error occurrs
-    func getRequest(urlString: String, params: Any? = nil, completion: @escaping (EVIOHttpResponse) -> Void) -> URLSessionDataTask? {
+    public func getRequest(urlString: String, params: Any? = nil, completion: @escaping (EVIOHttpResponse) -> Void) -> URLSessionDataTask? {
         
         // Check if the url is valid
         guard let url = URL(string: "\(self.serverUrl.rawValue)\(urlString)") else {
@@ -168,7 +168,7 @@ final class EVIOAPIClient: ObservableObject {
     ///   - params: the body of the request to be sent
     ///   - completion: the completion block to fire upon response received
     /// - Returns: an object of type URLSessionDataTask representing the url request being made or nil if an error occurrs
-    func postRequest(urlString: String, params: Any, completion: @escaping (EVIOHttpResponse) -> Void) -> URLSessionDataTask? {
+    public func postRequest(urlString: String, params: Any, completion: @escaping (EVIOHttpResponse) -> Void) -> URLSessionDataTask? {
         
         // Check if the url is valid
         guard let url = URL(string: "\(self.serverUrl.rawValue)\(urlString)") else {
@@ -218,7 +218,7 @@ final class EVIOAPIClient: ObservableObject {
     ///   - params: the body of the request to be sent
     ///   - completion: the completion block to fire upon response received
     /// - Returns: an object of type URLSessionDataTask representing the url request being made or nil if an error occurrs
-    func putRequest(urlString: String, params: Any, completion: @escaping (EVIOHttpResponse) -> Void) -> URLSessionDataTask? {
+    public func putRequest(urlString: String, params: Any, completion: @escaping (EVIOHttpResponse) -> Void) -> URLSessionDataTask? {
         
         // Check if the url is valid
         guard let url = URL(string: "\(self.serverUrl.rawValue)\(urlString)") else {
@@ -268,7 +268,7 @@ final class EVIOAPIClient: ObservableObject {
     ///   - params: the body of the request to be sent
     ///   - completion: the completion block to fire upon response received
     /// - Returns: an object of type URLSessionDataTask representing the url request being made or nil if an error occurrs
-    func patchRequest(urlString: String, params: Any, completion: @escaping (EVIOHttpResponse) -> Void) -> URLSessionDataTask? {
+    public func patchRequest(urlString: String, params: Any, completion: @escaping (EVIOHttpResponse) -> Void) -> URLSessionDataTask? {
         
         // Check if the url is valid
         guard let url = URL(string: "\(self.serverUrl.rawValue)\(urlString)") else {
@@ -318,7 +318,7 @@ final class EVIOAPIClient: ObservableObject {
     ///   - params: the body of the request to be sent
     ///   - completion: the completion block to fire upon response received
     /// - Returns: an object of type URLSessionDataTask representing the url request being made or nil if an error occurrs
-    func deleteRequest(urlString: String, params: Any, completion: @escaping (EVIOHttpResponse) -> Void) -> URLSessionDataTask? {
+    public func deleteRequest(urlString: String, params: Any, completion: @escaping (EVIOHttpResponse) -> Void) -> URLSessionDataTask? {
         
         // Check if the url is valid
         guard let url = URL(string: "\(self.serverUrl.rawValue)\(urlString)") else {
@@ -359,7 +359,7 @@ final class EVIOAPIClient: ObservableObject {
     }
     
     /// # METHOD THAT WILL CANCEL ALL RUNNING URL REQUESTS WHEN EXECUTED
-    func cancelAllRunningTasks() {
+    public func cancelAllRunningTasks() {
         // loops through the runningTasks array and filters out the ones running
         for task in self.runningTasks where task.state == .running {
             // and cancels them on by one

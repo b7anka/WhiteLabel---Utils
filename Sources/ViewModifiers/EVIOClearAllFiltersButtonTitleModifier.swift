@@ -14,6 +14,13 @@ public struct EVIOClearAllFiltersButtonTitleModifier: ViewModifier {
     public var lineLimit: Int? = 1
     public var textAlignment: TextAlignment = .center
     
+    public init(disabled: Binding<Bool>, color: Color?, lineLimit: Int? = 1, textAlignment: TextAlignment = .center) {
+        self._disabled = disabled
+        self.color = color
+        self.lineLimit = lineLimit
+        self.textAlignment = textAlignment
+    }
+    
     public func body(content: Content) -> some View {
         content
             .font(.evioClearAllFiltersButtonTitle)

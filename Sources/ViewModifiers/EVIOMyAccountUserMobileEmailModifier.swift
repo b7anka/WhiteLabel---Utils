@@ -13,6 +13,12 @@ public struct EVIOMyAccountUserMobileEmailModifier: ViewModifier {
     public var lineLimit: Int?
     public var textAlignment: TextAlignment = .leading
     
+    public init(color: Color = .primaryTextColor, lineLimit: Int?, textAlignment: TextAlignment = .leading) {
+        self.color = color
+        self.lineLimit = lineLimit
+        self.textAlignment = textAlignment
+    }
+    
     public func body(content: Content) -> some View {
         content
             .font(.evioMyAccountUserMobileEmailFont)

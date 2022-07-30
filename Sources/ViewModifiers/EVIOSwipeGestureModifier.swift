@@ -14,6 +14,10 @@ public struct EVIOSwipeGestureModifier: ViewModifier {
     // the callback to be executed that takes an EVIOSwipeGestureType as a parameter
     public var action: ((EVIOSwipeGestureType) -> Void)
     
+    public init(action: @escaping (EVIOSwipeGestureType) -> Void) {
+        self.action = action
+    }
+    
     // the body of the modifier
     public func body(content: Content) -> some View {
         content

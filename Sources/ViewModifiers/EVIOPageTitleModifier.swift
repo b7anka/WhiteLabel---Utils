@@ -14,6 +14,13 @@ public struct EVIOPageTitleModifier: ViewModifier {
     public var textAlignment: TextAlignment = .leading
     public var paddingTop: CGFloat = 16
     
+    public init(color: Color = .primaryTextColor, lineLimit: Int? = 2, textAlignment: TextAlignment = .leading, paddingTop: CGFloat = 16) {
+        self.color = color
+        self.lineLimit = lineLimit
+        self.textAlignment = textAlignment
+        self.paddingTop = paddingTop
+    }
+    
     public func body(content: Content) -> some View {
         content
             .font(.evioPageTitle)

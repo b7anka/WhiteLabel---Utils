@@ -12,6 +12,11 @@ public struct EVIOSearchViewHeaderButtonAndTextModifier: ViewModifier {
     public var color: Color = .primaryTextColor
     public var lineLimit: Int? = 2
     
+    public init(color: Color = .primaryTextColor, lineLimit: Int? = 2) {
+        self.color = color
+        self.lineLimit = lineLimit
+    }
+    
     public func body(content: Content) -> some View {
         content
             .foregroundColor(self.color)

@@ -15,6 +15,12 @@ public struct EVIOAlertTitleModifier: ViewModifier {
     public var lineLimit: Int? = 1
     public var textAlignment: TextAlignment = .center
     
+    public init(color: Color = .primaryTextColor, lineLimit: Int? = 1, textAlignment: TextAlignment = .center) {
+        self.color = color
+        self.lineLimit = lineLimit
+        self.textAlignment = textAlignment
+    }
+    
     // the body of the modifier
     public func body(content: Content) -> some View {
         content

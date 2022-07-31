@@ -18,6 +18,8 @@ public struct EVIOAppPermissionManager {
     // the shared instance of this struct
     public static let shared: EVIOAppPermissionManager = EVIOAppPermissionManager()
     
+    public init() { }
+    
     // MARK: - PUBLIC METHODS
     /// # CHECKS WHETHER THE USER HAS GIVEN ACCESS TO THE DEVICE'S CAMERA
     /// - Returns: an object of type ``EVIOAppPermission`` that represents the state of the permission

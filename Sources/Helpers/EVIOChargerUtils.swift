@@ -12,6 +12,8 @@ public struct EVIOChargerUtils {
     
     public static let shared: EVIOChargerUtils = EVIOChargerUtils()
     
+    public init() { }
+    
     public func getDefaultContractForCharger(charger: EVIOCharger) -> EVIOContract? {
         let user: EVIOUser? = EVIOStorageManager.shared.getUserProfile()
         if charger.isMobie {

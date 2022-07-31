@@ -17,11 +17,17 @@ public final class EVIONetworkManager: ObservableObject {
     public static let shared: EVIONetworkManager = EVIONetworkManager()
     
     // MARK: - PUBLISHED PROPERTIES
-    @Published public var hasInternetConnection: Bool = true
+    @Published public var hasInternetConnection: Bool
     
     // MARK: - PRIVATE PROPERTIES
     private var cancellable: AnyCancellable?
     private var connectivityResult: ConnectivityPublisher.Output?
+    
+    public init() {
+        self.cancellable = nil
+        self.connectivityResult = nil
+        self.hasInternetConnection = true
+    }
     
     // MARK: - DEINIT
     deinit {

@@ -13,6 +13,8 @@ public struct EVIOEstimatedCostUtils {
     
     public static let shared: EVIOEstimatedCostUtils = EVIOEstimatedCostUtils()
     
+    public init() { }
+    
     public func calculateEstimatedCost(estimateTime: Double, contract: EVIOContract?, charger: EVIOCharger, plug: EVIOPlug, ev: EVIOEv? = nil) -> EVIOEstimatedCost? {
         guard !charger.isOpenChargeMap else {return nil}
         let maxBatteryCapacity: Double

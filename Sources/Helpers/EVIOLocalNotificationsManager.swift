@@ -20,6 +20,8 @@ public final class EVIOLocalNotificationsManager {
     // MARK: - PRIVATE PROPERTIES
     private var isShowingBanner: Bool = false
     
+    public init() { }
+    
     // MARK: - PUBLIC METHODS
     
     /// # This method shows a banner notification to the user if there isn't any banner showing already

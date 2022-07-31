@@ -16,10 +16,17 @@ public final class EVIOStorageManager {
     public static let shared = EVIOStorageManager()
     
     // MARK: - PRIVATE PROPERTIES
-    private let defaults: UserDefaults = UserDefaults.standard
-    private var keychain: EVIOKeyChainManager = EVIOKeyChainManager.shared
-    private let decoder: JSONDecoder = JSONDecoder()
-    private let encoder: JSONEncoder = JSONEncoder()
+    private let defaults: UserDefaults
+    private var keychain: EVIOKeyChainManager
+    private let decoder: JSONDecoder
+    private let encoder: JSONEncoder
+    
+    public init() {
+        self.defaults = UserDefaults.standard
+        self.keychain = EVIOKeyChainManager.shared
+        self.decoder = JSONDecoder()
+        self.encoder = JSONEncoder()
+    }
     
     // MARK: - SAVING
     

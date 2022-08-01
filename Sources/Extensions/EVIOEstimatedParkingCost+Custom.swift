@@ -8,7 +8,7 @@
 import Foundation
 import WLModels
 
-extension EVIOEstimatedParkingCost {
+public extension EVIOEstimatedParkingCost {
     
     var parkDuringCharging: String {
         return self.parkingDuringCharging > 0 ? String(format: "%.\(self.parkingDuringCharging.numberOfDecimalPlaces())f", locale: Locale.current, self.parkingDuringCharging) : "-"

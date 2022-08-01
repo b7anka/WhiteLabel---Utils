@@ -12,11 +12,11 @@ import CoreMedia
 
 public final class EVIOMapKitHelper: NSObject {
     
-    private let geocoder: CLGeocoder
-    private var completer: MKLocalSearchCompleter
+    public let geocoder: CLGeocoder
+    public var completer: MKLocalSearchCompleter
     public var region: MKCoordinateRegion!
-    private var completion: (([EVIOSearchLocation], Error?) -> Void)
-    private var array: Set<EVIOSearchLocation>
+    public var completion: (([EVIOSearchLocation], Error?) -> Void)
+    public var array: Set<EVIOSearchLocation>
     
     public init(completion: @escaping ([EVIOSearchLocation], Error?) -> Void) {
         self.geocoder = CLGeocoder()

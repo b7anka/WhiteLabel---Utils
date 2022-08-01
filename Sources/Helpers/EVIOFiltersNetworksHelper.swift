@@ -12,6 +12,10 @@ public struct EVIOFiltersNetworksHelper {
     
     public static var shared: EVIOFiltersNetworksHelper = EVIOFiltersNetworksHelper()
     
-    public init() { }
+    public var networks: [EVIOFilterNetworkData]
+    
+    public init() {
+        self.networks = []
+    }
     
 }

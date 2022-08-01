@@ -8,7 +8,7 @@
 import Foundation
 import WLModels
 
-extension EVIOCemeTariff {
+public extension EVIOCemeTariff {
     
     static var `default`: EVIOCemeTariff {
         let evioPlanTariff = EVIOPlanTariff(id: "5f68af7639c69201cd7b1ee3", power: "all", uom: "€/kWh", tariffType: .serverEmpty, voltageLevel: nil, price: 0.11)

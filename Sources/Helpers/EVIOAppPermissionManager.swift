@@ -9,7 +9,6 @@ import AVFoundation
 import Photos
 import UserNotifications
 import SwiftLocation
-import WLModels
 
 /// # STRUCT THAT HANDLES ALL PERMISSIONS NECESSARY FOR THE APP'S PROPER FUNCTION
 public struct EVIOAppPermissionManager {

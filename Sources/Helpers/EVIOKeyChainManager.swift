@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import WLModels
 import Security
 
 /// # STRUCT THAT ACTS AS AN WRAPPER FOR THE iOS KEYCHAIN

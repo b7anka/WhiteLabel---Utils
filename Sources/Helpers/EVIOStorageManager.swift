@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import WLModels
 
 /// # SINGLETON CLASS TO PERFORM `CRUD` OPERATIONS
 /// # ON USER DEFAULTS

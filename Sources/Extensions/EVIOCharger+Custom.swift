@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import WLModels
 
 /// # EXTENSION THAT ADDS PROPERTIES AND FUNCTIONS TO THE EVIO CHARGER STRUCT
 public extension EVIOCharger {

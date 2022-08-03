@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftDate
-import WLModels
 
 public struct EVIOEstimatedCostUtils {
     

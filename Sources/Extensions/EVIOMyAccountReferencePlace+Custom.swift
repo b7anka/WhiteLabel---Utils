@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import WLModels
 
 public extension EVIOMyAccountReferencePlace {
     

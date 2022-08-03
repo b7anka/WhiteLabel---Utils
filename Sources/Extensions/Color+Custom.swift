@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import WLModels
 
 /// # EXTENSION WITH ALL THE COLORS USED IN THE APP
 public extension Color {

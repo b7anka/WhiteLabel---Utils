@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import WLModels
 import MapKit
 
 /// # HELPER SINGLETON STRUCT THAT CONTAINS

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import WLModels
 
 /// # SINGLTON STRUCT THAT HANDLES THE APP'S TRANSLATIONS
 public struct EVIOLanguageManager {

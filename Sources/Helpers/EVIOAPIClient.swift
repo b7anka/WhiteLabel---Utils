@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import WLModels
 
 /// ### APIClient Helper struct
 /// it is responsible for the `CRUD` operations

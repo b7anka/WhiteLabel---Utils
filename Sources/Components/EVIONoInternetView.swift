@@ -11,7 +11,7 @@ public struct EVIONoInternetView: View {
     
     private let language: EVIOLanguage
     
-    public init(language: EVIOLanguage) {
+    public init() {
         self.language = EVIOLanguageManager.shared.language
     }
     

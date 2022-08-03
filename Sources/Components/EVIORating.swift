@@ -25,7 +25,7 @@ public struct EVIORating: View {
     private let size: CGSize
     private let didUpdateRating: ((Double) -> Void)
     
-    public init(rating: Double = .zero, viewModel: EVIOStarRatingViewModel?, totalStars: Int = .filtersRatingBarTotalStars, starSize: CGFloat = .filtersRatingBarStarSize, filledColor: UIColor = Color.tertiaryBackground.uiColor, emptyColor: UIColor = .clear, emptyBorderColor: UIColor = Color.tertiaryTextColor.uiColor, emptyBorderWidth: CGFloat = .filtersRatingBarEmptyBorderWidth, filledBorderColor: UIColor = Color.tertiaryTextColor.uiColor, starMargin: CGFloat = .filtersRatingBarStarMarging, fillMode: StarFillMode = .half, isDisabled: Bool = false, size: CGSize = .ratingStarSizeForFilters, didUpdateRating: @escaping (Double) -> Void) {
+    public init(rating: Double = .zero, viewModel: EVIOStarRatingViewModel? = nil, totalStars: Int = .filtersRatingBarTotalStars, starSize: CGFloat = .filtersRatingBarStarSize, filledColor: UIColor = Color.tertiaryBackground.uiColor, emptyColor: UIColor = .clear, emptyBorderColor: UIColor = Color.tertiaryTextColor.uiColor, emptyBorderWidth: CGFloat = .filtersRatingBarEmptyBorderWidth, filledBorderColor: UIColor = Color.tertiaryTextColor.uiColor, starMargin: CGFloat = .filtersRatingBarStarMarging, fillMode: StarFillMode = .half, isDisabled: Bool = false, size: CGSize = .ratingStarSizeForFilters, didUpdateRating: @escaping (Double) -> Void) {
         self.rating = rating
         self.viewModel = viewModel
         self.totalStars = totalStars

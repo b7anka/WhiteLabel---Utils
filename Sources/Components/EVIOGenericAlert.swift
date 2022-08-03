@@ -19,7 +19,7 @@ public struct EVIOGenericAlertSUI: View {
     private let messageToBold: String?
     private let completion: (() -> Void)
     
-    public init(message: String, buttonTitle: String = EVIOLanguageManager.shared.language.generalOk, buttonColor: Color = .primaryTextColor, backgroundColor: Color = .semiTransparent, boldText: String?, messageToBold: String?, completion: @escaping () -> Void) {
+    public init(message: String, buttonTitle: String = EVIOLanguageManager.shared.language.generalOk, buttonColor: Color = .primaryTextColor, backgroundColor: Color = .semiTransparent, boldText: String? = nil, messageToBold: String? = nil, completion: @escaping () -> Void) {
         self.message = message
         self.buttonTitle = buttonTitle
         self.buttonColor = buttonColor

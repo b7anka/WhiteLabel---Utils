@@ -47,7 +47,7 @@ public final class EVIOCustomChargeButton: UIView {
         return btn
     }()
     
-    lazy var arrowImageView: UIImageView = {
+    public lazy var arrowImageView: UIImageView = {
         let imageView: UIImageView = UIImageView()
         imageView.image = UIImage(named: "arrowPointingDownWhite")
         imageView.translatesAutoresizingMaskIntoConstraints = false

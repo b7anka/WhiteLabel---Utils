@@ -672,17 +672,17 @@ public struct EVIOLanguage: Codable {
     public let blockedViewTextInfo: String
     public let blockedViewPaymentError: String
     // MARK: - COMPARATOR VIEW PROPERTIES
-    public let comparator_title: String
-    public let comparator_chargingPoint: String
-    public let comparator_plugPower: String
-    public let comparator_chargingDuration: String
-    public let comparator_totalCost: String
-    public let comparator_averageCost: String
-    public let comparator_myChargers: String
-    public let comparator_otherChargers: String
-    public let comparator_favourites: String
-    public let comparator_chooseChargingPoint: String
-    public let comparator_compareButton: String
+    public let comparatorTitle: String
+    public let comparatorChargingPoint: String
+    public let comparatorPlugPower: String
+    public let comparatorChargingDuration: String
+    public let comparatorTotalCost: String
+    public let comparatorAverageCost: String
+    public let comparatorMyChargers: String
+    public let comparatorOtherChargers: String
+    public let comparatorFavourites: String
+    public let comparatorChooseChargingPoint: String
+    public let comparatorCompareButton: String
     
     // MARK: - CODING KEYS
     private enum CodingKeys: String, CodingKey {
@@ -1349,17 +1349,17 @@ public struct EVIOLanguage: Codable {
         case blockedViewTextInfo = "blockedView_textInfo"
         case blockedViewPaymentError = "blockedView_paymentError"
         // MARK: - COMPARATOR VIEW KEYS PROPERTIES
-        case comparator_title = "comparator_title"
-        case comparator_chargingPoint = "comparator_chargingPoint"
-        case comparator_plugPower = "comparator_plugPower"
-        case comparator_chargingDuration = "comparator_chargingDuration"
-        case comparator_totalCost = "comparator_totalCost"
-        case comparator_averageCost = "comparator_averageCost"
-        case comparator_myChargers = "comparator_myChargers"
-        case comparator_otherChargers = "comparator_otherChargers"
-        case comparator_favourites = "comparator_favourites"
-        case comparator_chooseChargingPoint = "comparator_chooseChargingPoint"
-        case comparator_compareButton = "comparator_compareButton"
+        case comparatorTitle = "comparator_title"
+        case comparatorChargingPoint = "comparator_chargingPoint"
+        case comparatorPlugPower = "comparator_plugPower"
+        case comparatorChargingDuration = "comparator_chargingDuration"
+        case comparatorTotalCost = "comparator_totalCost"
+        case comparatorAverageCost = "comparator_averageCost"
+        case comparatorMyChargers = "comparator_myChargers"
+        case comparatorOtherChargers = "comparator_otherChargers"
+        case comparatorFavourites = "comparator_favourites"
+        case comparatorChooseChargingPoint = "comparator_chooseChargingPoint"
+        case comparatorCompareButton = "comparator_compareButton"
     }
     
     public init(from decoder: Decoder) throws {
@@ -2027,17 +2027,17 @@ public struct EVIOLanguage: Codable {
         self.blockedViewTextInfo = try container.decodeIfPresent(String.self, forKey: .blockedViewTextInfo) ?? NSLocalizedString(CodingKeys.blockedViewTextInfo.rawValue, comment: "")
         self.blockedViewPaymentError = try container.decodeIfPresent(String.self, forKey: .blockedViewPaymentError) ?? NSLocalizedString(CodingKeys.blockedViewPaymentError.rawValue, comment: "")
         // MARK: - COMPARATOR VIEW KEYS PROPERTIES
-        self.comparator_title = try container.decodeIfPresent(String.self, forKey: .comparator_title) ?? NSLocalizedString(CodingKeys.comparator_title.rawValue, comment: "")
-        self.comparator_chargingPoint = try container.decodeIfPresent(String.self, forKey: .comparator_chargingPoint) ?? NSLocalizedString(CodingKeys.comparator_chargingPoint.rawValue, comment: "")
-        self.comparator_plugPower = try container.decodeIfPresent(String.self, forKey: .comparator_plugPower) ?? NSLocalizedString(CodingKeys.comparator_plugPower.rawValue, comment: "")
-        self.comparator_chargingDuration = try container.decodeIfPresent(String.self, forKey: .comparator_chargingDuration) ?? NSLocalizedString(CodingKeys.comparator_chargingDuration.rawValue, comment: "")
-        self.comparator_totalCost = try container.decodeIfPresent(String.self, forKey: .comparator_totalCost) ?? NSLocalizedString(CodingKeys.comparator_totalCost.rawValue, comment: "")
-        self.comparator_averageCost = try container.decodeIfPresent(String.self, forKey: .comparator_averageCost) ?? NSLocalizedString(CodingKeys.comparator_averageCost.rawValue, comment: "")
-        self.comparator_myChargers = try container.decodeIfPresent(String.self, forKey: .comparator_myChargers) ?? NSLocalizedString(CodingKeys.comparator_myChargers.rawValue, comment: "")
-        self.comparator_otherChargers = try container.decodeIfPresent(String.self, forKey: .comparator_otherChargers) ?? NSLocalizedString(CodingKeys.comparator_otherChargers.rawValue, comment: "")
-        self.comparator_favourites = try container.decodeIfPresent(String.self, forKey: .comparator_favourites) ?? NSLocalizedString(CodingKeys.comparator_favourites.rawValue, comment: "")
-        self.comparator_chooseChargingPoint = try container.decodeIfPresent(String.self, forKey: .comparator_chooseChargingPoint) ?? NSLocalizedString(CodingKeys.comparator_chooseChargingPoint.rawValue, comment: "")
-        self.comparator_compareButton = try container.decodeIfPresent(String.self, forKey: .comparator_compareButton) ?? NSLocalizedString(CodingKeys.comparator_compareButton.rawValue, comment: "")
+        self.comparatorTitle = try container.decodeIfPresent(String.self, forKey: .comparatorTitle) ?? NSLocalizedString(CodingKeys.comparatorTitle.rawValue, comment: "")
+        self.comparatorChargingPoint = try container.decodeIfPresent(String.self, forKey: .comparatorChargingPoint) ?? NSLocalizedString(CodingKeys.comparatorChargingPoint.rawValue, comment: "")
+        self.comparatorPlugPower = try container.decodeIfPresent(String.self, forKey: .comparatorPlugPower) ?? NSLocalizedString(CodingKeys.comparatorPlugPower.rawValue, comment: "")
+        self.comparatorChargingDuration = try container.decodeIfPresent(String.self, forKey: .comparatorChargingDuration) ?? NSLocalizedString(CodingKeys.comparatorChargingDuration.rawValue, comment: "")
+        self.comparatorTotalCost = try container.decodeIfPresent(String.self, forKey: .comparatorTotalCost) ?? NSLocalizedString(CodingKeys.comparatorTotalCost.rawValue, comment: "")
+        self.comparatorAverageCost = try container.decodeIfPresent(String.self, forKey: .comparatorAverageCost) ?? NSLocalizedString(CodingKeys.comparatorAverageCost.rawValue, comment: "")
+        self.comparatorMyChargers = try container.decodeIfPresent(String.self, forKey: .comparatorMyChargers) ?? NSLocalizedString(CodingKeys.comparatorMyChargers.rawValue, comment: "")
+        self.comparatorOtherChargers = try container.decodeIfPresent(String.self, forKey: .comparatorOtherChargers) ?? NSLocalizedString(CodingKeys.comparatorOtherChargers.rawValue, comment: "")
+        self.comparatorFavourites = try container.decodeIfPresent(String.self, forKey: .comparatorFavourites) ?? NSLocalizedString(CodingKeys.comparatorFavourites.rawValue, comment: "")
+        self.comparatorChooseChargingPoint = try container.decodeIfPresent(String.self, forKey: .comparatorChooseChargingPoint) ?? NSLocalizedString(CodingKeys.comparatorChooseChargingPoint.rawValue, comment: "")
+        self.comparatorCompareButton = try container.decodeIfPresent(String.self, forKey: .comparatorCompareButton) ?? NSLocalizedString(CodingKeys.comparatorCompareButton.rawValue, comment: "")
     }
     
     public init() {
@@ -2704,17 +2704,17 @@ public struct EVIOLanguage: Codable {
         self.blockedViewTextInfo = NSLocalizedString(CodingKeys.blockedViewTextInfo.rawValue, comment: "")
         self.blockedViewPaymentError = NSLocalizedString(CodingKeys.blockedViewPaymentError.rawValue, comment: "")
         // MARK: - COMPARATOR VIEW KEYS
-        self.comparator_title = NSLocalizedString(CodingKeys.comparator_title.rawValue, comment: "")
-        self.comparator_chargingPoint = NSLocalizedString(CodingKeys.comparator_chargingPoint.rawValue, comment: "")
-        self.comparator_plugPower = NSLocalizedString(CodingKeys.comparator_plugPower.rawValue, comment: "")
-        self.comparator_chargingDuration = NSLocalizedString(CodingKeys.comparator_chargingDuration.rawValue, comment: "")
-        self.comparator_totalCost = NSLocalizedString(CodingKeys.comparator_totalCost.rawValue, comment: "")
-        self.comparator_averageCost = NSLocalizedString(CodingKeys.comparator_averageCost.rawValue, comment: "")
-        self.comparator_myChargers = NSLocalizedString(CodingKeys.comparator_myChargers.rawValue, comment: "")
-        self.comparator_otherChargers = NSLocalizedString(CodingKeys.comparator_otherChargers.rawValue, comment: "")
-        self.comparator_favourites = NSLocalizedString(CodingKeys.comparator_favourites.rawValue, comment: "")
-        self.comparator_chooseChargingPoint = NSLocalizedString(CodingKeys.comparator_chooseChargingPoint.rawValue, comment: "")
-        self.comparator_compareButton = NSLocalizedString(CodingKeys.comparator_compareButton.rawValue, comment: "")
+        self.comparatorTitle = NSLocalizedString(CodingKeys.comparatorTitle.rawValue, comment: "")
+        self.comparatorChargingPoint = NSLocalizedString(CodingKeys.comparatorChargingPoint.rawValue, comment: "")
+        self.comparatorPlugPower = NSLocalizedString(CodingKeys.comparatorPlugPower.rawValue, comment: "")
+        self.comparatorChargingDuration = NSLocalizedString(CodingKeys.comparatorChargingDuration.rawValue, comment: "")
+        self.comparatorTotalCost = NSLocalizedString(CodingKeys.comparatorTotalCost.rawValue, comment: "")
+        self.comparatorAverageCost = NSLocalizedString(CodingKeys.comparatorAverageCost.rawValue, comment: "")
+        self.comparatorMyChargers = NSLocalizedString(CodingKeys.comparatorMyChargers.rawValue, comment: "")
+        self.comparatorOtherChargers = NSLocalizedString(CodingKeys.comparatorOtherChargers.rawValue, comment: "")
+        self.comparatorFavourites = NSLocalizedString(CodingKeys.comparatorFavourites.rawValue, comment: "")
+        self.comparatorChooseChargingPoint = NSLocalizedString(CodingKeys.comparatorChooseChargingPoint.rawValue, comment: "")
+        self.comparatorCompareButton = NSLocalizedString(CodingKeys.comparatorCompareButton.rawValue, comment: "")
     }
     
 }

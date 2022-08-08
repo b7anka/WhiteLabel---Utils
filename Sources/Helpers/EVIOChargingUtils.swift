@@ -277,7 +277,7 @@ public final class EVIOChargingUtils: EVIOChargingUtilsWebServiceDelegate {
         var tagId = ""
         
         if charger.isEvio {
-            if charger.isInternal {
+            if charger.isInternal(self.selectedEV) {
                 let internalToken = contract.networks?.first(where: { $0.network == .´internal´})?.tokens?.first(where: { $0.tokenType == .appUser})
                 tagId = internalToken?.idTagDEC ?? internalToken?.idTagHexa ?? .empty
             } else {
@@ -285,7 +285,7 @@ public final class EVIOChargingUtils: EVIOChargingUtilsWebServiceDelegate {
                 tagId = evioToken?.idTagDEC ?? evioToken?.idTagHexa ?? .empty
             }
         } else if charger.isGoCharge {
-            if charger.isInternal {
+            if charger.isInternal(self.selectedEV) {
                 let internalToken = contract.networks?.first(where: { $0.network == .´internal´})?.tokens?.first(where: { $0.tokenType == .appUser})
                 tagId = internalToken?.idTagDEC ?? internalToken?.idTagHexa ?? .empty
             } else {
@@ -293,7 +293,7 @@ public final class EVIOChargingUtils: EVIOChargingUtilsWebServiceDelegate {
                 tagId = goChargeToken?.idTagDEC ?? goChargeToken?.idTagHexa ?? .empty
             }
         } else if charger.isHyundai {
-            if charger.isInternal {
+            if charger.isInternal(self.selectedEV) {
                 let internalToken = contract.networks?.first(where: { $0.network == .´internal´})?.tokens?.first(where: { $0.tokenType == .appUser})
                 tagId = internalToken?.idTagDEC ?? internalToken?.idTagHexa ?? .empty
             } else {

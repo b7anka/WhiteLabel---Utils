@@ -59,10 +59,6 @@ public extension EVIOCharger {
         return Self.HYUNDAI_NETWORK_CHARGERS.contains(self.chargerType)
     }
     
-    var isInternal: Bool {
-        return self.network == .´internal´
-    }
-    
     // returns the name for this charger's network
     var networkName: String {
         // if charger is Gireve
@@ -76,6 +72,14 @@ public extension EVIOCharger {
         }
         // if all else fails returns the network's property raw value or in case it's nil the translation for the unknown network
         return self.network?.rawValue ?? .noValue
+    }
+    
+    func isInternal(_ ev: EVIOEv?) -> Bool {
+        if EVIOStorageManager.shared.getUserProfile()?.id == self.createUser {
+            return true
+        }
+        guard let ev = ev else { return false }
+        return ev.userID == self.createUser
     }
     
 }

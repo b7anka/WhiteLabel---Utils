@@ -28,7 +28,7 @@ public struct EVIOServerMessage: Codable {
         self.token = try container.decodeIfPresent(String.self, forKey: .token)
     }
     
-    public init(code: String?, message: String?, redirect: EVIOAlertRedirectType?, amount: Double?, charger: EVIOCharger?, statusCode: Int?, token: String?) {
+    public init(code: String?, message: String?, redirect: EVIOAlertRedirectType?, amount: Double?, charger: EVIOCharger?, statusCode: Int? = nil, token: String? = nil) {
         self.code = code
         self.message = message
         self.redirect = redirect

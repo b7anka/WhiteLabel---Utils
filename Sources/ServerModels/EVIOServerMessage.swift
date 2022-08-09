@@ -15,7 +15,6 @@ public struct EVIOServerMessage: Codable {
     public var amount: Double?
     public var charger: EVIOCharger?
     public var statusCode: Int?
-    public var token: String?
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -25,17 +24,15 @@ public struct EVIOServerMessage: Codable {
         self.amount = try container.decodeIfPresent(Double.self, forKey: .amount)
         self.charger = try container.decodeIfPresent(EVIOCharger.self, forKey: .charger)
         self.statusCode = try container.decodeIfPresent(Int.self, forKey: .statusCode)
-        self.token = try container.decodeIfPresent(String.self, forKey: .token)
     }
     
-    public init(code: String?, message: String?, redirect: EVIOAlertRedirectType?, amount: Double?, charger: EVIOCharger?, statusCode: Int? = nil, token: String? = nil) {
+    public init(code: String?, message: String?, redirect: EVIOAlertRedirectType?, amount: Double?, charger: EVIOCharger?, statusCode: Int? = nil) {
         self.code = code
         self.message = message
         self.redirect = redirect
         self.amount = amount
         self.charger = charger
         self.statusCode = statusCode
-        self.token = token
     }
     
 }

@@ -22,6 +22,8 @@ public extension Int {
     static let ok: Int = 200
     // something happened normally it's a bad request from the client
     static let badRequest: Int = 400
+    // user is unauthorized to access the service
+    static let unauthorized: Int = 401
     // server error
     static let internalServerError: Int = 500
     // 1 kilobyte

@@ -130,7 +130,7 @@ public struct EVIOAppUtils {
                 if resultsInMeters {
                     completion(String(format: "%.2f - %d", locale: Locale.current, route.distance, Int(route.expectedTravelTime)))
                 } else {
-                    completion(String(format: "%.2fkm - %dmin", locale: Locale.current, route.distance / 1000.0, Int(route.expectedTravelTime / 60.0)))
+                    completion(String(format: "%.\(route.distance >= 1000 ? (route.distance / 1000.0).numberOfDecimalPlaces(maxPlaces: 2) : route.distance.numberOfDecimalPlaces(maxPlaces: 2))f%@ - %dmin", locale: Locale.current, route.distance >= 1000 ? route.distance / 1000.0 : route.distance, route.distance >= 1000 ? "km" : "m", Int(route.expectedTravelTime / 60.0)))
                 }
             } else {
                 completion("-")

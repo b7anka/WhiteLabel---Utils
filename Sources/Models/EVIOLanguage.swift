@@ -683,6 +683,8 @@ public struct EVIOLanguage: Codable {
     public let comparatorFavourites: String
     public let comparatorChooseChargingPoint: String
     public let comparatorCompareButton: String
+    public let comparatorChoosePlugToCompare: String
+    public let comparatorPlugAlreadyBeingCompared: String
     
     // MARK: - CODING KEYS
     private enum CodingKeys: String, CodingKey {
@@ -1360,6 +1362,8 @@ public struct EVIOLanguage: Codable {
         case comparatorFavourites = "comparator_favourites"
         case comparatorChooseChargingPoint = "comparator_chooseChargingPoint"
         case comparatorCompareButton = "comparator_compareButton"
+        case comparatorChoosePlugToCompare = "comparator_choosePlugToCompare"
+        case comparatorPlugAlreadyBeingCompared = "comparator_plugAlreadyBeingCompared"
     }
     
     public init(from decoder: Decoder) throws {
@@ -2038,6 +2042,8 @@ public struct EVIOLanguage: Codable {
         self.comparatorFavourites = try container.decodeIfPresent(String.self, forKey: .comparatorFavourites) ?? NSLocalizedString(CodingKeys.comparatorFavourites.rawValue, comment: "")
         self.comparatorChooseChargingPoint = try container.decodeIfPresent(String.self, forKey: .comparatorChooseChargingPoint) ?? NSLocalizedString(CodingKeys.comparatorChooseChargingPoint.rawValue, comment: "")
         self.comparatorCompareButton = try container.decodeIfPresent(String.self, forKey: .comparatorCompareButton) ?? NSLocalizedString(CodingKeys.comparatorCompareButton.rawValue, comment: "")
+        self.comparatorChoosePlugToCompare = try container.decodeIfPresent(String.self, forKey: .comparatorChoosePlugToCompare) ?? NSLocalizedString(CodingKeys.comparatorChoosePlugToCompare.rawValue, comment: "")
+        self.comparatorPlugAlreadyBeingCompared = try container.decodeIfPresent(String.self, forKey: .comparatorPlugAlreadyBeingCompared) ?? NSLocalizedString(CodingKeys.comparatorPlugAlreadyBeingCompared.rawValue, comment: "")
     }
     
     public init() {
@@ -2715,6 +2721,8 @@ public struct EVIOLanguage: Codable {
         self.comparatorFavourites = NSLocalizedString(CodingKeys.comparatorFavourites.rawValue, comment: "")
         self.comparatorChooseChargingPoint = NSLocalizedString(CodingKeys.comparatorChooseChargingPoint.rawValue, comment: "")
         self.comparatorCompareButton = NSLocalizedString(CodingKeys.comparatorCompareButton.rawValue, comment: "")
+        self.comparatorChoosePlugToCompare = NSLocalizedString(CodingKeys.comparatorChoosePlugToCompare.rawValue, comment: "")
+        self.comparatorPlugAlreadyBeingCompared = NSLocalizedString(CodingKeys.comparatorPlugAlreadyBeingCompared.rawValue, comment: "")
     }
     
 }

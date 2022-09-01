@@ -227,15 +227,13 @@ public struct EVIOEstimatedCostUtils {
         return tariffId
     }
     
-    public func preSelectHalfHour(charger: EVIOCharger?, ev: EVIOEv?, slider: MultiSlider, sliderOnDragEnded: @escaping (MultiSlider) -> Void) {
+    public func preSelectHalfHour(charger: EVIOCharger?, ev: EVIOEv?, sliderViewModel: EVIOMultisliderViewModel) {
         guard let charger = charger else {
             return
         }
         let selectedPlug = charger.plugs?.first(where: { $0.selected })
         let halfHour = self.findHalfHourValue(value: 100, plug: selectedPlug, ev: ev)
-        slider.value = [CGFloat(1), CGFloat(halfHour)]
-        guard charger.isGireve else {return}
-        sliderOnDragEnded(slider)
+        sliderViewModel.value = [CGFloat(1), CGFloat(halfHour)]
     }
     
     private func findHalfHourValue(value: CGFloat, plug: EVIOPlug?, ev: EVIOEv?) -> CGFloat {

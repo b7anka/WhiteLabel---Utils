@@ -61,9 +61,8 @@ public final class EVIOHorizontalEvSelectionViewViewModel: ObservableObject {
     
     public func getEvs() {
         #if DEBUG
-        let bundle: Bundle = Bundle(for: EVIOHorizontalEvSelectionViewViewModel.self)
-        guard let url = bundle.url(forResource: "evs", withExtension: .json), let data: Data = try? Data(contentsOf: url) else { return }
-        self.evs = []
+        guard let url = Bundle.main.url(forResource: "evs", withExtension: .json), let data: Data = try? Data(contentsOf: url), let evs: [EVIOEv] = try? JSONDecoder().decode([EVIOEv].self, from: data) else { return }
+        self.evs = evs.map({ SelectEv(isSelected: selectedEv?.id == $0.id, ev: $0) })
         #else
         self.evs = (EVIOStorageManager.shared.getUserEvs() ?? []).map({ SelectEv(isSelected: selectedEv?.id == $0.id, ev: $0) })
         #endif

@@ -17,7 +17,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         .package(url: "https://github.com/devicekit/DeviceKit", from: "4.6.1"),
-        .package(url: "https://github.com/malcommac/SwiftLocation", from: "5.1.0"),
+        .package(url: "https://github.com/b7anka/SwiftLocation", from: "5.1.1"),
         .package(url: "https://github.com/malcommac/SwiftDate.git", from: "6.3.1"),
         .package(url: "https://github.com/Daltron/NotificationBanner", from: "3.1.0"),
         .package(url: "https://github.com/rwbutler/Hyperconnectivity", from: "1.1.1"),

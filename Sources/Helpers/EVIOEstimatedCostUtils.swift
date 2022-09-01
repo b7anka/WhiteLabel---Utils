@@ -7,6 +7,8 @@
 
 import Foundation
 import SwiftDate
+import MultiSlider
+import CoreGraphics
 
 public struct EVIOEstimatedCostUtils {
     
@@ -223,6 +225,27 @@ public struct EVIOEstimatedCostUtils {
             tariffId = "-1"
         }
         return tariffId
+    }
+    
+    public func preSelectHalfHour(charger: EVIOCharger?, ev: EVIOEv?, slider: MultiSlider, sliderOnDragEnded: @escaping (MultiSlider) -> Void) {
+        guard let charger = charger else {
+            return
+        }
+        let selectedPlug = charger.plugs?.first(where: { $0.selected })
+        let halfHour = self.findHalfHourValue(value: 100, plug: selectedPlug, ev: ev)
+        slider.value = [CGFloat(1), CGFloat(halfHour)]
+        guard charger.isGireve else {return}
+        sliderOnDragEnded(slider)
+    }
+    
+    private func findHalfHourValue(value: CGFloat, plug: EVIOPlug?, ev: EVIOEv?) -> CGFloat {
+        let maxValue = value
+        guard let plug = plug, let ev = ev else { return 0.0 }
+        let maxPower = (plug.power ?? 0 > 0 ? plug.power : 1) ?? 1
+        let timeTo: CGFloat = EVIOAppUtils.shared.getValueForSliderBarSize(plug: plug, ev: ev, maxPower: maxPower, maxValue: maxValue)
+        let maxSeekTime = timeTo
+        let valueToReturn = ((1800 * 100) / maxSeekTime)
+        return valueToReturn
     }
     
     private func getIntervalTimes(schedule: EVIOPlanSchedule) -> (Date, Date) {

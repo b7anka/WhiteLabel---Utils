@@ -271,8 +271,13 @@ public final class EVIOStorageManager {
     /// # METHOD TO RETRIEVE THE EVIO'S DEFAULT CEME
     /// - Returns: an object of type ``EVIOCeme`` representing the evio's default ceme or nil in case none is found or an error occurs while trying to decode it
     public func getDefaulEvioCemeTariff() -> EVIOCeme? {
+        #if DEBUG
+        guard let url: URL = Bundle.main.url(forResource: "ceme", withExtension: .json), let data: Data = try? Data(contentsOf: url), let defaultCeme: EVIOCeme = try? self.decoder.decode(EVIOCeme.self, from: data) else { return nil }
+        return defaultCeme
+        #else
         guard let data: Data = self.defaults.data(forKey: .defaultCeme), let defaultCeme: EVIOCeme = try? self.decoder.decode(EVIOCeme.self, from: data) else { return nil }
         return defaultCeme
+        #endif
     }
     
     /// # METHOD TO RETRIEVE THE USER'S CEME TARIFFS

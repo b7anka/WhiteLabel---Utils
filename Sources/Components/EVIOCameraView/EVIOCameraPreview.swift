@@ -21,7 +21,6 @@ public struct EVIOCameraPreview: UIViewRepresentable {
         view.previewLayer.session = self.cameraViewModel.session
         view.previewLayer.videoGravity = .resizeAspectFill
         self.cameraViewModel.preview  = view.previewLayer
-        // view.layer.addSublayer(self.cameraViewModel.preview)
         self.cameraViewModel.session.startRunning()
         return view
     }
@@ -30,8 +29,6 @@ public struct EVIOCameraPreview: UIViewRepresentable {
         for layer in view.layer.sublayers ?? [] {
             layer.frame = view.bounds
         }
-        //        self.cameraViewModel.preview.frame = view.frame
-        //        self.cameraViewModel.preview.videoGravity = .resizeAspectFill
     }
     
     final class VideoView: UIView {

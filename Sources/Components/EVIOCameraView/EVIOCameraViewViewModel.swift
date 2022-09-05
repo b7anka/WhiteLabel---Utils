@@ -32,7 +32,7 @@ final public class EVIOCameraViewViewModel: NSObject, ObservableObject {
     }
     
     public func checkPermission() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             switch AVCaptureDevice.authorizationStatus(for: .video) {
             case.authorized:
                 self.setup()

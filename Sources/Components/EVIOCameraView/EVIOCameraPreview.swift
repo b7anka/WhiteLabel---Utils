@@ -26,6 +26,8 @@ public struct EVIOCameraPreview: UIViewRepresentable {
     }
     
     public func updateUIView(_ view: UIView, context: Context) {
+        view.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        view.setContentHuggingPriority(.defaultLow, for: .horizontal)
         self.cameraViewModel.preview.frame = view.frame
         self.cameraViewModel.preview.videoGravity = .resizeAspectFill
     }

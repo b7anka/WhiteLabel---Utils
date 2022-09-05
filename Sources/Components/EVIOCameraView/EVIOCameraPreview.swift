@@ -18,6 +18,11 @@ public struct EVIOCameraPreview: UIViewRepresentable {
     
     public func makeUIView(context: Context) -> UIView {
         let view: UIView = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            view.widthAnchor.constraint(equalToConstant: 100),
+            view.heightAnchor.constraint(equalToConstant: 100)
+        ])
         self.cameraViewModel.preview  = AVCaptureVideoPreviewLayer(session: self.cameraViewModel.session)
         view.layer.addSublayer(self.cameraViewModel.preview)
         self.cameraViewModel.session.startRunning()

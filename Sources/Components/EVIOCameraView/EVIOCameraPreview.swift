@@ -17,19 +17,33 @@ public struct EVIOCameraPreview: UIViewRepresentable {
     }
     
     public func makeUIView(context: Context) -> UIView {
-        let view: UIView = UIView()
-        self.cameraViewModel.preview  = AVCaptureVideoPreviewLayer(session: self.cameraViewModel.session)
-        self.cameraViewModel.preview.frame = view.frame
-        view.layer.addSublayer(self.cameraViewModel.preview)
+        let view: VideoView = VideoView()
+        view.previewLayer.session = self.cameraViewModel.session
+        view.previewLayer.videoGravity = .resizeAspectFill
+        self.cameraViewModel.preview  = view.previewLayer
+        // view.layer.addSublayer(self.cameraViewModel.preview)
         self.cameraViewModel.session.startRunning()
         return view
     }
     
     public func updateUIView(_ view: UIView, context: Context) {
-        view.setContentHuggingPriority(.defaultHigh, for: .vertical)
-        view.setContentHuggingPriority(.defaultLow, for: .horizontal)
-        self.cameraViewModel.preview.frame = view.frame
-        self.cameraViewModel.preview.videoGravity = .resizeAspectFill
+        for layer in view.layer.sublayers ?? [] {
+            layer.frame = view.bounds
+        }
+        //        self.cameraViewModel.preview.frame = view.frame
+        //        self.cameraViewModel.preview.videoGravity = .resizeAspectFill
+    }
+    
+    final class VideoView: UIView {
+        
+        override class var layerClass: AnyClass {
+            AVCaptureVideoPreviewLayer.self
+        }
+        
+        var previewLayer: AVCaptureVideoPreviewLayer {
+            layer as! AVCaptureVideoPreviewLayer
+        }
+        
     }
     
 }

@@ -645,6 +645,7 @@ public struct EVIOLanguage: Codable {
     public let supportSearchNotSearchedYet: String
     public let supportSearchNoResultsFoundFor: String
     public let supportSearchTypeSomethingToSearch: String
+    public let supportAddPictures: String
     // MARK: - INSIGHTS VIEW PROPERTIES
     public let insightsInsightsTabTitle: String
     public let insightsHistoryTabTitle: String
@@ -1325,6 +1326,7 @@ public struct EVIOLanguage: Codable {
         case supportSearchNotSearchedYet = "support_searchNotSearchedYet"
         case supportSearchNoResultsFoundFor = "support_searchNoResultsFoundFor"
         case supportSearchTypeSomethingToSearch = "support_searchTypeSomethingToSearch"
+        case supportAddPictures = "support_addPictures"
         // MARK: - INSIGHTS VIEW KEYS PROPERTIES
         case insightsInsightsTabTitle = "insights_insightsTabTitle"
         case insightsHistoryTabTitle = "insights_historyTabTitle"
@@ -2006,6 +2008,7 @@ public struct EVIOLanguage: Codable {
         self.supportSearchNotSearchedYet = try container.decodeIfPresent(String.self, forKey: .supportSearchNotSearchedYet) ?? NSLocalizedString(CodingKeys.supportSearchNotSearchedYet.rawValue, comment: "")
         self.supportSearchNoResultsFoundFor = try container.decodeIfPresent(String.self, forKey: .supportSearchNoResultsFoundFor) ?? NSLocalizedString(CodingKeys.supportSearchNoResultsFoundFor.rawValue, comment: "")
         self.supportSearchTypeSomethingToSearch = try container.decodeIfPresent(String.self, forKey: .supportSearchTypeSomethingToSearch) ?? NSLocalizedString(CodingKeys.supportSearchTypeSomethingToSearch.rawValue, comment: "")
+        self.supportAddPictures = try container.decodeIfPresent(String.self, forKey: .supportAddPictures) ?? NSLocalizedString(CodingKeys.supportAddPictures.rawValue, comment: .empty)
         // MARK: - INSIGHTS VIEW KEYS
         self.insightsInsightsTabTitle = try container.decodeIfPresent(String.self, forKey: .insightsInsightsTabTitle) ?? NSLocalizedString(CodingKeys.insightsInsightsTabTitle.rawValue, comment: "")
         self.insightsHistoryTabTitle = try container.decodeIfPresent(String.self, forKey: .insightsHistoryTabTitle) ?? NSLocalizedString(CodingKeys.insightsHistoryTabTitle.rawValue, comment: "")
@@ -2686,6 +2689,7 @@ public struct EVIOLanguage: Codable {
         self.supportSearchNotSearchedYet = NSLocalizedString(CodingKeys.supportSearchNotSearchedYet.rawValue, comment: "")
         self.supportSearchNoResultsFoundFor = NSLocalizedString(CodingKeys.supportSearchNoResultsFoundFor.rawValue, comment: "")
         self.supportSearchTypeSomethingToSearch = NSLocalizedString(CodingKeys.supportSearchTypeSomethingToSearch.rawValue, comment: "")
+        self.supportAddPictures = NSLocalizedString(CodingKeys.supportAddPictures.rawValue, comment: .empty)
         // MARK: - INSIGHTS VIEW KEYS
         self.insightsInsightsTabTitle = NSLocalizedString(CodingKeys.insightsInsightsTabTitle.rawValue, comment: "")
         self.insightsHistoryTabTitle = NSLocalizedString(CodingKeys.insightsHistoryTabTitle.rawValue, comment: "")

@@ -9,12 +9,10 @@ import Foundation
 
 public struct EVIOSendMobileToServer: Codable {
     
-    public let token: String?
     public let internationalPrefix: String?
     public let mobile: String?
     
-    public init(token: String?, internationalPrefix: String?, mobile: String?) {
-        self.token = token
+    public init(internationalPrefix: String?, mobile: String?) {
         self.internationalPrefix = internationalPrefix
         self.mobile = mobile
     }

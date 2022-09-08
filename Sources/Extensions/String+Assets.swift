@@ -45,6 +45,7 @@ public extension String {
     static let locationPickerImage: String = "locationPickerImage"
     static let verticalEllipsis: String = "verticalEllipsis"
     static let imageSelectionButtonIcon: String = "imageSelectionButtonIcon"
+    static let supportaddImage: String = "supportaddImage"
     
     // MARK: - CONNECTOR TYPE
     static let ccs1: String = "ccs1"

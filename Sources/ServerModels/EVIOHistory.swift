@@ -27,7 +27,7 @@ public struct EVIOHistory: Codable {
         case chargerType, startDate, purchaseTariff, costDetails, totalPrice, stopDate, ev, cdrId, paymentBillingInfo
     }
     
-    var status: String {
+    public var status: String {
         guard let status = self.paymentBillingInfo else { return .empty }
         switch status {
         case .paid:
@@ -47,7 +47,7 @@ public struct EVIOHistory: Codable {
         }
     }
     
-    var statusColor: Color {
+    public var statusColor: Color {
         guard let status = self.paymentBillingInfo else { return .clear }
         switch status {
         case .paid:

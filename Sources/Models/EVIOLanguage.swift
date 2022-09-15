@@ -2069,7 +2069,7 @@ public struct EVIOLanguage: Codable {
         // MARK: - HISTORY VIEW KEYS
         self.historyPaymentBillingInfoPaid = try container.decodeIfPresent(String.self, forKey: .historyPaymentBillingInfoPaid) ?? NSLocalizedString(CodingKeys.historyPaymentBillingInfoPaid.rawValue, comment: "")
         self.historyPaymentBillingInfoPaidAndBilled = try container.decodeIfPresent(String.self, forKey: .historyPaymentBillingInfoPaidAndBilled) ?? NSLocalizedString(CodingKeys.historyPaymentBillingInfoPaidAndBilled.rawValue, comment: "")
-        self.historyPaymentBillingInfoToProcess = try container.decodeIfPresent(String.self, forKey: .historyPaymentBillingInfoTopProcess) ?? NSLocalizedString(CodingKeys.historyPaymentBillingInfoTopProcess.rawValue, comment: "")
+        self.historyPaymentBillingInfoToProcess = try container.decodeIfPresent(String.self, forKey: .historyPaymentBillingInfoToProcess) ?? NSLocalizedString(CodingKeys.historyPaymentBillingInfoToProcess.rawValue, comment: "")
         self.historyPaymentBillingInfoNotApplicable = try container.decodeIfPresent(String.self, forKey: .historyPaymentBillingInfoNotApplicable) ?? NSLocalizedString(CodingKeys.historyPaymentBillingInfoNotApplicable.rawValue, comment: "")
         self.historyPaymentBillingInfoFailedBilling = try container.decodeIfPresent(String.self, forKey: .historyPaymentBillingInfoFailedBilling) ?? NSLocalizedString(CodingKeys.historyPaymentBillingInfoFailedBilling.rawValue, comment: "")
         self.historyPaymentBillingInfoFailedPayment = try container.decodeIfPresent(String.self, forKey: .historyPaymentBillingInfoFailedPayment) ?? NSLocalizedString(CodingKeys.historyPaymentBillingInfoFailedPayment.rawValue, comment: "")
@@ -2758,7 +2758,7 @@ public struct EVIOLanguage: Codable {
         // MARK: - HISTORY VIEW KEYS
         self.historyPaymentBillingInfoPaid = NSLocalizedString(CodingKeys.historyPaymentBillingInfoPaid.rawValue, comment: "")
         self.historyPaymentBillingInfoPaidAndBilled = NSLocalizedString(CodingKeys.historyPaymentBillingInfoPaidAndBilled.rawValue, comment: "")
-        self.historyPaymentBillingInfoToProcess = NSLocalizedString(CodingKeys.historyPaymentBillingInfoTopProcess.rawValue, comment: "")
+        self.historyPaymentBillingInfoToProcess = NSLocalizedString(CodingKeys.historyPaymentBillingInfoToProcess.rawValue, comment: "")
         self.historyPaymentBillingInfoNotApplicable = NSLocalizedString(CodingKeys.historyPaymentBillingInfoNotApplicable.rawValue, comment: "")
         self.historyPaymentBillingInfoFailedBilling = NSLocalizedString(CodingKeys.historyPaymentBillingInfoFailedBilling.rawValue, comment: "")
         self.historyPaymentBillingInfoFailedPayment = NSLocalizedString(CodingKeys.historyPaymentBillingInfoFailedPayment.rawValue, comment: "")

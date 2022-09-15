@@ -687,6 +687,14 @@ public struct EVIOLanguage: Codable {
     public let comparatorCompareButton: String
     public let comparatorChoosePlugToCompare: String
     public let comparatorPlugAlreadyBeingCompared: String
+    // MARK: - HISTORY VIEW PROPERTIES
+    public let historyPaymentBillingInfoPaid: String
+    public let historyPaymentBillingInfoPaidAndBilled: String
+    public let historyPaymentBillingInfoToProcess: String
+    public let historyPaymentBillingInfoNotApplicable: String
+    public let historyPaymentBillingInfoFailedBilling: String
+    public let historyPaymentBillingInfoFailedPayment: String
+    public let historyPaymentBillingInfoBilledAndNotPaid: String
     
     // MARK: - CODING KEYS
     private enum CodingKeys: String, CodingKey {
@@ -1368,6 +1376,14 @@ public struct EVIOLanguage: Codable {
         case comparatorCompareButton = "comparator_compareButton"
         case comparatorChoosePlugToCompare = "comparator_choosePlugToCompare"
         case comparatorPlugAlreadyBeingCompared = "comparator_plugAlreadyBeingCompared"
+        // MARK: - HISTORY VIEW KEYS PROPERTIES
+        case historyPaymentBillingInfoPaid = "historyPaymentBillingInfo_paid"
+        case historyPaymentBillingInfoPaidAndBilled = "historyPaymentBillingInfo_paidAndBilled"
+        case historyPaymentBillingInfoToProcess = "historyPaymentBillingInfo_toProcess"
+        case historyPaymentBillingInfoNotApplicable = "historyPaymentBillingInfo_notApplicable"
+        case historyPaymentBillingInfoFailedBilling = "historyPaymentBillingInfo_failedBilling"
+        case historyPaymentBillingInfoFailedPayment = "historyPaymentBillingInfo_failedPayment"
+        case historyPaymentBillingInfoBilledAndNotPaid = "historyPaymentBillingInfo_billedAndNotPaid"
     }
     
     public init(from decoder: Decoder) throws {
@@ -2032,11 +2048,11 @@ public struct EVIOLanguage: Codable {
         self.insightsEnergyConsumptionPerSession = try container.decodeIfPresent(String.self, forKey: .insightsEnergyConsumptionPerSession) ?? NSLocalizedString(CodingKeys.insightsEnergyConsumptionPerSession.rawValue, comment: "")
         self.insightsFavoriteCharger = try container.decodeIfPresent(String.self, forKey: .insightsFavoriteCharger) ?? NSLocalizedString(CodingKeys.insightsFavoriteCharger.rawValue, comment: "")
         self.insightsMostUsedPlug = try container.decodeIfPresent(String.self, forKey: .insightsMostUsedPlug) ?? NSLocalizedString(CodingKeys.insightsMostUsedPlug.rawValue, comment: "")
-        // MARK: - BLOCKED VIEW KEYS PROPERTIES
+        // MARK: - BLOCKED VIEW KEYS
         self.blockedViewUpdateBt = try container.decodeIfPresent(String.self, forKey: .blockedViewUpdateBt) ?? NSLocalizedString(CodingKeys.blockedViewUpdateBt.rawValue, comment: "")
         self.blockedViewTextInfo = try container.decodeIfPresent(String.self, forKey: .blockedViewTextInfo) ?? NSLocalizedString(CodingKeys.blockedViewTextInfo.rawValue, comment: "")
         self.blockedViewPaymentError = try container.decodeIfPresent(String.self, forKey: .blockedViewPaymentError) ?? NSLocalizedString(CodingKeys.blockedViewPaymentError.rawValue, comment: "")
-        // MARK: - COMPARATOR VIEW KEYS PROPERTIES
+        // MARK: - COMPARATOR VIEW KEYS
         self.comparatorTitle = try container.decodeIfPresent(String.self, forKey: .comparatorTitle) ?? NSLocalizedString(CodingKeys.comparatorTitle.rawValue, comment: "")
         self.comparatorChargingPoint = try container.decodeIfPresent(String.self, forKey: .comparatorChargingPoint) ?? NSLocalizedString(CodingKeys.comparatorChargingPoint.rawValue, comment: "")
         self.comparatorPlugPower = try container.decodeIfPresent(String.self, forKey: .comparatorPlugPower) ?? NSLocalizedString(CodingKeys.comparatorPlugPower.rawValue, comment: "")
@@ -2050,6 +2066,14 @@ public struct EVIOLanguage: Codable {
         self.comparatorCompareButton = try container.decodeIfPresent(String.self, forKey: .comparatorCompareButton) ?? NSLocalizedString(CodingKeys.comparatorCompareButton.rawValue, comment: "")
         self.comparatorChoosePlugToCompare = try container.decodeIfPresent(String.self, forKey: .comparatorChoosePlugToCompare) ?? NSLocalizedString(CodingKeys.comparatorChoosePlugToCompare.rawValue, comment: "")
         self.comparatorPlugAlreadyBeingCompared = try container.decodeIfPresent(String.self, forKey: .comparatorPlugAlreadyBeingCompared) ?? NSLocalizedString(CodingKeys.comparatorPlugAlreadyBeingCompared.rawValue, comment: "")
+        // MARK: - HISTORY VIEW KEYS
+        self.historyPaymentBillingInfoPaid = try container.decodeIfPresent(String.self, forKey: .historyPaymentBillingInfoPaid) ?? NSLocalizedString(CodingKeys.historyPaymentBillingInfoPaid.rawValue, comment: "")
+        self.historyPaymentBillingInfoPaidAndBilled = try container.decodeIfPresent(String.self, forKey: .historyPaymentBillingInfoPaidAndBilled) ?? NSLocalizedString(CodingKeys.historyPaymentBillingInfoPaidAndBilled.rawValue, comment: "")
+        self.historyPaymentBillingInfoToProcess = try container.decodeIfPresent(String.self, forKey: .historyPaymentBillingInfoTopProcess) ?? NSLocalizedString(CodingKeys.historyPaymentBillingInfoTopProcess.rawValue, comment: "")
+        self.historyPaymentBillingInfoNotApplicable = try container.decodeIfPresent(String.self, forKey: .historyPaymentBillingInfoNotApplicable) ?? NSLocalizedString(CodingKeys.historyPaymentBillingInfoNotApplicable.rawValue, comment: "")
+        self.historyPaymentBillingInfoFailedBilling = try container.decodeIfPresent(String.self, forKey: .historyPaymentBillingInfoFailedBilling) ?? NSLocalizedString(CodingKeys.historyPaymentBillingInfoFailedBilling.rawValue, comment: "")
+        self.historyPaymentBillingInfoFailedPayment = try container.decodeIfPresent(String.self, forKey: .historyPaymentBillingInfoFailedPayment) ?? NSLocalizedString(CodingKeys.historyPaymentBillingInfoFailedPayment.rawValue, comment: "")
+        self.historyPaymentBillingInfoBilledAndNotPaid = try container.decodeIfPresent(String.self, forKey: .historyPaymentBillingInfoBilledAndNotPaid) ?? NSLocalizedString(CodingKeys.historyPaymentBillingInfoBilledAndNotPaid.rawValue, comment: "")
     }
     
     public init() {
@@ -2731,6 +2755,14 @@ public struct EVIOLanguage: Codable {
         self.comparatorCompareButton = NSLocalizedString(CodingKeys.comparatorCompareButton.rawValue, comment: "")
         self.comparatorChoosePlugToCompare = NSLocalizedString(CodingKeys.comparatorChoosePlugToCompare.rawValue, comment: "")
         self.comparatorPlugAlreadyBeingCompared = NSLocalizedString(CodingKeys.comparatorPlugAlreadyBeingCompared.rawValue, comment: "")
+        // MARK: - HISTORY VIEW KEYS
+        self.historyPaymentBillingInfoPaid = NSLocalizedString(CodingKeys.historyPaymentBillingInfoPaid.rawValue, comment: "")
+        self.historyPaymentBillingInfoPaidAndBilled = NSLocalizedString(CodingKeys.historyPaymentBillingInfoPaidAndBilled.rawValue, comment: "")
+        self.historyPaymentBillingInfoToProcess = NSLocalizedString(CodingKeys.historyPaymentBillingInfoTopProcess.rawValue, comment: "")
+        self.historyPaymentBillingInfoNotApplicable = NSLocalizedString(CodingKeys.historyPaymentBillingInfoNotApplicable.rawValue, comment: "")
+        self.historyPaymentBillingInfoFailedBilling = NSLocalizedString(CodingKeys.historyPaymentBillingInfoFailedBilling.rawValue, comment: "")
+        self.historyPaymentBillingInfoFailedPayment = NSLocalizedString(CodingKeys.historyPaymentBillingInfoFailedPayment.rawValue, comment: "")
+        self.historyPaymentBillingInfoBilledAndNotPaid = NSLocalizedString(CodingKeys.historyPaymentBillingInfoBilledAndNotPaid.rawValue, comment: "")
     }
     
 }

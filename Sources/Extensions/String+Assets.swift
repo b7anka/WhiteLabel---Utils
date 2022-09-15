@@ -331,6 +331,13 @@ public extension String {
     static let topUpButtonSelectedTextColor: String = "topUpButtonSelectedTextColor"
     static let topUpButtonUnselectedTextColor: String = "topUpButtonUnselectedTextColor"
     static let primaryButtonTextSelectedColor: String = "primaryButtonTextSelectedColor"
+    static let historyStatusBilledAndNotPaid: String = "historyStatusBilledAndNotPaid"
+    static let historyStatusFailedBilling: String = "historyStatusFailedBilling"
+    static let historyStatusFailedPayment: String = "historyStatusFailedPayment"
+    static let historyStatusNotApplicable: String = "historyStatusNotApplicable"
+    static let historyStatusPaid: String = "historyStatusPaid"
+    static let historyStatusPaidAndBilled: String = "historyStatusPaidAndBilled"
+    static let historyStatusToProcess: String = "historyStatusToProcess"
     
     // MARK: - ACTIVATION PAGE
     static let checkmarkIcon: String = "checkmarkIcon"

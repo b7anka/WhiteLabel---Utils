@@ -695,6 +695,16 @@ public struct EVIOLanguage: Codable {
     public let historyPaymentBillingInfoFailedBilling: String
     public let historyPaymentBillingInfoFailedPayment: String
     public let historyPaymentBillingInfoBilledAndNotPaid: String
+    // MARK: - INFO TARIFF MOBIE PROPERTIES
+    public let infoTariffMobiePerMinuteMinMaxDuration: String
+    public let infoTariffMobiePerMinuteMinMaxKwh: String
+    public let infoTariffMobiePerKwhStartEndTime: String
+    public let infoTariffMobiePerKwhStartEndDate: String
+    public let infoTariffMobiePerKwhMaxMinKwh: String
+    public let infoTariffMobiePerKwhMinMaxDuration: String
+    public let infoTariffMobiePerKwhDayOfWeek: String
+    public let infoTariffMobieSimulatePercent: String
+    public let infoTariffMobieSimulateTime: String
     
     // MARK: - CODING KEYS
     private enum CodingKeys: String, CodingKey {
@@ -1384,6 +1394,16 @@ public struct EVIOLanguage: Codable {
         case historyPaymentBillingInfoFailedBilling = "historyPaymentBillingInfo_failedBilling"
         case historyPaymentBillingInfoFailedPayment = "historyPaymentBillingInfo_failedPayment"
         case historyPaymentBillingInfoBilledAndNotPaid = "historyPaymentBillingInfo_billedAndNotPaid"
+        // MARK: - INFO TARIFF MOBIE PROPERTIES
+        case infoTariffMobiePerMinuteMinMaxDuration = "infoTariffMobie_perMinuteMinMaxDuration"
+        case infoTariffMobiePerMinuteMinMaxKwh = "infoTariffMobie_perMinuteMinMaxKwh"
+        case infoTariffMobiePerKwhStartEndTime = "infoTariffMobie_perKwhStartEndTime"
+        case infoTariffMobiePerKwhStartEndDate = "infoTariffMobie_perKwhStartEndDate"
+        case infoTariffMobiePerKwhMaxMinKwh = "infoTariffMobie_perKwhMaxMinKwh"
+        case infoTariffMobiePerKwhMinMaxDuration = "infoTariffMobie_perKwhMinMaxDuration"
+        case infoTariffMobiePerKwhDayOfWeek = "infoTariffMobie_perKwhDayOfWeek"
+        case infoTariffMobieSimulatePercent = "infoTariffMobie_simulatePercent"
+        case infoTariffMobieSimulateTime = "infoTariffMobie_simulateTime"
     }
     
     public init(from decoder: Decoder) throws {
@@ -2074,6 +2094,16 @@ public struct EVIOLanguage: Codable {
         self.historyPaymentBillingInfoFailedBilling = try container.decodeIfPresent(String.self, forKey: .historyPaymentBillingInfoFailedBilling) ?? NSLocalizedString(CodingKeys.historyPaymentBillingInfoFailedBilling.rawValue, comment: "")
         self.historyPaymentBillingInfoFailedPayment = try container.decodeIfPresent(String.self, forKey: .historyPaymentBillingInfoFailedPayment) ?? NSLocalizedString(CodingKeys.historyPaymentBillingInfoFailedPayment.rawValue, comment: "")
         self.historyPaymentBillingInfoBilledAndNotPaid = try container.decodeIfPresent(String.self, forKey: .historyPaymentBillingInfoBilledAndNotPaid) ?? NSLocalizedString(CodingKeys.historyPaymentBillingInfoBilledAndNotPaid.rawValue, comment: "")
+        // MARK: - INFO TARIFF MOBIE KEYS
+        self.infoTariffMobiePerMinuteMinMaxDuration = try container.decodeIfPresent(String.self, forKey: .infoTariffMobiePerMinuteMinMaxDuration) ?? NSLocalizedString(CodingKeys.infoTariffMobiePerMinuteMinMaxDuration.rawValue, comment: "")
+        self.infoTariffMobiePerMinuteMinMaxKwh = try container.decodeIfPresent(String.self, forKey: .infoTariffMobiePerMinuteMinMaxKwh) ?? NSLocalizedString(CodingKeys.infoTariffMobiePerMinuteMinMaxKwh.rawValue, comment: "")
+        self.infoTariffMobiePerKwhStartEndTime = try container.decodeIfPresent(String.self, forKey: .infoTariffMobiePerKwhStartEndTime) ?? NSLocalizedString(CodingKeys.infoTariffMobiePerKwhStartEndTime.rawValue, comment: "")
+        self.infoTariffMobiePerKwhStartEndDate = try container.decodeIfPresent(String.self, forKey: .infoTariffMobiePerKwhStartEndDate) ?? NSLocalizedString(CodingKeys.infoTariffMobiePerKwhStartEndDate.rawValue, comment: "")
+        self.infoTariffMobiePerKwhMaxMinKwh = try container.decodeIfPresent(String.self, forKey: .infoTariffMobiePerKwhMaxMinKwh) ?? NSLocalizedString(CodingKeys.infoTariffMobiePerKwhMaxMinKwh.rawValue, comment: "")
+        self.infoTariffMobiePerKwhMinMaxDuration = try container.decodeIfPresent(String.self, forKey: .infoTariffMobiePerKwhMinMaxDuration) ?? NSLocalizedString(CodingKeys.infoTariffMobiePerKwhMinMaxDuration.rawValue, comment: "")
+        self.infoTariffMobiePerKwhDayOfWeek = try container.decodeIfPresent(String.self, forKey: .infoTariffMobiePerKwhDayOfWeek) ?? NSLocalizedString(CodingKeys.infoTariffMobiePerKwhDayOfWeek.rawValue, comment: "")
+        self.infoTariffMobieSimulatePercent = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieSimulatePercent) ?? NSLocalizedString(CodingKeys.infoTariffMobieSimulatePercent.rawValue, comment: "")
+        self.infoTariffMobieSimulateTime = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieSimulateTime) ?? NSLocalizedString(CodingKeys.infoTariffMobieSimulateTime.rawValue, comment: "")
     }
     
     public init() {
@@ -2755,7 +2785,7 @@ public struct EVIOLanguage: Codable {
         self.comparatorCompareButton = NSLocalizedString(CodingKeys.comparatorCompareButton.rawValue, comment: "")
         self.comparatorChoosePlugToCompare = NSLocalizedString(CodingKeys.comparatorChoosePlugToCompare.rawValue, comment: "")
         self.comparatorPlugAlreadyBeingCompared = NSLocalizedString(CodingKeys.comparatorPlugAlreadyBeingCompared.rawValue, comment: "")
-        // MARK: - HISTORY VIEW KEYS
+        // MARK: - HISTORY VIEW DEFAULT KEYS
         self.historyPaymentBillingInfoPaid = NSLocalizedString(CodingKeys.historyPaymentBillingInfoPaid.rawValue, comment: "")
         self.historyPaymentBillingInfoPaidAndBilled = NSLocalizedString(CodingKeys.historyPaymentBillingInfoPaidAndBilled.rawValue, comment: "")
         self.historyPaymentBillingInfoToProcess = NSLocalizedString(CodingKeys.historyPaymentBillingInfoToProcess.rawValue, comment: "")
@@ -2763,6 +2793,16 @@ public struct EVIOLanguage: Codable {
         self.historyPaymentBillingInfoFailedBilling = NSLocalizedString(CodingKeys.historyPaymentBillingInfoFailedBilling.rawValue, comment: "")
         self.historyPaymentBillingInfoFailedPayment = NSLocalizedString(CodingKeys.historyPaymentBillingInfoFailedPayment.rawValue, comment: "")
         self.historyPaymentBillingInfoBilledAndNotPaid = NSLocalizedString(CodingKeys.historyPaymentBillingInfoBilledAndNotPaid.rawValue, comment: "")
+        // MARK: - INFO TARIFF MOBIE DEFAULT KEYS
+        self.infoTariffMobiePerMinuteMinMaxDuration = NSLocalizedString(CodingKeys.infoTariffMobiePerMinuteMinMaxDuration.rawValue, comment: "")
+        self.infoTariffMobiePerMinuteMinMaxKwh = NSLocalizedString(CodingKeys.infoTariffMobiePerMinuteMinMaxKwh.rawValue, comment: "")
+        self.infoTariffMobiePerKwhStartEndTime = NSLocalizedString(CodingKeys.infoTariffMobiePerKwhStartEndTime.rawValue, comment: "")
+        self.infoTariffMobiePerKwhStartEndDate = NSLocalizedString(CodingKeys.infoTariffMobiePerKwhStartEndDate.rawValue, comment: "")
+        self.infoTariffMobiePerKwhMaxMinKwh = NSLocalizedString(CodingKeys.infoTariffMobiePerKwhMaxMinKwh.rawValue, comment: "")
+        self.infoTariffMobiePerKwhMinMaxDuration = NSLocalizedString(CodingKeys.infoTariffMobiePerKwhMinMaxDuration.rawValue, comment: "")
+        self.infoTariffMobiePerKwhDayOfWeek = NSLocalizedString(CodingKeys.infoTariffMobiePerKwhDayOfWeek.rawValue, comment: "")
+        self.infoTariffMobieSimulatePercent = NSLocalizedString(CodingKeys.infoTariffMobieSimulatePercent.rawValue, comment: "")
+        self.infoTariffMobieSimulateTime = NSLocalizedString(CodingKeys.infoTariffMobieSimulateTime.rawValue, comment: "")
     }
     
 }

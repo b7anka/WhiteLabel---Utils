@@ -338,6 +338,7 @@ public extension String {
     static let historyStatusPaid: String = "historyStatusPaid"
     static let historyStatusPaidAndBilled: String = "historyStatusPaidAndBilled"
     static let historyStatusToProcess: String = "historyStatusToProcess"
+    static let _5B6480: String = "5B6480"
     
     // MARK: - ACTIVATION PAGE
     static let checkmarkIcon: String = "checkmarkIcon"

@@ -22,7 +22,7 @@ let package = Package(
         .package(url: "https://github.com/Daltron/NotificationBanner", from: "3.1.0"),
         .package(url: "https://github.com/rwbutler/Hyperconnectivity", from: "1.1.1"),
         .package(url: "https://github.com/marmelroy/PhoneNumberKit", from: "3.4.4"),
-        .package(url: "https://github.com/danielgindi/Charts.git", from: "3.6.0"),
+        .package(url: "https://github.com/danielgindi/Charts.git", from: "4.1.0"),
         .package(url: "https://github.com/evgenyneu/Cosmos.git", from: "23.0.0"),
         .package(url: "https://github.com/Mobilinked/MbSwiftUIFirstResponder", branch: "main"),
         .package(url: "https://github.com/JWAutumn/ACarousel", branch: "main"),

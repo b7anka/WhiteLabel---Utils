@@ -45,7 +45,7 @@ public final class EVIOChartUtils {
         setPower.axisDependency = YAxis.AxisDependency.left
         setBattery.axisDependency = YAxis.AxisDependency.right
         
-        var dataSets = [IBarChartDataSet]()
+        var dataSets = [BarChartDataSet]()
         dataSets.append(setPower)
         dataSets.append(setBattery)
         
@@ -96,7 +96,7 @@ public final class EVIOChartUtils {
         setPower.axisDependency = YAxis.AxisDependency.left
         setBattery.axisDependency = YAxis.AxisDependency.right
         
-        var dataSets = [IBarChartDataSet]()
+        var dataSets = [BarChartDataSet]()
         dataSets.append(setPower)
         dataSets.append(setBattery)
         
@@ -138,7 +138,7 @@ public final class EVIOChartUtils {
         let barWidth = 0.42
         let barChartRender = BarChartRenderer(dataProvider: chartView, animator: chartView.chartAnimator, viewPortHandler: chartView.viewPortHandler)
         chartView.renderer = barChartRender
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
         chartView.setScaleEnabled(false)
         chartView.animate(xAxisDuration: 2)
         chartView.animate(xAxisDuration: 2, yAxisDuration: 2)
@@ -211,7 +211,7 @@ public final class EVIOChartUtils {
     
 }
 
-public final class YAxisValueFormatterForTime: NSObject, IAxisValueFormatter {
+public final class YAxisValueFormatterForTime: NSObject, AxisValueFormatter {
     
     public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         return value == 0.0 ? "h" : String(Int(value.rounded(.toNearestOrEven)))
@@ -219,7 +219,7 @@ public final class YAxisValueFormatterForTime: NSObject, IAxisValueFormatter {
     
 }
 
-public final class YAxisValueFormatterForPercentage: NSObject, IAxisValueFormatter {
+public final class YAxisValueFormatterForPercentage: NSObject, AxisValueFormatter {
     
     public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         return value == 0.0 ? "%" : String(Int(value))
@@ -227,7 +227,7 @@ public final class YAxisValueFormatterForPercentage: NSObject, IAxisValueFormatt
     
 }
 
-public final class YAxisLeftValueFormatterForKwh: NSObject, IAxisValueFormatter {
+public final class YAxisLeftValueFormatterForKwh: NSObject, AxisValueFormatter {
     
     public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         return value == 0.0 ? "kWh" : String(Int(value.rounded(.toNearestOrEven)))
@@ -235,7 +235,7 @@ public final class YAxisLeftValueFormatterForKwh: NSObject, IAxisValueFormatter 
     
 }
 
-public final class YAxisLefValueFormatterForKw: NSObject, IAxisValueFormatter {
+public final class YAxisLefValueFormatterForKw: NSObject, AxisValueFormatter {
     
     public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         return value == 0.0 ? "kW" : String(Int(value))

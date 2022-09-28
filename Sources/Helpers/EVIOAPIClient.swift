@@ -26,7 +26,7 @@ public final class EVIOAPIClient: ObservableObject {
     public var headers: EVIOHeaders = EVIOHeaders(apiKey: nil, evioAppVersion: nil, mobileBrand: nil, mobileModel: nil, mobileVersion: nil, refreshToken: nil, token: nil)
     #if DEBUG
     // the server url being used in debug
-    public var serverUrl: EVIOServerAddresses = .preUnsecure {
+    public var serverUrl: EVIOServerAddresses = .pre {
         didSet {
             // once this variable is set we ask the root view model to update the server url property
             self.serverInUse = self.serverUrl.description

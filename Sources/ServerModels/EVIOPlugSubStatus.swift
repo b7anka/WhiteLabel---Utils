@@ -18,6 +18,13 @@ public enum EVIOPlugSubSatus: String, Codable {
     case removed = "REMOVED"
     case reserved = "RESERVED"
     case unknown = "UNKNOWN"
+    case preparing = "PREPARING"
+    case suspendedEvse = "SUSPENDEDEVSE"
+    case suspendedEv = "SUSPENDEDEV"
+    case finishing = "FINISHING"
+    case unavailable = "UNAVAILABLE"
+    case faulted = "FAULTED"
+    case occupied = "OCCUPIED"
     
     public init?(rawValue: String) {
         switch rawValue.uppercased() {
@@ -37,6 +44,20 @@ public enum EVIOPlugSubSatus: String, Codable {
             self = .removed
         case Self.reserved.rawValue:
             self = .reserved
+        case Self.preparing.rawValue:
+            self = .preparing
+        case Self.suspendedEvse.rawValue:
+            self = .suspendedEvse
+        case Self.suspendedEv.rawValue:
+            self = .suspendedEv
+        case Self.finishing.rawValue:
+            self = .finishing
+        case Self.unavailable.rawValue:
+            self = .unavailable
+        case Self.faulted.rawValue:
+            self = .faulted
+        case Self.occupied.rawValue:
+            self = .occupied
         default:
             self = .unknown
         }

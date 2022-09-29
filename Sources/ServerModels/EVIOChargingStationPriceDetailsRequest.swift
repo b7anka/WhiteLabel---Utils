@@ -17,6 +17,15 @@ public struct EVIOChargingStationPriceDetailsRequest: Codable {
     public var countryCode: String?
     public var currentDate: String?
     
+    public init(tariffId: String?, planId: String?, source: String?, voltageLevel: String?, countryCode: String?, currentDate: String?) {
+        self.tariffId = tariffId
+        self.planId = planId
+        self.source = source
+        self.voltageLevel = voltageLevel
+        self.countryCode = countryCode
+        self.currentDate = currentDate
+    }
+    
     public func toDictionary() -> [String: Any] {
         guard let data: Data = try? JSONEncoder().encode(self), let dict: [String: Any] = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else { return [:] }
         return dict

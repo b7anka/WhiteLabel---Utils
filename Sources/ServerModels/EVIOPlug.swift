@@ -27,9 +27,10 @@ public final class EVIOPlug: Codable {
     public var subStatus: EVIOPlugSubSatus?
     public var selected: Bool
     public var evseGroup: String?
+    public var tariffId: [String]
     
     public enum CodingKeys: String, CodingKey {
-        case status, id = "_id", plugId, active, amperage, connectorType, power, voltage, tariff, canBeNotified, canBeAutomaticallyBooked, session, qrCodeId, mySession, serviceCost, subStatus, selected, evseGroup
+        case status, id = "_id", plugId, active, amperage, connectorType, power, voltage, tariff, canBeNotified, canBeAutomaticallyBooked, session, qrCodeId, mySession, serviceCost, subStatus, selected, evseGroup, tariffId
     }
     
     public init(from decoder: Decoder) throws {
@@ -52,6 +53,7 @@ public final class EVIOPlug: Codable {
         self.subStatus = try container.decodeIfPresent(EVIOPlugSubSatus.self, forKey: .subStatus)
         self.evseGroup = try container.decodeIfPresent(String.self, forKey: .evseGroup)
         self.selected = try container.decodeIfPresent(Bool.self, forKey: .selected) ?? false
+        self.tariffId = try container.decodeIfPresent([String].self, forKey: .tariffId) ?? []
     }
     
     public init(id: String?, connectorType: String?, power: Double?) {
@@ -73,6 +75,7 @@ public final class EVIOPlug: Codable {
         self.subStatus = nil
         self.evseGroup = nil
         self.selected = false
+        self.tariffId = []
     }
     
 }

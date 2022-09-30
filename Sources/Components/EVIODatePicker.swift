@@ -26,11 +26,7 @@ final public class EVIODatePicker: UIPickerView {
     
     public var selectedDate: String = ""
     public var utcSelectedDate: String = ""
-    public var evioDatePickerDelegate: EVIODatePickerDelegate? {
-        didSet {
-            self.evioDatePickerDelegate?.evioDatePicker(evioDatePicker: self, didSelectItem: self.selectedDate)
-        }
-    }
+    public var evioDatePickerDelegate: EVIODatePickerDelegate?
     
     @IBInspectable
     public var textColor: UIColor = UIColor(red: 53.0/255.0, green: 56.0/255.0, blue: 65.0/255.0, alpha: 1.0) {

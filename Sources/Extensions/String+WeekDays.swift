@@ -11,12 +11,12 @@ public typealias EVIOWeekDay = String
 
 public extension String {
     
-    static let sunday = "SUNDAY"
-    static let monday = "MONDAY"
-    static let tuesday = "TUESDAY"
-    static let wednesday = "WEDNESDAY"
-    static let thursday = "THURSDAY"
-    static let friday = "FRIDAY"
-    static let saturday = "SATURDAY"
+    static let sunday: EVIOWeekDay = "SUNDAY"
+    static let monday: EVIOWeekDay = "MONDAY"
+    static let tuesday: EVIOWeekDay = "TUESDAY"
+    static let wednesday: EVIOWeekDay = "WEDNESDAY"
+    static let thursday: EVIOWeekDay = "THURSDAY"
+    static let friday: EVIOWeekDay = "FRIDAY"
+    static let saturday: EVIOWeekDay = "SATURDAY"
     
 }

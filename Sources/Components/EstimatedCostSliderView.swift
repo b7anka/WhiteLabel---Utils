@@ -29,7 +29,7 @@ public struct EstimatedCostSliderView: View {
     
     public var body: some View {
         ZStack {
-            EVIOMultiSlider(viewModel: nil, shouldStartDisabled: true, isRangeSlider: self.isRangeSlider, minimumValue: 0, maximumValue: 100, didEndDrag: self.didEndDrag, onChange: self.onChange)
+            EVIOMultiSlider(viewModel: nil, shouldStartDisabled: true, isRangeSlider: self.isRangeSlider, minimumValue: 0, maximumValue: 100, didEndDrag: self.didEndDrag, onChange: self.onChange, sliderDidGetCreated: self.sliderDidGetCreated)
             if let value = self.value {
                 Text(value)
                     .modifier(EvioFiltersSliderLabelsTextModifier(color: Color.primaryTextColor, lineLimit: 1, textAlignment: .center))

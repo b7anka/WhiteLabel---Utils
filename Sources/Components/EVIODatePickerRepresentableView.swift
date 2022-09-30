@@ -21,8 +21,8 @@ public struct EVIODatePickerRepresentableView: UIViewRepresentable {
     public func makeUIView(context: UIViewRepresentableContext<EVIODatePickerRepresentableView>) -> UIView {
         let datePicker = EVIODatePicker()
         datePicker.translatesAutoresizingMaskIntoConstraints = false
-        datePicker.evioDatePickerDelegate = self.delegate
         datePicker.setDate(date: self.selectedDate)
+        datePicker.evioDatePickerDelegate = self.delegate
         let view: UIView = UIView()
         view.backgroundColor = .clear
         view.addSubview(datePicker)

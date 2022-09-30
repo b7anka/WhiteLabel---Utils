@@ -41,7 +41,7 @@ public struct EVIOEstimatedCostExpandableView<Content: View>: View {
                         Image(.downArrow)
                             .resizable()
                             .aspectRatio(nil, contentMode: .fit)
-                            .frame(width: 15)
+                            .frame(height: 8)
                             .rotationEffect(.degrees(self.isExpanded ? 180 : .zero))
                     }
                     .padding(.vertical, 5)

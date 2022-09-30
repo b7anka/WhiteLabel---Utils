@@ -97,7 +97,7 @@ public struct EVIOHorizontalEVSelectionViewListView: View {
     public var body: some View {
         if !self.evs.isEmpty {
             ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack(spacing: 10) {
+                HStack(spacing: 10) {
                     ForEach(self.evs) { ev in
                         EVIOHorizontalEVSelectionViewListItemView(ev: ev)
                             .onTapGesture {

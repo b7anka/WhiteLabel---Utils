@@ -16,14 +16,18 @@ public struct EVIOChargingStationPriceDetailsRequest: Codable {
     public var voltageLevel: String?
     public var countryCode: String?
     public var currentDate: String?
+    public var latitude: Double?
+    public var longitude: Double?
     
-    public init(tariffId: String?, planId: String?, source: String?, voltageLevel: String?, countryCode: String?, currentDate: String?) {
+    public init(tariffId: String?, planId: String?, source: String?, voltageLevel: String?, countryCode: String?, currentDate: String?, latitude: Double?, longitude: Double?) {
         self.tariffId = tariffId
         self.planId = planId
         self.source = source
         self.voltageLevel = voltageLevel
         self.countryCode = countryCode
         self.currentDate = currentDate
+        self.latitude = latitude
+        self.longitude = longitude
     }
     
     public func toDictionary() -> [String: Any] {

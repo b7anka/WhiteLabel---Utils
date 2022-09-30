@@ -17,9 +17,13 @@ public struct EVIOOCPIResponsePrice: Codable {
     public var vat: EVIOVat?
     public var totalCost: EVIOTotalPrice?
     public var currency: String?
+    public var opc: Double?
+    public var ceme: Double?
+    public var fees: Double?
+    public var total: Double?
     
     private enum CodingKeys: String, CodingKey {
-        case flat, energy, time, parking, vat, totalCost = "total_cost", currency
+        case flat, energy, time, parking, vat, totalCost = "total_cost", currency, opc, ceme, fees, total
     }
     
 }

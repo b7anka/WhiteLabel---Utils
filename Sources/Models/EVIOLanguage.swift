@@ -705,6 +705,25 @@ public struct EVIOLanguage: Codable {
     public let infoTariffMobiePerKwhDayOfWeek: String
     public let infoTariffMobieSimulatePercent: String
     public let infoTariffMobieSimulateTime: String
+    public let infoTariffMobieStart: String
+    public let infoTariffMobieReturn: String
+    public let infoTariffMobieSimulationByTime: String
+    public let infoTariffMobieDay: String
+    public let infoTariffMobieHour: String
+    public let infoTariffMobieSimulationByPercentage: String
+    public let infoTariffMobieSimulationPrice: String
+    public let infoTariffMobieDurationRestriction: String
+    public let infoTariffMobieDayRestriction: String
+    public let infoTariffMobieTimeRestriction: String
+    public let infoTariffMobieDateRestriction: String
+    public let infoTariffMobieEnergyRestriction: String
+    public let infoTariffMobieCurrentRestriction: String
+    public let infoTariffMobiePowerRestriction: String
+    public let infoTariffMobieDefaultRestriction: String
+    public let infoTariffMobieBetween: String
+    public let infoTariffMobieAfter: String
+    public let infoTariffMobieBefore: String
+    public let infoTariffMobieAnd: String
     
     // MARK: - CODING KEYS
     private enum CodingKeys: String, CodingKey {
@@ -1404,6 +1423,25 @@ public struct EVIOLanguage: Codable {
         case infoTariffMobiePerKwhDayOfWeek = "infoTariffMobie_perKwhDayOfWeek"
         case infoTariffMobieSimulatePercent = "infoTariffMobie_simulatePercent"
         case infoTariffMobieSimulateTime = "infoTariffMobie_simulateTime"
+        case infoTariffMobieStart = "infoTariffMobie_start"
+        case infoTariffMobieReturn = "infoTariffMobie_return"
+        case infoTariffMobieSimulationByTime = "infoTariffMobie_simulationByTime"
+        case infoTariffMobieDay = "infoTariffMobie_day"
+        case infoTariffMobieHour = "infoTariffMobie_hour"
+        case infoTariffMobieSimulationByPercentage = "infoTariffMobie_simulationByPercentage"
+        case infoTariffMobieSimulationPrice = "infoTariffMobie_simulationPrice"
+        case infoTariffMobieDurationRestriction = "infoTariffMobie_durationRestriction"
+        case infoTariffMobieDayRestriction = "infoTariffMobie_dayRestriction"
+        case infoTariffMobieTimeRestriction = "infoTariffMobie_timeRestriction"
+        case infoTariffMobieDateRestriction = "infoTariffMobie_dateRestriction"
+        case infoTariffMobieEnergyRestriction = "infoTariffMobie_energyRestriction"
+        case infoTariffMobieCurrentRestriction = "infoTariffMobie_currentRestriction"
+        case infoTariffMobiePowerRestriction = "infoTariffMobie_powerRestriction"
+        case infoTariffMobieDefaultRestriction = "infoTariffMobie_defaultRestriction"
+        case infoTariffMobieBetween = "infoTariffMobie_between"
+        case infoTariffMobieAfter = "infoTariffMobie_after"
+        case infoTariffMobieBefore = "infoTariffMobie_before"
+        case infoTariffMobieAnd = "infoTariffMobie_and"
     }
     
     public init(from decoder: Decoder) throws {
@@ -2104,6 +2142,25 @@ public struct EVIOLanguage: Codable {
         self.infoTariffMobiePerKwhDayOfWeek = try container.decodeIfPresent(String.self, forKey: .infoTariffMobiePerKwhDayOfWeek) ?? NSLocalizedString(CodingKeys.infoTariffMobiePerKwhDayOfWeek.rawValue, comment: "")
         self.infoTariffMobieSimulatePercent = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieSimulatePercent) ?? NSLocalizedString(CodingKeys.infoTariffMobieSimulatePercent.rawValue, comment: "")
         self.infoTariffMobieSimulateTime = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieSimulateTime) ?? NSLocalizedString(CodingKeys.infoTariffMobieSimulateTime.rawValue, comment: "")
+        self.infoTariffMobieStart = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieStart) ?? NSLocalizedString(CodingKeys.infoTariffMobieStart.rawValue, comment: "")
+        self.infoTariffMobieReturn = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieReturn) ?? NSLocalizedString(CodingKeys.infoTariffMobieReturn.rawValue, comment: "")
+        self.infoTariffMobieSimulationByTime = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieSimulationByTime) ?? NSLocalizedString(CodingKeys.infoTariffMobieSimulationByTime.rawValue, comment: "")
+        self.infoTariffMobieDay = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieDay) ?? NSLocalizedString(CodingKeys.infoTariffMobieDay.rawValue, comment: "")
+        self.infoTariffMobieHour = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieHour) ?? NSLocalizedString(CodingKeys.infoTariffMobieHour.rawValue, comment: "")
+        self.infoTariffMobieSimulationByPercentage = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieSimulationByPercentage) ?? NSLocalizedString(CodingKeys.infoTariffMobieSimulationByPercentage.rawValue, comment: "")
+        self.infoTariffMobieSimulationPrice = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieSimulationPrice) ?? NSLocalizedString(CodingKeys.infoTariffMobieSimulationPrice.rawValue, comment: "")
+        self.infoTariffMobieDurationRestriction = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieDurationRestriction) ?? NSLocalizedString(CodingKeys.infoTariffMobieDurationRestriction.rawValue, comment: "")
+        self.infoTariffMobieDayRestriction = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieDayRestriction) ?? NSLocalizedString(CodingKeys.infoTariffMobieDayRestriction.rawValue, comment: "")
+        self.infoTariffMobieTimeRestriction = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieTimeRestriction) ?? NSLocalizedString(CodingKeys.infoTariffMobieTimeRestriction.rawValue, comment: "")
+        self.infoTariffMobieDateRestriction = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieDateRestriction) ?? NSLocalizedString(CodingKeys.infoTariffMobieDateRestriction.rawValue, comment: "")
+        self.infoTariffMobieEnergyRestriction = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieEnergyRestriction) ?? NSLocalizedString(CodingKeys.infoTariffMobieEnergyRestriction.rawValue, comment: "")
+        self.infoTariffMobieCurrentRestriction = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieCurrentRestriction) ?? NSLocalizedString(CodingKeys.infoTariffMobieCurrentRestriction.rawValue, comment: "")
+        self.infoTariffMobiePowerRestriction = try container.decodeIfPresent(String.self, forKey: .infoTariffMobiePowerRestriction) ?? NSLocalizedString(CodingKeys.infoTariffMobiePowerRestriction.rawValue, comment: "")
+        self.infoTariffMobieDefaultRestriction = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieDefaultRestriction) ?? NSLocalizedString(CodingKeys.infoTariffMobieDefaultRestriction.rawValue, comment: "")
+        self.infoTariffMobieBetween = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieBetween) ?? NSLocalizedString(CodingKeys.infoTariffMobieBetween.rawValue, comment: "")
+        self.infoTariffMobieAfter = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieAfter) ?? NSLocalizedString(CodingKeys.infoTariffMobieAfter.rawValue, comment: "")
+        self.infoTariffMobieBefore = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieBefore) ?? NSLocalizedString(CodingKeys.infoTariffMobieBefore.rawValue, comment: "")
+        self.infoTariffMobieAnd = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieAnd) ?? NSLocalizedString(CodingKeys.infoTariffMobieAnd.rawValue, comment: "")
     }
     
     public init() {
@@ -2803,6 +2860,25 @@ public struct EVIOLanguage: Codable {
         self.infoTariffMobiePerKwhDayOfWeek = NSLocalizedString(CodingKeys.infoTariffMobiePerKwhDayOfWeek.rawValue, comment: "")
         self.infoTariffMobieSimulatePercent = NSLocalizedString(CodingKeys.infoTariffMobieSimulatePercent.rawValue, comment: "")
         self.infoTariffMobieSimulateTime = NSLocalizedString(CodingKeys.infoTariffMobieSimulateTime.rawValue, comment: "")
+        self.infoTariffMobieStart = NSLocalizedString(CodingKeys.infoTariffMobieStart.rawValue, comment: "")
+        self.infoTariffMobieReturn = NSLocalizedString(CodingKeys.infoTariffMobieReturn.rawValue, comment: "")
+        self.infoTariffMobieSimulationByTime = NSLocalizedString(CodingKeys.infoTariffMobieSimulationByTime.rawValue, comment: "")
+        self.infoTariffMobieDay = NSLocalizedString(CodingKeys.infoTariffMobieDay.rawValue, comment: "")
+        self.infoTariffMobieHour = NSLocalizedString(CodingKeys.infoTariffMobieHour.rawValue, comment: "")
+        self.infoTariffMobieSimulationByPercentage = NSLocalizedString(CodingKeys.infoTariffMobieSimulationByPercentage.rawValue, comment: "")
+        self.infoTariffMobieSimulationPrice = NSLocalizedString(CodingKeys.infoTariffMobieSimulationPrice.rawValue, comment: "")
+        self.infoTariffMobieDurationRestriction = NSLocalizedString(CodingKeys.infoTariffMobieDurationRestriction.rawValue, comment: "")
+        self.infoTariffMobieDayRestriction = NSLocalizedString(CodingKeys.infoTariffMobieDayRestriction.rawValue, comment: "")
+        self.infoTariffMobieTimeRestriction = NSLocalizedString(CodingKeys.infoTariffMobieTimeRestriction.rawValue, comment: "")
+        self.infoTariffMobieDateRestriction = NSLocalizedString(CodingKeys.infoTariffMobieDateRestriction.rawValue, comment: "")
+        self.infoTariffMobieEnergyRestriction = NSLocalizedString(CodingKeys.infoTariffMobieEnergyRestriction.rawValue, comment: "")
+        self.infoTariffMobieCurrentRestriction = NSLocalizedString(CodingKeys.infoTariffMobieCurrentRestriction.rawValue, comment: "")
+        self.infoTariffMobiePowerRestriction = NSLocalizedString(CodingKeys.infoTariffMobiePowerRestriction.rawValue, comment: "")
+        self.infoTariffMobieDefaultRestriction = NSLocalizedString(CodingKeys.infoTariffMobieDefaultRestriction.rawValue, comment: "")
+        self.infoTariffMobieBetween = NSLocalizedString(CodingKeys.infoTariffMobieBetween.rawValue, comment: "")
+        self.infoTariffMobieAfter = NSLocalizedString(CodingKeys.infoTariffMobieAfter.rawValue, comment: "")
+        self.infoTariffMobieBefore = NSLocalizedString(CodingKeys.infoTariffMobieBefore.rawValue, comment: "")
+        self.infoTariffMobieAnd = NSLocalizedString(CodingKeys.infoTariffMobieAnd.rawValue, comment: "")
     }
     
 }

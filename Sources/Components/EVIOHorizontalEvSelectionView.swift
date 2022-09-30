@@ -48,8 +48,10 @@ public final class EVIOHorizontalEvSelectionViewViewModel: ObservableObject {
     private var completion: ((EVIOEv?) -> Void)
     public let languageManager: EVIOLanguage
     public var popUpAction: (() -> Void)?
+    private let allowAnonymous: Bool
     
-    public init(selectedEv: EVIOEv?, completion: @escaping (EVIOEv?) -> Void, popUpAction: (() -> Void)? = nil) {
+    public init(selectedEv: EVIOEv?, allowAnonymous: Bool = false, completion: @escaping (EVIOEv?) -> Void, popUpAction: (() -> Void)? = nil) {
+        self.allowAnonymous = allowAnonymous
         self.popUpAction = popUpAction
         self.selectedEv = selectedEv
         self.evs = []
@@ -61,6 +63,9 @@ public final class EVIOHorizontalEvSelectionViewViewModel: ObservableObject {
     
     public func getEvs() {
         self.evs = (EVIOStorageManager.shared.getUserEvs() ?? []).map({ SelectEv(isSelected: selectedEv?.id == $0.id, ev: $0) })
+        if self.allowAnonymous {
+            self.evs.insert(SelectEv(ev: EVIOEv.anonymous), at: .zero)
+        }
     }
     
     public func evSelected(_ ev: SelectEv) {

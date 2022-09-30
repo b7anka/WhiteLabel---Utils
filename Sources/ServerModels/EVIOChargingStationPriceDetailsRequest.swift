@@ -13,13 +13,13 @@ public struct EVIOChargingStationPriceDetailsRequest: Codable {
     public var tariffId: String?
     public var planId: String?
     public var source: String?
-    public var voltageLevel: String?
+    public var voltageLevel: EVIOVoltageLevel?
     public var countryCode: String?
     public var currentDate: String?
     public var latitude: Double?
     public var longitude: Double?
     
-    public init(tariffId: String?, planId: String?, source: String?, voltageLevel: String?, countryCode: String?, currentDate: String?, latitude: Double?, longitude: Double?) {
+    public init(tariffId: String?, planId: String?, source: String?, voltageLevel: EVIOVoltageLevel?, countryCode: String?, currentDate: String?, latitude: Double?, longitude: Double?) {
         self.tariffId = tariffId
         self.planId = planId
         self.source = source

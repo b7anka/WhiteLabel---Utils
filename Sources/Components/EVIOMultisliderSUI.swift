@@ -19,8 +19,9 @@ public struct EVIOMultiSlider: View {
     private let outerTrackColor: Color
     private let didEndDrag: ((MultiSlider) -> Void)?
     private let onChange: ((MultiSlider) -> Void)?
+    private let sliderDidGetCreated: ((MultiSlider) -> Void)?
     
-    public init(viewModel: EVIOMultisliderViewModel?, shouldStartDisabled: Bool = true, isRangeSlider: Bool = false, minimumValue: CGFloat = 1, maximumValue: CGFloat = 100, trackWidth: CGFloat = 30, outerTrackColor: Color = .primaryBackground, didEndDrag: ((MultiSlider) -> Void)? = nil, onChange: ((MultiSlider) -> Void)? = nil) {
+    public init(viewModel: EVIOMultisliderViewModel?, shouldStartDisabled: Bool = true, isRangeSlider: Bool = false, minimumValue: CGFloat = 1, maximumValue: CGFloat = 100, trackWidth: CGFloat = 30, outerTrackColor: Color = .primaryBackground, didEndDrag: ((MultiSlider) -> Void)? = nil, onChange: ((MultiSlider) -> Void)? = nil, sliderDidGetCreated: ((MultiSlider) -> Void)?) {
         self.viewModel = viewModel
         self.shouldStartDisabled = shouldStartDisabled
         self.isRangeSlider = isRangeSlider
@@ -30,6 +31,7 @@ public struct EVIOMultiSlider: View {
         self.outerTrackColor = outerTrackColor
         self.didEndDrag = didEndDrag
         self.onChange = onChange
+        self.sliderDidGetCreated = sliderDidGetCreated
     }
     
     public var body: some View {
@@ -37,7 +39,7 @@ public struct EVIOMultiSlider: View {
             .stroke(Color.primaryTextColor, lineWidth: 1)
             .frame(height: 36)
             .overlay(
-                EVIOMultisliderRepresentable(viewModel: self.viewModel, shouldStartDisabled: self.shouldStartDisabled, isRangeSlider: self.isRangeSlider, minimumValue: self.minimumValue, maximumValue: self.maximumValue, trackWidth: self.trackWidth, outerTrackColor: self.outerTrackColor, didEndDrag: self.didEndDrag, onChange: self.onChange)
+                EVIOMultisliderRepresentable(viewModel: self.viewModel, shouldStartDisabled: self.shouldStartDisabled, isRangeSlider: self.isRangeSlider, minimumValue: self.minimumValue, maximumValue: self.maximumValue, trackWidth: self.trackWidth, outerTrackColor: self.outerTrackColor, didEndDrag: self.didEndDrag, onChange: self.onChange, sliderDidGetCreated: self.sliderDidGetCreated)
                     .padding(.horizontal, 3)
             )
     }

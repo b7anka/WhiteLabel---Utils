@@ -13,9 +13,9 @@ public struct EVIOHorizontalEvSelectionView: View {
     @Binding var resetComponent: Bool
     @StateObject private var viewModel: EVIOHorizontalEvSelectionViewViewModel
     
-    public init(selectedEv: EVIOEv?, resetComponent: Binding<Bool>, completion: @escaping (EVIOEv?) -> Void, popUpAction: (() -> Void)? = nil) {
+    public init(selectedEv: EVIOEv?, resetComponent: Binding<Bool>, completion: @escaping (EVIOEv?) -> Void, popUpAction: (() -> Void)? = nil, allowAnonymous: Bool = false) {
         self._resetComponent = resetComponent
-        self._viewModel = StateObject(wrappedValue: EVIOHorizontalEvSelectionViewViewModel(selectedEv: selectedEv, completion: completion, popUpAction: popUpAction))
+        self._viewModel = StateObject(wrappedValue: EVIOHorizontalEvSelectionViewViewModel(selectedEv: selectedEv, allowAnonymous: allowAnonymous, completion: completion, popUpAction: popUpAction))
     }
     
     public var body: some View {
@@ -50,7 +50,7 @@ public final class EVIOHorizontalEvSelectionViewViewModel: ObservableObject {
     public var popUpAction: (() -> Void)?
     private let allowAnonymous: Bool
     
-    public init(selectedEv: EVIOEv?, allowAnonymous: Bool = false, completion: @escaping (EVIOEv?) -> Void, popUpAction: (() -> Void)? = nil) {
+    public init(selectedEv: EVIOEv?, allowAnonymous: Bool, completion: @escaping (EVIOEv?) -> Void, popUpAction: (() -> Void)? = nil) {
         self.allowAnonymous = allowAnonymous
         self.popUpAction = popUpAction
         self.selectedEv = selectedEv

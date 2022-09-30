@@ -97,7 +97,7 @@ public struct EVIOHorizontalEVSelectionViewListView: View {
     public var body: some View {
         if !self.evs.isEmpty {
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 10) {
+                LazyHStack(spacing: 10) {
                     ForEach(self.evs) { ev in
                         EVIOHorizontalEVSelectionViewListItemView(ev: ev)
                             .onTapGesture {
@@ -126,8 +126,19 @@ public struct EVIOHorizontalEVSelectionViewListItemView: View {
     @ObservedObject var ev: SelectEv
     
     public var name: String {
-        guard let brand = self.ev.ev?.brand, let model = self.ev.ev?.model, let licensePlate = self.ev.ev?.licensePlate else { return .noValue }
-        return "\(brand)\n\(model)\n\(licensePlate)"
+        if let brand = self.ev.ev?.brand, let model = self.ev.ev?.model, let licensePlate = self.ev.ev?.licensePlate {
+            return "\(brand)\n\(model)\n\(licensePlate)"
+        } else if let brand = self.ev.ev?.brand, let model = self.ev.ev?.model {
+            return "\(brand)\n\(model)"
+        } else if let brand = self.ev.ev?.brand {
+            return brand
+        } else if let model = self.ev.ev?.model {
+            return model
+        } else if let licensePlate = self.ev.ev?.licensePlate {
+            return licensePlate
+        } else {
+            return .noValue
+        }
     }
     
     public init(ev: SelectEv) {

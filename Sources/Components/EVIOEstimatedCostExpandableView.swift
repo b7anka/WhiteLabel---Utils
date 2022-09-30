@@ -32,13 +32,12 @@ public struct EVIOEstimatedCostExpandableView<Content: View>: View {
                         self.isExpanded.toggle()
                     }
                 }) {
-                    HStack(spacing: .zero) {
+                    HStack(spacing: 5) {
                         Text(self.label)
                             .modifier(EVIOContractInfoModifier(color: Color._5B6480, lineLimit: 1, textAlignment: .leading))
                         Spacer()
                         Text(self.value)
                             .modifier(EVIOReferencePlaceAddressModifier(color: Color.tertiaryTextColor, lineLimit: 1, textAlignment: .leading))
-                            .padding(.trailing, 5)
                         Image(.downArrow)
                             .resizable()
                             .aspectRatio(nil, contentMode: .fit)

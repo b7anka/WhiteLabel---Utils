@@ -125,6 +125,7 @@ public struct EVIOLanguage: Codable {
     public let generalPage: String
     public let generalNoEvs: String
     public let generalGoToMyEvs: String
+    public let generalDownload: String
     // MARK: - OTHER KEYS PROPERTIES
     public let appNeedsToBeUpdated: String
     public let chargerCannotBeUsed: String
@@ -695,6 +696,11 @@ public struct EVIOLanguage: Codable {
     public let historyPaymentBillingInfoFailedBilling: String
     public let historyPaymentBillingInfoFailedPayment: String
     public let historyPaymentBillingInfoBilledAndNotPaid: String
+    public let historyDownloadMessage: String
+    public let historyPaymentStatus: String
+    public let historyStartDate: String
+    public let historyStopDate: String
+    public let historyDonwloadSuccess: String
     // MARK: - INFO TARIFF MOBIE PROPERTIES
     public let infoTariffMobiePerMinuteMinMaxDuration: String
     public let infoTariffMobiePerMinuteMinMaxKwh: String
@@ -843,6 +849,7 @@ public struct EVIOLanguage: Codable {
         case generalPage = "general_page"
         case generalNoEvs = "general_noEvs"
         case generalGoToMyEvs = "general_goToMyEvs"
+        case generalDownload = "general_download"
         // MARK: - OTHER CODING KEYS PROPERTIES
         case appNeedsToBeUpdated = "server_need_update_app"
         case chargerCannotBeUsed = "server_charger_not_available"
@@ -1413,6 +1420,11 @@ public struct EVIOLanguage: Codable {
         case historyPaymentBillingInfoFailedBilling = "historyPaymentBillingInfo_failedBilling"
         case historyPaymentBillingInfoFailedPayment = "historyPaymentBillingInfo_failedPayment"
         case historyPaymentBillingInfoBilledAndNotPaid = "historyPaymentBillingInfo_billedAndNotPaid"
+        case historyDownloadMessage = "history_downloadMessage"
+        case historyPaymentStatus = "history_paymentStatus"
+        case historyStartDate = "history_startDate"
+        case historyStopDate = "history_stopDate"
+        case historyDonwloadSuccess = "history_donwloadSuccess"
         // MARK: - INFO TARIFF MOBIE PROPERTIES
         case infoTariffMobiePerMinuteMinMaxDuration = "infoTariffMobie_perMinuteMinMaxDuration"
         case infoTariffMobiePerMinuteMinMaxKwh = "infoTariffMobie_perMinuteMinMaxKwh"
@@ -1562,6 +1574,7 @@ public struct EVIOLanguage: Codable {
         self.generalPage = try container.decodeIfPresent(String.self, forKey: .generalPage) ?? NSLocalizedString(CodingKeys.generalPage.rawValue, comment: "")
         self.generalNoEvs = try container.decodeIfPresent(String.self, forKey: .generalNoEvs) ?? NSLocalizedString(CodingKeys.generalNoEvs.rawValue, comment: "")
         self.generalGoToMyEvs = try container.decodeIfPresent(String.self, forKey: .generalGoToMyEvs) ?? NSLocalizedString(CodingKeys.generalGoToMyEvs.rawValue, comment: "")
+        self.generalDownload = try container.decodeIfPresent(String.self, forKey: .generalDownload) ?? NSLocalizedString(CodingKeys.generalDownload.rawValue, comment: .empty)
         // MARK: - OTHER KEYS
         self.appNeedsToBeUpdated = try container.decodeIfPresent(String.self, forKey: .appNeedsToBeUpdated) ?? NSLocalizedString(CodingKeys.appNeedsToBeUpdated.rawValue, comment: "")
         self.chargerCannotBeUsed = try container.decodeIfPresent(String.self, forKey: .chargerCannotBeUsed) ?? NSLocalizedString(CodingKeys.chargerCannotBeUsed.rawValue, comment: "")
@@ -2132,6 +2145,11 @@ public struct EVIOLanguage: Codable {
         self.historyPaymentBillingInfoFailedBilling = try container.decodeIfPresent(String.self, forKey: .historyPaymentBillingInfoFailedBilling) ?? NSLocalizedString(CodingKeys.historyPaymentBillingInfoFailedBilling.rawValue, comment: "")
         self.historyPaymentBillingInfoFailedPayment = try container.decodeIfPresent(String.self, forKey: .historyPaymentBillingInfoFailedPayment) ?? NSLocalizedString(CodingKeys.historyPaymentBillingInfoFailedPayment.rawValue, comment: "")
         self.historyPaymentBillingInfoBilledAndNotPaid = try container.decodeIfPresent(String.self, forKey: .historyPaymentBillingInfoBilledAndNotPaid) ?? NSLocalizedString(CodingKeys.historyPaymentBillingInfoBilledAndNotPaid.rawValue, comment: "")
+        self.historyDownloadMessage = try container.decodeIfPresent(String.self, forKey: .historyDownloadMessage) ?? NSLocalizedString(CodingKeys.historyDownloadMessage.rawValue, comment: "")
+        self.historyPaymentStatus = try container.decodeIfPresent(String.self, forKey: .historyPaymentStatus) ?? NSLocalizedString(CodingKeys.historyPaymentStatus.rawValue, comment: "")
+        self.historyStartDate = try container.decodeIfPresent(String.self, forKey: .historyStartDate) ?? NSLocalizedString(CodingKeys.historyStartDate.rawValue, comment: "")
+        self.historyStopDate = try container.decodeIfPresent(String.self, forKey: .historyStopDate) ?? NSLocalizedString(CodingKeys.historyStopDate.rawValue, comment: "")
+        self.historyDonwloadSuccess = try container.decodeIfPresent(String.self, forKey: .historyDonwloadSuccess) ?? NSLocalizedString(CodingKeys.historyDonwloadSuccess.rawValue, comment: "")
         // MARK: - INFO TARIFF MOBIE KEYS
         self.infoTariffMobiePerMinuteMinMaxDuration = try container.decodeIfPresent(String.self, forKey: .infoTariffMobiePerMinuteMinMaxDuration) ?? NSLocalizedString(CodingKeys.infoTariffMobiePerMinuteMinMaxDuration.rawValue, comment: "")
         self.infoTariffMobiePerMinuteMinMaxKwh = try container.decodeIfPresent(String.self, forKey: .infoTariffMobiePerMinuteMinMaxKwh) ?? NSLocalizedString(CodingKeys.infoTariffMobiePerMinuteMinMaxKwh.rawValue, comment: "")
@@ -2280,6 +2298,7 @@ public struct EVIOLanguage: Codable {
         self.generalPage = NSLocalizedString(CodingKeys.generalPage.rawValue, comment: "")
         self.generalNoEvs = NSLocalizedString(CodingKeys.generalNoEvs.rawValue, comment: "")
         self.generalGoToMyEvs = NSLocalizedString(CodingKeys.generalGoToMyEvs.rawValue, comment: "")
+        self.generalDownload = NSLocalizedString(CodingKeys.generalDownload.rawValue, comment: "")
         // MARK: - OTHER DEFAULT KEYS
         self.appNeedsToBeUpdated = NSLocalizedString(CodingKeys.appNeedsToBeUpdated.rawValue, comment: "")
         self.chargerCannotBeUsed = NSLocalizedString(CodingKeys.chargerCannotBeUsed.rawValue, comment: "")
@@ -2850,6 +2869,11 @@ public struct EVIOLanguage: Codable {
         self.historyPaymentBillingInfoFailedBilling = NSLocalizedString(CodingKeys.historyPaymentBillingInfoFailedBilling.rawValue, comment: "")
         self.historyPaymentBillingInfoFailedPayment = NSLocalizedString(CodingKeys.historyPaymentBillingInfoFailedPayment.rawValue, comment: "")
         self.historyPaymentBillingInfoBilledAndNotPaid = NSLocalizedString(CodingKeys.historyPaymentBillingInfoBilledAndNotPaid.rawValue, comment: "")
+        self.historyDownloadMessage = NSLocalizedString(CodingKeys.historyDownloadMessage.rawValue, comment: "")
+        self.historyPaymentStatus = NSLocalizedString(CodingKeys.historyPaymentStatus.rawValue, comment: "")
+        self.historyStartDate = NSLocalizedString(CodingKeys.historyStartDate.rawValue, comment: "")
+        self.historyStopDate = NSLocalizedString(CodingKeys.historyStopDate.rawValue, comment: "")
+        self.historyDonwloadSuccess = NSLocalizedString(CodingKeys.historyDonwloadSuccess.rawValue, comment: "")
         // MARK: - INFO TARIFF MOBIE DEFAULT KEYS
         self.infoTariffMobiePerMinuteMinMaxDuration = NSLocalizedString(CodingKeys.infoTariffMobiePerMinuteMinMaxDuration.rawValue, comment: "")
         self.infoTariffMobiePerMinuteMinMaxKwh = NSLocalizedString(CodingKeys.infoTariffMobiePerMinuteMinMaxKwh.rawValue, comment: "")

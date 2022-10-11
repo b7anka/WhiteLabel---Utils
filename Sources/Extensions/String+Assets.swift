@@ -120,6 +120,14 @@ public extension String {
     static let internalFilterSelected: String = "internalFilterSelected"
     static let hyundaiFilter: String = "hyundaiFilter"
     static let hyundaiFilterSelected: String = "hyundaiFilterSelected"
+    static let filtersAvailableOnlySelected: String = "filtersAvailableOnlySelected"
+    static let filtersAvailableOnlyUnselected: String = "filtersAvailableOnlyUnselected"
+    static let filtersOnlineOnlySelected: String = "filtersOnlineOnlySelected"
+    static let filtersOnlineOnlyUnselected: String = "filtersOnlineOnlyUnselected"
+    static let filtersPerKwhselected: String = "filtersPerKwhselected"
+    static let filtersPerKwhUnselected: String = "filtersPerKwhUnselected"
+    static let filtersPerMinSelected: String = "filtersPerMinSelected"
+    static let filtersPerMinUnselected: String = "filtersPerMinUnselected"
     
     // MARK: - EVS PAGE IMAGES
     static let noOtherEvs: String = "noOtherEvs"

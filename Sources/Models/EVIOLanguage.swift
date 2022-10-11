@@ -175,6 +175,10 @@ public struct EVIOLanguage: Codable {
     public let filtersApplyButton: String
     public let filtersInformationPrice: String
     public let filtersMaxPowerEvInfo: String
+    public let filtersOnlyAvailable: String
+    public let filtersOnlyOnline: String
+    public let filtersOnlyPerKwh: String
+    public let filtersOnlyPerMin: String
     // MARK: - FAVOURITES KEYS PROPERTIES
     public let favouritesEmptyViewWithoutLoginSubTitleUnderline: String
     public let favouritesEmptyViewTitle: String
@@ -899,6 +903,10 @@ public struct EVIOLanguage: Codable {
         case filtersApplyButton = "filters_applyButton"
         case filtersInformationPrice = "filters_informationPrice"
         case filtersMaxPowerEvInfo = "filters_maxPowerEvInfo"
+        case filtersOnlyAvailable = "filters_onlyAvailable"
+        case filtersOnlyOnline = "filters_onlyOnline"
+        case filtersOnlyPerKwh = "filters_onlyPerKwh"
+        case filtersOnlyPerMin = "filters_onlyPerMin"
         // MARK: - FAVOURITES PAGE CODING KEYS PROPERTIES
         case favouritesEmptyViewWithoutLoginSubTitleUnderline = "favourites_emptyViewWithoutLoginSubTitle_underline"
         case favouritesEmptyViewTitle = "favourites_emptyViewTitle"
@@ -1624,6 +1632,10 @@ public struct EVIOLanguage: Codable {
         self.filtersApplyButton = try container.decodeIfPresent(String.self, forKey: .filtersApplyButton) ?? NSLocalizedString(CodingKeys.filtersApplyButton.rawValue, comment: "")
         self.filtersInformationPrice = try container.decodeIfPresent(String.self, forKey: .filtersInformationPrice) ?? NSLocalizedString(CodingKeys.filtersInformationPrice.rawValue, comment: "")
         self.filtersMaxPowerEvInfo = try container.decodeIfPresent(String.self, forKey: .filtersMaxPowerEvInfo) ?? NSLocalizedString(CodingKeys.filtersMaxPowerEvInfo.rawValue, comment: "")
+        self.filtersOnlyAvailable = try container.decodeIfPresent(String.self, forKey: .filtersOnlyAvailable) ?? NSLocalizedString(CodingKeys.filtersOnlyAvailable.rawValue, comment: "")
+        self.filtersOnlyOnline = try container.decodeIfPresent(String.self, forKey: .filtersOnlyOnline) ?? NSLocalizedString(CodingKeys.filtersOnlyOnline.rawValue, comment: "")
+        self.filtersOnlyPerKwh = try container.decodeIfPresent(String.self, forKey: .filtersOnlyPerKwh) ?? NSLocalizedString(CodingKeys.filtersOnlyPerKwh.rawValue, comment: "")
+        self.filtersOnlyPerMin = try container.decodeIfPresent(String.self, forKey: .filtersOnlyPerMin) ?? NSLocalizedString(CodingKeys.filtersOnlyPerMin.rawValue, comment: "")
         // MARK: - FAVOURITES PAGE KEYS
         self.favouritesEmptyViewWithoutLoginSubTitleUnderline = try container.decodeIfPresent(String.self, forKey: .favouritesEmptyViewWithoutLoginSubTitleUnderline) ?? NSLocalizedString(CodingKeys.favouritesEmptyViewWithoutLoginSubTitleUnderline.rawValue, comment: "")
         self.favouritesEmptyViewTitle = try container.decodeIfPresent(String.self, forKey: .favouritesEmptyViewTitle) ?? NSLocalizedString(CodingKeys.favouritesEmptyViewTitle.rawValue, comment: "")
@@ -2348,6 +2360,10 @@ public struct EVIOLanguage: Codable {
         self.filtersApplyButton = NSLocalizedString(CodingKeys.filtersApplyButton.rawValue, comment: "")
         self.filtersInformationPrice = NSLocalizedString(CodingKeys.filtersInformationPrice.rawValue, comment: "")
         self.filtersMaxPowerEvInfo = NSLocalizedString(CodingKeys.filtersMaxPowerEvInfo.rawValue, comment: "")
+        self.filtersOnlyAvailable = NSLocalizedString(CodingKeys.filtersOnlyAvailable.rawValue, comment: "")
+        self.filtersOnlyOnline = NSLocalizedString(CodingKeys.filtersOnlyOnline.rawValue, comment: "")
+        self.filtersOnlyPerKwh = NSLocalizedString(CodingKeys.filtersOnlyPerKwh.rawValue, comment: "")
+        self.filtersOnlyPerMin = NSLocalizedString(CodingKeys.filtersOnlyPerMin.rawValue, comment: "")
         // MARK: - FAVOURITES PAGE DEFAULT KEYS
         self.favouritesEmptyViewWithoutLoginSubTitleUnderline = NSLocalizedString(CodingKeys.favouritesEmptyViewWithoutLoginSubTitleUnderline.rawValue, comment: "")
         self.favouritesEmptyViewTitle = NSLocalizedString(CodingKeys.favouritesEmptyViewTitle.rawValue, comment: "")

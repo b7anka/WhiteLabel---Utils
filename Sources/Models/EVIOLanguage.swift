@@ -179,6 +179,8 @@ public struct EVIOLanguage: Codable {
     public let filtersOnlyOnline: String
     public let filtersOnlyPerKwh: String
     public let filtersOnlyPerMin: String
+    public let filtersTariff: String
+    public let filtersAvailability: String
     // MARK: - FAVOURITES KEYS PROPERTIES
     public let favouritesEmptyViewWithoutLoginSubTitleUnderline: String
     public let favouritesEmptyViewTitle: String
@@ -907,6 +909,8 @@ public struct EVIOLanguage: Codable {
         case filtersOnlyOnline = "filters_onlyOnline"
         case filtersOnlyPerKwh = "filters_onlyPerKwh"
         case filtersOnlyPerMin = "filters_onlyPerMin"
+        case filtersTariff = "filters_tariff"
+        case filtersAvailability = "filters_availability"
         // MARK: - FAVOURITES PAGE CODING KEYS PROPERTIES
         case favouritesEmptyViewWithoutLoginSubTitleUnderline = "favourites_emptyViewWithoutLoginSubTitle_underline"
         case favouritesEmptyViewTitle = "favourites_emptyViewTitle"
@@ -1636,6 +1640,8 @@ public struct EVIOLanguage: Codable {
         self.filtersOnlyOnline = try container.decodeIfPresent(String.self, forKey: .filtersOnlyOnline) ?? NSLocalizedString(CodingKeys.filtersOnlyOnline.rawValue, comment: "")
         self.filtersOnlyPerKwh = try container.decodeIfPresent(String.self, forKey: .filtersOnlyPerKwh) ?? NSLocalizedString(CodingKeys.filtersOnlyPerKwh.rawValue, comment: "")
         self.filtersOnlyPerMin = try container.decodeIfPresent(String.self, forKey: .filtersOnlyPerMin) ?? NSLocalizedString(CodingKeys.filtersOnlyPerMin.rawValue, comment: "")
+        self.filtersTariff = try container.decodeIfPresent(String.self, forKey: .filtersTariff) ?? NSLocalizedString(CodingKeys.filtersTariff.rawValue, comment: "")
+        self.filtersAvailability = try container.decodeIfPresent(String.self, forKey: .filtersAvailability) ?? NSLocalizedString(CodingKeys.filtersAvailability.rawValue, comment: "")
         // MARK: - FAVOURITES PAGE KEYS
         self.favouritesEmptyViewWithoutLoginSubTitleUnderline = try container.decodeIfPresent(String.self, forKey: .favouritesEmptyViewWithoutLoginSubTitleUnderline) ?? NSLocalizedString(CodingKeys.favouritesEmptyViewWithoutLoginSubTitleUnderline.rawValue, comment: "")
         self.favouritesEmptyViewTitle = try container.decodeIfPresent(String.self, forKey: .favouritesEmptyViewTitle) ?? NSLocalizedString(CodingKeys.favouritesEmptyViewTitle.rawValue, comment: "")
@@ -2364,6 +2370,8 @@ public struct EVIOLanguage: Codable {
         self.filtersOnlyOnline = NSLocalizedString(CodingKeys.filtersOnlyOnline.rawValue, comment: "")
         self.filtersOnlyPerKwh = NSLocalizedString(CodingKeys.filtersOnlyPerKwh.rawValue, comment: "")
         self.filtersOnlyPerMin = NSLocalizedString(CodingKeys.filtersOnlyPerMin.rawValue, comment: "")
+        self.filtersTariff = NSLocalizedString(CodingKeys.filtersTariff.rawValue, comment: "")
+        self.filtersAvailability = NSLocalizedString(CodingKeys.filtersAvailability.rawValue, comment: "")
         // MARK: - FAVOURITES PAGE DEFAULT KEYS
         self.favouritesEmptyViewWithoutLoginSubTitleUnderline = NSLocalizedString(CodingKeys.favouritesEmptyViewWithoutLoginSubTitleUnderline.rawValue, comment: "")
         self.favouritesEmptyViewTitle = NSLocalizedString(CodingKeys.favouritesEmptyViewTitle.rawValue, comment: "")

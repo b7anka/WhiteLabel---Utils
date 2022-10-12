@@ -20,6 +20,7 @@ public struct EVIOMapFilter: Codable, Equatable {
     public var stations: [String?]?
     public var ev: EVIOEv?
     public var onlyAvailable: Bool
+    public var tariffType: EVIOMapFilterTariffType?
     
     public init(id: String = UUID().uuidString) {
         self.id = id
@@ -32,6 +33,7 @@ public struct EVIOMapFilter: Codable, Equatable {
         self.powerRange = nil
         self.onlyAvailable = false
         self.ev = nil
+        self.tariffType = nil
     }
     
     public func toDictionary() -> [String: Any] {

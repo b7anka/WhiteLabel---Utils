@@ -736,6 +736,16 @@ public struct EVIOLanguage: Codable {
     public let infoTariffMobieAfter: String
     public let infoTariffMobieBefore: String
     public let infoTariffMobieAnd: String
+    // MARK: - CANCEL CARD VIEW PROPERTIES
+    public let cancelCardCancelCard: String
+    public let cancelCardDescription: String
+    public let cancelCardDescriptionHint: String
+    public let cancelCardReason: String
+    public let cancelCardLost: String
+    public let cancelCardTheft: String
+    public let cancelCardOther: String
+    public let cancelCardWantReplacement: String
+    public let cancelCardSuccessCanceledMessage: String
     
     // MARK: - CODING KEYS
     private enum CodingKeys: String, CodingKey {
@@ -1437,7 +1447,7 @@ public struct EVIOLanguage: Codable {
         case historyStartDate = "history_startDate"
         case historyStopDate = "history_stopDate"
         case historyDonwloadSuccess = "history_donwloadSuccess"
-        // MARK: - INFO TARIFF MOBIE PROPERTIES
+        // MARK: - INFO TARIFF MOBIE KEYS PROPERTIES
         case infoTariffMobiePerMinuteMinMaxDuration = "infoTariffMobie_perMinuteMinMaxDuration"
         case infoTariffMobiePerMinuteMinMaxKwh = "infoTariffMobie_perMinuteMinMaxKwh"
         case infoTariffMobiePerKwhStartEndTime = "infoTariffMobie_perKwhStartEndTime"
@@ -1466,6 +1476,16 @@ public struct EVIOLanguage: Codable {
         case infoTariffMobieAfter = "infoTariffMobie_after"
         case infoTariffMobieBefore = "infoTariffMobie_before"
         case infoTariffMobieAnd = "infoTariffMobie_and"
+        // MARK: - CANCEL CARD VIEW KEYS PROPERTIES
+        case cancelCardCancelCard = "cancelCard_cancelCard"
+        case cancelCardDescription = "cancelCard_description"
+        case cancelCardDescriptionHint = "cancelCard_descriptionHint"
+        case cancelCardReason = "cancelCard_reason"
+        case cancelCardLost = "cancelCard_lost"
+        case cancelCardTheft = "cancelCard_theft"
+        case cancelCardOther = "cancelCard_other"
+        case cancelCardWantReplacement = "cancelCard_wantReplacement"
+        case cancelCardSuccessCanceledMessage = "cancelCard_successCanceledMessage"
     }
     
     public init(from decoder: Decoder) throws {
@@ -2197,6 +2217,16 @@ public struct EVIOLanguage: Codable {
         self.infoTariffMobieAfter = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieAfter) ?? NSLocalizedString(CodingKeys.infoTariffMobieAfter.rawValue, comment: "")
         self.infoTariffMobieBefore = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieBefore) ?? NSLocalizedString(CodingKeys.infoTariffMobieBefore.rawValue, comment: "")
         self.infoTariffMobieAnd = try container.decodeIfPresent(String.self, forKey: .infoTariffMobieAnd) ?? NSLocalizedString(CodingKeys.infoTariffMobieAnd.rawValue, comment: "")
+        // MARK: - CANCEL CARD VIEW KEYS
+        self.cancelCardCancelCard = try container.decodeIfPresent(String.self, forKey: .cancelCardCancelCard) ?? NSLocalizedString(CodingKeys.cancelCardCancelCard.rawValue, comment: "")
+        self.cancelCardDescription = try container.decodeIfPresent(String.self, forKey: .cancelCardDescription) ?? NSLocalizedString(CodingKeys.cancelCardDescription.rawValue, comment: "")
+        self.cancelCardDescriptionHint = try container.decodeIfPresent(String.self, forKey: .cancelCardDescriptionHint) ?? NSLocalizedString(CodingKeys.cancelCardDescriptionHint.rawValue, comment: "")
+        self.cancelCardReason = try container.decodeIfPresent(String.self, forKey: .cancelCardReason) ?? NSLocalizedString(CodingKeys.cancelCardReason.rawValue, comment: "")
+        self.cancelCardLost = try container.decodeIfPresent(String.self, forKey: .cancelCardLost) ?? NSLocalizedString(CodingKeys.cancelCardLost.rawValue, comment: "")
+        self.cancelCardTheft = try container.decodeIfPresent(String.self, forKey: .cancelCardTheft) ?? NSLocalizedString(CodingKeys.cancelCardTheft.rawValue, comment: "")
+        self.cancelCardOther = try container.decodeIfPresent(String.self, forKey: .cancelCardOther) ?? NSLocalizedString(CodingKeys.cancelCardOther.rawValue, comment: "")
+        self.cancelCardWantReplacement = try container.decodeIfPresent(String.self, forKey: .cancelCardWantReplacement) ?? NSLocalizedString(CodingKeys.cancelCardWantReplacement.rawValue, comment: "")
+        self.cancelCardSuccessCanceledMessage = try container.decodeIfPresent(String.self, forKey: .cancelCardSuccessCanceledMessage) ?? NSLocalizedString(CodingKeys.cancelCardSuccessCanceledMessage.rawValue, comment: "")
     }
     
     public init() {
@@ -2927,6 +2957,16 @@ public struct EVIOLanguage: Codable {
         self.infoTariffMobieAfter = NSLocalizedString(CodingKeys.infoTariffMobieAfter.rawValue, comment: "")
         self.infoTariffMobieBefore = NSLocalizedString(CodingKeys.infoTariffMobieBefore.rawValue, comment: "")
         self.infoTariffMobieAnd = NSLocalizedString(CodingKeys.infoTariffMobieAnd.rawValue, comment: "")
+        // MARK: - CANCEL CARD VIEW DEFAULT KEYS
+        self.cancelCardCancelCard = NSLocalizedString(CodingKeys.cancelCardCancelCard.rawValue, comment: "")
+        self.cancelCardDescription = NSLocalizedString(CodingKeys.cancelCardDescription.rawValue, comment: "")
+        self.cancelCardDescriptionHint = NSLocalizedString(CodingKeys.cancelCardDescriptionHint.rawValue, comment: "")
+        self.cancelCardReason = NSLocalizedString(CodingKeys.cancelCardReason.rawValue, comment: "")
+        self.cancelCardLost = NSLocalizedString(CodingKeys.cancelCardLost.rawValue, comment: "")
+        self.cancelCardTheft = NSLocalizedString(CodingKeys.cancelCardTheft.rawValue, comment: "")
+        self.cancelCardOther = NSLocalizedString(CodingKeys.cancelCardOther.rawValue, comment: "")
+        self.cancelCardWantReplacement = NSLocalizedString(CodingKeys.cancelCardWantReplacement.rawValue, comment: "")
+        self.cancelCardSuccessCanceledMessage = NSLocalizedString(CodingKeys.cancelCardSuccessCanceledMessage.rawValue, comment: "")
     }
     
 }

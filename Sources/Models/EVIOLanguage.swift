@@ -355,6 +355,9 @@ public struct EVIOLanguage: Codable {
     public let evsLeaveGroupTitle: String
     public let evsLeaveGroupMessage: String
     public let evsDrivers: String
+    public let evsCurrentPlafond: String
+    public let evsMonthlyPlafond: String
+    public let evsUsedPlafond: String
     // MARK: - VALIDATION MESSAGE KEYS PROPERTIES
     public let validationMessageProceedNowBt: String
     public let validationMessageAdhocInfo2iOS: String
@@ -1095,6 +1098,9 @@ public struct EVIOLanguage: Codable {
         case evsLeaveGroupTitle = "evs_leaveGroupTitle"
         case evsLeaveGroupMessage = "evs_leaveGroupMessage"
         case evsDrivers = "evs_drivers"
+        case evsCurrentPlafond = "evs_currentPlafond"
+        case evsMonthlyPlafond = "evs_monthlyPlafond"
+        case evsUsedPlafond = "evs_usedPlafond"
         // MARK: - VALIDATION MESSAGE CODING KEYS PROPERTIES
         case validationMessageProceedNowBt = "validationMessage_proceedNowBt"
         case validationMessageAdhocInfo2iOS = "validationMessage_adhocInfo2iOS"
@@ -1836,6 +1842,9 @@ public struct EVIOLanguage: Codable {
         self.evsLeaveGroupTitle = try container.decodeIfPresent(String.self, forKey: .evsLeaveGroupTitle) ?? NSLocalizedString(CodingKeys.evsLeaveGroupTitle.rawValue, comment: "")
         self.evsLeaveGroupMessage = try container.decodeIfPresent(String.self, forKey: .evsLeaveGroupMessage) ?? NSLocalizedString(CodingKeys.evsLeaveGroupMessage.rawValue, comment: "")
         self.evsDrivers = try container.decodeIfPresent(String.self, forKey: .evsDrivers) ?? NSLocalizedString(CodingKeys.evsDrivers.rawValue, comment: "")
+        self.evsCurrentPlafond = try container.decodeIfPresent(String.self, forKey: .evsCurrentPlafond) ?? NSLocalizedString(CodingKeys.evsCurrentPlafond.rawValue, comment: "")
+        self.evsMonthlyPlafond = try container.decodeIfPresent(String.self, forKey: .evsMonthlyPlafond) ?? NSLocalizedString(CodingKeys.evsMonthlyPlafond.rawValue, comment: "")
+        self.evsUsedPlafond = try container.decodeIfPresent(String.self, forKey: .evsUsedPlafond) ?? NSLocalizedString(CodingKeys.evsUsedPlafond.rawValue, comment: "")
         // MARK: - VALIDATION MESSAGE PAGE KEYS
         self.validationMessageProceedNowBt = try container.decodeIfPresent(String.self, forKey: .validationMessageProceedNowBt) ?? NSLocalizedString(CodingKeys.validationMessageProceedNowBt.rawValue, comment: "")
         self.validationMessageAdhocInfo2iOS = try container.decodeIfPresent(String.self, forKey: .validationMessageAdhocInfo2iOS) ?? NSLocalizedString(CodingKeys.validationMessageAdhocInfo2iOS.rawValue, comment: "")
@@ -2576,6 +2585,9 @@ public struct EVIOLanguage: Codable {
         self.evsLeaveGroupTitle = NSLocalizedString(CodingKeys.evsLeaveGroupTitle.rawValue, comment: "")
         self.evsLeaveGroupMessage = NSLocalizedString(CodingKeys.evsLeaveGroupMessage.rawValue, comment: "")
         self.evsDrivers = NSLocalizedString(CodingKeys.evsDrivers.rawValue, comment: "")
+        self.evsCurrentPlafond = NSLocalizedString(CodingKeys.evsCurrentPlafond.rawValue, comment: "")
+        self.evsMonthlyPlafond = NSLocalizedString(CodingKeys.evsMonthlyPlafond.rawValue, comment: "")
+        self.evsUsedPlafond = NSLocalizedString(CodingKeys.evsUsedPlafond.rawValue, comment: "")
         // MARK: - VALIDATION MESSAGE DEFAULT KEYS
         self.validationMessageProceedNowBt = NSLocalizedString(CodingKeys.validationMessageProceedNowBt.rawValue, comment: "")
         self.validationMessageAdhocInfo2iOS = NSLocalizedString(CodingKeys.validationMessageAdhocInfo2iOS.rawValue, comment: "")

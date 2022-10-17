@@ -12,7 +12,11 @@ import DeviceKit
 public extension Device {
     
     // holds all iPhone models with a notch
-    static let DEVICES_WITH_NOTCH: [Device] = [.iPhoneX, .simulator(.iPhoneX), .iPhoneXS, .simulator(.iPhoneXS), .iPhoneXSMax, .simulator(.iPhoneXSMax), .iPhoneXR, .simulator(.iPhoneXR), .iPhone11, .simulator(.iPhone11), .iPhone11Pro, .simulator(.iPhone11Pro), .iPhone11ProMax, .simulator(.iPhone11ProMax), .iPhone12, .simulator(.iPhone12), .iPhone12Mini, .simulator(.iPhone12Mini), .iPhone12Pro, .simulator(.iPhone12Pro), .iPhone12ProMax, .simulator(.iPhone12ProMax), .iPhone13, .simulator(.iPhone13), .iPhone13Mini, .simulator(.iPhone13Mini), .iPhone13Pro, .simulator(.iPhone13Pro), .iPhone13ProMax, .simulator(.iPhone13ProMax)]
+    static let DEVICES_WITH_NOTCH: [Device] = [.iPhoneX, .simulator(.iPhoneX), .iPhoneXS, .simulator(.iPhoneXS), .iPhoneXSMax, .simulator(.iPhoneXSMax), .iPhoneXR, .simulator(.iPhoneXR), .iPhone11, .simulator(.iPhone11), .iPhone11Pro, .simulator(.iPhone11Pro), .iPhone11ProMax, .simulator(.iPhone11ProMax), .iPhone12, .simulator(.iPhone12), .iPhone12Mini, .simulator(.iPhone12Mini), .iPhone12Pro, .simulator(.iPhone12Pro), .iPhone12ProMax, .simulator(.iPhone12ProMax), .iPhone13, .simulator(.iPhone13), .iPhone13Mini, .simulator(.iPhone13Mini), .iPhone13Pro, .simulator(.iPhone13Pro), .iPhone13ProMax, .simulator(.iPhone13ProMax), .iPhone14, .simulator(.iPhone14), .iPhone14Plus, .simulator(.iPhone14Plus)]
+    
+    // hold all iphone models that contain the new notch format
+    static let DEVICES_WITH_NEW_NOTCH: [Device] = [.iPhone14Pro, .simulator(.iPhone14Pro), .iPhone14ProMax, .simulator(.iPhone14ProMax)]
+    
     // holds all iPhone models that have the same resolution as the iPhone SE (1st Generation)
     static let DEVICES_WITH_320X568_POINTS: [Device] = [.iPhoneSE, .simulator(.iPhoneSE), .iPodTouch7, .simulator(.iPodTouch7)]
     // holds all iPhone models that have the same resolution as the iPhone 7

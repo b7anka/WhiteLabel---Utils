@@ -358,6 +358,13 @@ public struct EVIOLanguage: Codable {
     public let evsCurrentPlafond: String
     public let evsMonthlyPlafond: String
     public let evsUsedPlafond: String
+    public let evsPlafond: String
+    public let evsCompany: String
+    public let evsPlafondMovements: String
+    public let evsNoPlafondMovements: String
+    public let evsDuration: String
+    public let evsMovement: String
+    public let evsNetwork: String
     // MARK: - VALIDATION MESSAGE KEYS PROPERTIES
     public let validationMessageProceedNowBt: String
     public let validationMessageAdhocInfo2iOS: String
@@ -1101,6 +1108,13 @@ public struct EVIOLanguage: Codable {
         case evsCurrentPlafond = "evs_currentPlafond"
         case evsMonthlyPlafond = "evs_monthlyPlafond"
         case evsUsedPlafond = "evs_usedPlafond"
+        case evsPlafond = "evs_plafond"
+        case evsCompany = "evs_company"
+        case evsPlafondMovements = "evs_plafondMovements"
+        case evsNoPlafondMovements = "evs_noPlafondMovements"
+        case evsDuration = "evs_duration"
+        case evsMovement = "evs_movement"
+        case evsNetwork = "evs_network"
         // MARK: - VALIDATION MESSAGE CODING KEYS PROPERTIES
         case validationMessageProceedNowBt = "validationMessage_proceedNowBt"
         case validationMessageAdhocInfo2iOS = "validationMessage_adhocInfo2iOS"
@@ -1845,6 +1859,14 @@ public struct EVIOLanguage: Codable {
         self.evsCurrentPlafond = try container.decodeIfPresent(String.self, forKey: .evsCurrentPlafond) ?? NSLocalizedString(CodingKeys.evsCurrentPlafond.rawValue, comment: "")
         self.evsMonthlyPlafond = try container.decodeIfPresent(String.self, forKey: .evsMonthlyPlafond) ?? NSLocalizedString(CodingKeys.evsMonthlyPlafond.rawValue, comment: "")
         self.evsUsedPlafond = try container.decodeIfPresent(String.self, forKey: .evsUsedPlafond) ?? NSLocalizedString(CodingKeys.evsUsedPlafond.rawValue, comment: "")
+        self.evsPlafond = NSLocalizedString(CodingKeys.evsPlafond.rawValue, comment: "")
+        self.evsCompany = try container.decodeIfPresent(String.self, forKey: .evsCompany) ?? NSLocalizedString(CodingKeys.evsCompany.rawValue, comment: "")
+        self.evsPlafondMovements = try container.decodeIfPresent(String.self, forKey: .evsPlafondMovements) ?? NSLocalizedString(CodingKeys.evsPlafondMovements.rawValue, comment: "")
+        self.evsNoPlafondMovements = try container.decodeIfPresent(String.self, forKey: .evsNoPlafondMovements) ?? NSLocalizedString(CodingKeys.evsNoPlafondMovements.rawValue, comment: "")
+        self.evsCharging = try container.decodeIfPresent(String.self, forKey: .evsCharging) ?? NSLocalizedString(CodingKeys.evsCharging.rawValue, comment: "")
+        self.evsDuration = try container.decodeIfPresent(String.self, forKey: .evsDuration) ?? NSLocalizedString(CodingKeys.evsDuration.rawValue, comment: "") 
+        self.evsMovement = try container.decodeIfPresent(String.self, forKey: .evsMovement) ?? NSLocalizedString(CodingKeys.evsMovement.rawValue, comment: "") 
+        self.evsNetwork = try container.decodeIfPresent(String.self, forKey: .evsNetwork) ?? NSLocalizedString(CodingKeys.evsNetwork.rawValue, comment: "")
         // MARK: - VALIDATION MESSAGE PAGE KEYS
         self.validationMessageProceedNowBt = try container.decodeIfPresent(String.self, forKey: .validationMessageProceedNowBt) ?? NSLocalizedString(CodingKeys.validationMessageProceedNowBt.rawValue, comment: "")
         self.validationMessageAdhocInfo2iOS = try container.decodeIfPresent(String.self, forKey: .validationMessageAdhocInfo2iOS) ?? NSLocalizedString(CodingKeys.validationMessageAdhocInfo2iOS.rawValue, comment: "")
@@ -2585,6 +2607,14 @@ public struct EVIOLanguage: Codable {
         self.evsLeaveGroupTitle = NSLocalizedString(CodingKeys.evsLeaveGroupTitle.rawValue, comment: "")
         self.evsLeaveGroupMessage = NSLocalizedString(CodingKeys.evsLeaveGroupMessage.rawValue, comment: "")
         self.evsDrivers = NSLocalizedString(CodingKeys.evsDrivers.rawValue, comment: "")
+        self.evsPlafond = NSLocalizedString(CodingKeys.evsPlafond.rawValue, comment: "")
+        self.evsCompany = NSLocalizedString(CodingKeys.evsCompany.rawValue, comment: "")
+        self.evsPlafondMovements = NSLocalizedString(CodingKeys.evsPlafondMovements.rawValue, comment: "")
+        self.evsNoPlafondMovements = NSLocalizedString(CodingKeys.evsNoPlafondMovements.rawValue, comment: "")
+        self.evsCharging = NSLocalizedString(CodingKeys.evsCharging.rawValue, comment: "")
+        self.evsDuration = NSLocalizedString(CodingKeys.evsDuration.rawValue, comment: "")
+        self.evsMovement = NSLocalizedString(CodingKeys.evsMovement.rawValue, comment: "") 
+        self.evsNetwork = NSLocalizedString(CodingKeys.evsNetwork.rawValue, comment: "")
         self.evsCurrentPlafond = NSLocalizedString(CodingKeys.evsCurrentPlafond.rawValue, comment: "")
         self.evsMonthlyPlafond = NSLocalizedString(CodingKeys.evsMonthlyPlafond.rawValue, comment: "")
         self.evsUsedPlafond = NSLocalizedString(CodingKeys.evsUsedPlafond.rawValue, comment: "")

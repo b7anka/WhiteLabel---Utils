@@ -125,6 +125,5 @@ public extension String {
     static let updateContractPaymentMethod: EVIOEndpoints = "/private/contracts/paymentMethod"
     static let getOcpiDetailedTariffsEndpoint: EVIOEndpoints = "/public/ocpi/detailedTariffs"
     static let cancelCardEndpoint: EVIOEndpoints = "/private/contracts/cancelRFID"
-    static let getPlafondMovementsEndpoint: EVIOEndpoints = "/private/history_v2/byEV"
     
 }

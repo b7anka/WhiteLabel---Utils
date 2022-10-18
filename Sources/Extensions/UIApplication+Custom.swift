@@ -10,17 +10,15 @@ import UIKit
 public extension UIApplication {
     
     var currentKeyWindow: UIWindow? {
-        UIApplication.shared.connectedScenes
-            .filter { $0.activationState == .foregroundActive }
-            .map { $0 as? UIWindowScene }
-            .compactMap { $0 }
-            .first?.windows
-            .filter { $0.isKeyWindow }
-            .first
+        return UIApplication.shared.windows.first(where: \.isKeyWindow)
     }
     
     var rootViewController: UIViewController? {
         self.currentKeyWindow?.rootViewController
+    }
+    
+    var notchSize: CGFloat {
+        self.currentKeyWindow?.safeAreaInsets.top ?? self.rootViewController?.view.window?.windowScene?.statusBarManager?.statusBarFrame.size.height ?? .zero
     }
     
 }

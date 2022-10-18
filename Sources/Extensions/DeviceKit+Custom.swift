@@ -40,6 +40,11 @@ public extension Device {
         return Self.DEVICES_WITH_NOTCH.contains(self)
     }
     
+    // tells whether the iPhone running the app has the new notch format
+    var hasNewNotch: Bool {
+        return Self.DEVICES_WITH_NEW_NOTCH.contains(self)
+    }
+    
     // tells if this device belongs to the iPhone SE (1st Generation) group
     var isSEGroup: Bool {
         // if the device exists in the array it means it belongs to the group

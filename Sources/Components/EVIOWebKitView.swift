@@ -100,7 +100,10 @@ public final class EVIOWebKitViewCoordinator: NSObject, WKUIDelegate, WKNavigati
             webView.load(request)
             return
         } else if url.absoluteString == .registrationReturnUrl {
+            self.parentView.webViewDidChangeUrl?(URL(string: .registrationReturnUrl))
             decisionHandler(.cancel)
+            let request: URLRequest = URLRequest(url: self.parentView.url)
+            webView.load(request)
             return
         }
         decisionHandler(.allow)

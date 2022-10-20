@@ -406,6 +406,7 @@ public struct EVIOLanguage: Codable {
     public let loginForgotPassword: String
     public let loginForgotPasswordBoldPart: String
     public let loginPhoneNumberRequired: String
+    public let loginOpenEmailApp: String
     // MARK: - ACTIVATION PAGE KEYS PROPERTIES
     public let activationTitle: String
     public let activationSubTitle: String
@@ -1156,6 +1157,7 @@ public struct EVIOLanguage: Codable {
         case loginForgotPassword = "login_forgotPassword"
         case loginForgotPasswordBoldPart = "login_forgotPassword_boldPart"
         case loginPhoneNumberRequired = "login_phoneNumberRequired"
+        case loginOpenEmailApp = "login_openEmailApp"
         // MARK: - ACTIVATION PAGE CODING KEYS PROPERTIES
         case activationTitle = "activation_title"
         case activationSubTitle = "activation_subTitle"
@@ -1907,6 +1909,7 @@ public struct EVIOLanguage: Codable {
         self.loginForgotPassword = try container.decodeIfPresent(String.self, forKey: .loginForgotPassword) ?? NSLocalizedString(CodingKeys.loginForgotPassword.rawValue, comment: "")
         self.loginForgotPasswordBoldPart = try container.decodeIfPresent(String.self, forKey: .loginForgotPasswordBoldPart) ?? NSLocalizedString(CodingKeys.loginForgotPasswordBoldPart.rawValue, comment: "")
         self.loginPhoneNumberRequired = try container.decodeIfPresent(String.self, forKey: .loginPhoneNumberRequired) ?? NSLocalizedString(CodingKeys.loginPhoneNumberRequired.rawValue, comment: "")
+        self.loginOpenEmailApp = try container.decodeIfPresent(String.self, forKey: .loginOpenEmailApp) ?? NSLocalizedString(CodingKeys.loginOpenEmailApp.rawValue, comment: "")
         // MARK: - ACTIVATION PAGE KEYS
         self.activationTitle = try container.decodeIfPresent(String.self, forKey: .activationTitle) ?? NSLocalizedString(CodingKeys.activationTitle.rawValue, comment: "")
         self.activationSubTitle = try container.decodeIfPresent(String.self, forKey: .activationSubTitle) ?? NSLocalizedString(CodingKeys.activationSubTitle.rawValue, comment: "")
@@ -2657,6 +2660,7 @@ public struct EVIOLanguage: Codable {
         self.loginForgotPassword = NSLocalizedString(CodingKeys.loginForgotPassword.rawValue, comment: "")
         self.loginForgotPasswordBoldPart = NSLocalizedString(CodingKeys.loginForgotPasswordBoldPart.rawValue, comment: "")
         self.loginPhoneNumberRequired = NSLocalizedString(CodingKeys.loginPhoneNumberRequired.rawValue, comment: "")
+        self.loginOpenEmailApp = NSLocalizedString(CodingKeys.loginOpenEmailApp.rawValue, comment: "")
         // MARK: - ACTIVATION PAGE DEFAULT KEYS
         self.activationTitle = NSLocalizedString(CodingKeys.activationTitle.rawValue, comment: "")
         self.activationSubTitle = NSLocalizedString(CodingKeys.activationSubTitle.rawValue, comment: "")

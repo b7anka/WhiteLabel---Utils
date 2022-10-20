@@ -29,11 +29,11 @@ public struct EVIONoInternetTopView: View {
             ZStack {
                 // MARK: - BACKGROUND
                 Color.tertiaryTextColor.opacity(0.9)
-                    .frame(height: self.device.hasNotch ? 71 : 61)
+                    .frame(height: self.device.hasNotch ? 71 : self.device.hasNewNotch ? 86 : 61)
                 // MARK: - TEXT
                 Text(self.message)
                     .modifier(EVIONoInternetConnectionModifier())
-                    .padding(.top, self.device.hasNotch ? 20 : 0)
+                    .padding(.top, self.device.hasNotch ? 20 : self.device.hasNewNotch ? 35 : 0)
             }
             .edgesIgnoringSafeArea(.all)
             Spacer()

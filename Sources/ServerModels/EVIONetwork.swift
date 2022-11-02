@@ -13,10 +13,11 @@ public struct EVIONetwork: Codable {
     public var networkName, paymentMethod: String?
     public var network: EVIONetworkType?
     public var paymentMethodInfo: EVIOPaymentMethodInfo?
+    public var networkStatus: EVIOContractStatus?
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
-        case name, tokens, network, networkName, paymentMethod, paymentMethodInfo
+        case name, tokens, network, networkName, paymentMethod, paymentMethodInfo, networkStatus = "status"
     }
     
 }
@@ -29,9 +30,9 @@ extension EVIONetwork: Equatable {
     
     public var status: EVIOContractStatus {
         if self.network == .roaming || self.network == .gireve {
-            return self.tokens?.first(where: { $0.tokenType == .other })?.status ?? .inactive
+            return self.tokens?.first(where: { $0.tokenType == .other })?.status ?? self.networkStatus ?? .inactive
         }
-        return self.tokens?.first(where: { $0.tokenType == .appUser })?.status ?? .inactive
+        return self.tokens?.first(where: { $0.tokenType == .appUser })?.status ?? self.networkStatus ?? .inactive
     }
     
 }

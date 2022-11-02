@@ -27,7 +27,7 @@ public final class EVIOPlug: Codable {
     public var subStatus: EVIOPlugSubSatus?
     public var selected: Bool
     public var evseGroup: String?
-    public var tariffId: [String]
+    public var tariffId: [String?]
     
     public enum CodingKeys: String, CodingKey {
         case status, id = "_id", plugId, active, amperage, connectorType, power, voltage, tariff, canBeNotified, canBeAutomaticallyBooked, session, qrCodeId, mySession, serviceCost, subStatus, selected, evseGroup, tariffId

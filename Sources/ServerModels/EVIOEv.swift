@@ -29,6 +29,7 @@ public final class EVIOEv: Codable, Hashable {
     public var dateFrom: String?
     public var dateTo: String?
     public var plafondInfo: EVIOPlafondInfo?
+    public var networks: [EVIONetwork]?
 
     enum CodingKeys: String, CodingKey {
         case primaryEV, status, hasFleet, usageNumber
@@ -39,10 +40,10 @@ public final class EVIOEv: Codable, Hashable {
         case v = "__v"
         case contractID = "contractId"
         case contract, evId
-        case dateFrom, dateTo, plafondInfo
+        case dateFrom, dateTo, plafondInfo, networks
     }
     
-    public init(primaryEV: Bool? = nil, status: EVIOStatus? = nil, hasFleet: Bool? = nil, usageNumber: Int? = nil, id: String?, evId: String?, otherInfo: String? = nil, version: String? = nil, model: String? = nil, imageContent: String? = nil, licensePlate: String? = nil, country: String? = nil, brand: String?, fleet: String? = nil, sessions: [EVIOEVSession]? = nil, listOfGroupDrivers: Set<EVIOListOfDrivers>? = nil, listOfDrivers: Set<EVIOListOfDrivers>? = nil, userID: String? = nil, evType: EVIOEVType? = nil, evInfo: EVIOEvInfo? = nil, createdAt: String? = nil, updatedAt: String? = nil, v: Int? = nil, contractID: String? = nil) {
+    public init(primaryEV: Bool? = nil, status: EVIOStatus? = nil, hasFleet: Bool? = nil, usageNumber: Int? = nil, id: String?, evId: String?, otherInfo: String? = nil, version: String? = nil, model: String? = nil, imageContent: String? = nil, licensePlate: String? = nil, country: String? = nil, brand: String?, fleet: String? = nil, sessions: [EVIOEVSession]? = nil, listOfGroupDrivers: Set<EVIOListOfDrivers>? = nil, listOfDrivers: Set<EVIOListOfDrivers>? = nil, userID: String? = nil, evType: EVIOEVType? = nil, evInfo: EVIOEvInfo? = nil, createdAt: String? = nil, updatedAt: String? = nil, v: Int? = nil, contractID: String? = nil, networks: [EVIONetwork]? = nil) {
         self.primaryEV = primaryEV
         self.status = status
         self.hasFleet = hasFleet
@@ -71,6 +72,7 @@ public final class EVIOEv: Codable, Hashable {
         self.dateFrom = nil
         self.dateTo = nil
         self.plafondInfo = nil
+        self.networks = nil
     }
     
     public func toDictionary() -> [String: Any] {

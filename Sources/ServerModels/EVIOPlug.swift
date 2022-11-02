@@ -53,7 +53,7 @@ public final class EVIOPlug: Codable {
         self.subStatus = try container.decodeIfPresent(EVIOPlugSubSatus.self, forKey: .subStatus)
         self.evseGroup = try container.decodeIfPresent(String.self, forKey: .evseGroup)
         self.selected = try container.decodeIfPresent(Bool.self, forKey: .selected) ?? false
-        self.tariffId = try container.decodeIfPresent([String].self, forKey: .tariffId) ?? []
+        self.tariffId = try container.decodeIfPresent([String?].self, forKey: .tariffId)?.filter({ $0 != nil }) ?? []
     }
     
     public init(id: String?, connectorType: String?, power: Double?) {

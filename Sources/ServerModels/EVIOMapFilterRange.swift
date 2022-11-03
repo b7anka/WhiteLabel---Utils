@@ -14,8 +14,8 @@ public struct EVIOMapFilterRange: Codable {
     public var uom: String?
     
     public init() {
-        self.min = nil
-        self.max = nil
+        self.min = -1
+        self.max = -1
         self.uom = nil
     }
     

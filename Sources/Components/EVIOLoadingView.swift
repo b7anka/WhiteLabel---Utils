@@ -11,7 +11,7 @@ public struct EVIOLoadingView: View {
     
     private let transparent: Bool
     
-    public init(transparent: Bool = false) {
+    public init(transparent: Bool = true) {
         self.transparent = transparent
     }
     

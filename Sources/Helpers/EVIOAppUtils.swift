@@ -79,9 +79,16 @@ public struct EVIOAppUtils {
     /// - Returns: returns a string that represents the device's preferred language or the default one if it cannot get the preferred from the device
     public func getDeviceRegion() -> String {
         // checks if the first preferred language exists, if true then splits the first language by the "-" dash symbol and makes sure it can get the last one from the devided array
-        if let locale = Locale.preferredLanguages.first, let region = locale.components(separatedBy: "-").last?.trimmingCharacters(in: .whitespacesAndNewlines) {
-            // if true returns it
-            return region
+        if #available(iOS 16, *) {
+            if let region = Locale.current.region?.identifier {
+                // if true returns it
+                return region
+            }
+        } else {
+            if let region = Locale.current.regionCode {
+                // if true returns it
+                return region
+            }
         }
         // else returns the default one
         return .defaultRegion

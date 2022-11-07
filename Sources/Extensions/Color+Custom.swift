@@ -85,6 +85,7 @@ public extension Color {
     static let _5B6480: Color = Color(._5B6480, bundle: nil)
     static let _CED6ED: Color = Color(._CED6ED, bundle: nil)
     static let _E1E6F3: Color = Color(._E1E6F3, bundle: nil)
+    static let otherComponentsColor: Color = Color(.otherComponentsColor, bundle: nil)
     static let fifthShadow: Color = Color(.sRGB, red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, opacity: 0.16)
     static let fifthBackground: Color = Color(.sRGB, red: 90.0/255.0, green: 80.0/255.0, blue: 85.0/255.0, opacity: 0.392)
     static let semiTransparent: Color = .black.opacity(0.5)

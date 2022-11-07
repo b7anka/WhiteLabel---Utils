@@ -10,9 +10,11 @@ import SwiftUI
 public struct EVIOLoadingViewRepresentable: UIViewRepresentable {
     
     private let staticSpinningImage: UIImageView
+    private let paddingBottom: UIEdgeInsets
     
-    public init() {
+    public init(paddingBottom: UIEdgeInsets) {
         self.staticSpinningImage = UIImageView(frame: .zero)
+        self.paddingBottom = paddingBottom
     }
     
     public func makeUIView(context: Context) -> UIView {
@@ -26,12 +28,12 @@ public struct EVIOLoadingViewRepresentable: UIViewRepresentable {
         self.staticSpinningImage.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(self.staticSpinningImage)
         NSLayoutConstraint.activate([
-            staticLoadingImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            staticLoadingImage.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            staticLoadingImage.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: self.paddingBottom.left),
+            staticLoadingImage.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: self.paddingBottom.top),
             staticLoadingImage.widthAnchor.constraint(equalToConstant: 100),
             staticLoadingImage.heightAnchor.constraint(equalToConstant: 100),
-            self.staticSpinningImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            self.staticSpinningImage.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            self.staticSpinningImage.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: self.paddingBottom.left),
+            self.staticSpinningImage.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: self.paddingBottom.top),
             self.staticSpinningImage.widthAnchor.constraint(equalToConstant: 100),
             self.staticSpinningImage.heightAnchor.constraint(equalToConstant: 100)
         ])

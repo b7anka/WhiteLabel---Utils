@@ -10,9 +10,11 @@ import SwiftUI
 public struct EVIOLoadingView: View {
     
     private let transparent: Bool
+    private let paddingBottom: UIEdgeInsets
     
-    public init(transparent: Bool = true) {
+    public init(transparent: Bool = true, paddingBottom: UIEdgeInsets = UIEdgeInsets(top: .zero, left: .zero, bottom: .zero, right: .zero)) {
         self.transparent = transparent
+        self.paddingBottom = paddingBottom
     }
     
     public var body: some View {
@@ -24,7 +26,7 @@ public struct EVIOLoadingView: View {
                 Color.semiTransparent
                     .edgesIgnoringSafeArea(.all)
             }
-            EVIOLoadingViewRepresentable()
+            EVIOLoadingViewRepresentable(paddingBottom: self.paddingBottom)
         }
         .background(EVIOTransparentBackgroundView())
     }

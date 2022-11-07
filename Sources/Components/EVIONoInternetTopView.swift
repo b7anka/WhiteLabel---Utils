@@ -28,7 +28,7 @@ public struct EVIONoInternetTopView: View {
             // MARK: - ZSTACK
             ZStack {
                 // MARK: - BACKGROUND
-                Color.tertiaryTextColor.opacity(0.9)
+                Color.otherComponentsColor.opacity(0.9)
                     .frame(height: self.device.hasNotch ? 71 : self.device.hasNewNotch ? 86 : 61)
                 // MARK: - TEXT
                 Text(self.message)

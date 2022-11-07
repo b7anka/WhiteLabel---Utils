@@ -42,7 +42,7 @@ public final class EVIOLocalNotificationsManager {
             this is done on purpose because right now all alerts have the same color but in the future
             this might change
         */
-        banner.backgroundColor = Color.tertiaryTextColor.uiColor
+        banner.backgroundColor = Color.otherComponentsColor.uiColor
         // presents the banner to the user
         banner.show()
     }

@@ -99,11 +99,11 @@ public extension Color {
     static func colorFor(status: EVIOStatus) -> Color {
         switch status {
         case .free:
-            return .tertiaryBackground
+            return .plugFree
         case .charging:
-            return .errorColor
+            return .plugOccupied
         default:
-            return .unavailableColor
+            return .plugOffline
         }
     }
     

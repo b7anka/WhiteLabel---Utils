@@ -84,7 +84,7 @@ public extension Color {
     static let historyStatusToProcess: Color = Color(.historyStatusToProcess, bundle: nil)
     static let plugFree: Color = Color(.plugFree, bundle: nil)
     static let plugOccupied: Color = Color(.plugOccupied, bundle: nil)
-    static let plugOffline: Color = Color(.plugFree, bundle: nil)
+    static let plugOffline: Color = Color(.plugOffline, bundle: nil)
     static let _5B6480: Color = Color(._5B6480, bundle: nil)
     static let _CED6ED: Color = Color(._CED6ED, bundle: nil)
     static let _E1E6F3: Color = Color(._E1E6F3, bundle: nil)

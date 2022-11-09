@@ -33,7 +33,7 @@ public struct EVIOChargerUtils {
                 return EVIOStorageManager.shared.getUserContracts()?.first(where: {$0.contractType == .user})
             }
         } else if charger.isEvio || charger.isGoCharge || charger.isHyundai {
-            if charger.createUser == user?.id || charger.listOfFleets?.isEmpty ?? true {
+            if charger.createUser == user?.id || charger.listOfFleets?.isEmpty ?? true || charger.accessType == .public {
                 return EVIOStorageManager.shared.getUserContracts()?.first(where: {return $0.contractType == .user})
             } else {
                 var userHasAccess: Bool = false

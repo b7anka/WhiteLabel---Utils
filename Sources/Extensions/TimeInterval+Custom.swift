@@ -11,7 +11,7 @@ import Foundation
 extension TimeInterval: Identifiable {
     
     // the time for which an url request must fail in development environment (seconds)
-    public static let timeoutForDevelopment: TimeInterval = 60
+    public static let timeoutForDevelopment: TimeInterval = 120
     // the time for which a url request must fail in production mode (seconds)
     public static let timeoutForProduction: TimeInterval = 10
     

@@ -52,7 +52,7 @@ public struct EVIOEstimatedCostUtils {
         let chargingDuration = (consumption * 60) / ((plug.power ?? .zero) >= maxBatteryChargingCapacity ? maxBatteryChargingCapacity : min(maxBatteryCapacity, (plug.power ?? .zero)))
         let cemeTariff: EVIOCemeTariff = EVIOStorageManager.shared.getUserCemeTariffs()?.first ?? EVIOCemeTariff.default
         if charger.isEvio || charger.isGoCharge || charger.isHyundai {
-            return self.calculateEVIOCost(charger: charger, plug: plug, estimateTime: estimateTime, consumption: consumption, ceme: cemeTariff, duration: chargingDuration, ev: ev)
+            return self.calculateEVIOCost(charger: charger, plug: plug, estimateTime: estimateTime, consumption: consumption, ceme: cemeTariff, duration: chargingDuration, ev: ev, contract: contract)
         } else if charger.isTesla {
             let teslaPrice: EVIOTariffTesla? = EVIOStorageManager.shared.getCurrentTeslaTariff()
             let totalPrice: Double = (teslaPrice?.value ?? .zero) * consumption
@@ -302,8 +302,8 @@ public struct EVIOEstimatedCostUtils {
         return charger.isTesla ? EVIOEv.teslaModelS : EVIOEv.renaultZoe
     }
     
-    private func calculateEVIOCost(charger: EVIOCharger, plug: EVIOPlug, estimateTime: Double, consumption: Double, ceme: EVIOCemeTariff, duration: Double, ev: EVIOEv?) -> EVIOEstimatedCost? {
-        let contract: EVIOContract? = EVIOStorageManager.shared.getUserContracts()?.filter({return $0.contractType == .fleet}).first(where: {$0.evId == ev?.id})
+    private func calculateEVIOCost(charger: EVIOCharger, plug: EVIOPlug, estimateTime: Double, consumption: Double, ceme: EVIOCemeTariff, duration: Double, ev: EVIOEv?, contract: EVIOContract?) -> EVIOEstimatedCost? {
+        let contract: EVIOContract? = contract ?? EVIOStorageManager.shared.getUserContracts()?.filter({return $0.contractType == .fleet}).first(where: {$0.evId == ev?.id})
        let tariffId: String? = self.getTariffIdByPlug(charger: charger, plug: plug, contract: contract)
         let tariff: EVIOTariff? = plug.tariff?.first(where: {return $0.tariffId == tariffId})
        let feeds = charger.fees

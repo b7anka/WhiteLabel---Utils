@@ -271,6 +271,7 @@ public extension String {
     static let boltFill: String = "bolt.fill"
     static let lockFill: String = "lock.fill"
     static let checkmarkFill: String = "checkmark.square.fill"
+    static let checkmark: String = "checkmark"
     static let cameraFill: String = "camera.fill"
     static let dollarSignCircleFill: String = "dollarsign.circle.fill"
     static let plusCircleFill: String = "plus.circle.fill"

@@ -24,7 +24,7 @@ public struct EVIOCheckBoxButton: View {
                 .frame(width: 22, height: 22)
                 .background(
                     Rectangle()
-                    .stroke(self.selected ? Color.mainButtonColor : Color.clear)
+                    .stroke(Color.mainButtonColor)
                     .frame(width: 20, height: 20)
                     .overlay(
                         Rectangle()

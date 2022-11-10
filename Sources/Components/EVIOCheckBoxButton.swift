@@ -24,7 +24,7 @@ public struct EVIOCheckBoxButton: View {
                 .frame(width: 22, height: 22)
                 .background(
                     Rectangle()
-                    .stroke(Color.mainButtonColor, lineWidth: 1)
+                    .stroke(self.selected ? Color.mainButtonColor : Color.clear)
                     .frame(width: 20, height: 20)
                     .overlay(
                         Rectangle()
@@ -34,8 +34,8 @@ public struct EVIOCheckBoxButton: View {
                                 Image(systemName: .checkmark)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .foregroundColor(Color.white)
-                                    .frame(width: 20, height: 20)
+                                    .foregroundColor(self.selected ? Color.white : Color.clear)
+                                    .frame(width: 18, height: 18)
                             )
                 )
             )

@@ -82,6 +82,8 @@ public extension Color {
     static let historyStatusPaid: Color = Color(.historyStatusPaid, bundle: nil)
     static let historyStatusPaidAndBilled: Color = Color(.historyStatusPaidAndBilled, bundle: nil)
     static let historyStatusToProcess: Color = Color(.historyStatusToProcess, bundle: nil)
+    static let chargerWithProblemsViewBackgroundColor: Color = Color(.chargerWithProblemsViewBackgroundColor, bundle: nil)
+    static let chargerWithProblemsViewTextColor: Color = Color(.chargerWithProblemsViewTextColor, bundle: nil)
     static let plugFree: Color = Color(.plugFree, bundle: nil)
     static let plugOccupied: Color = Color(.plugOccupied, bundle: nil)
     static let plugOffline: Color = Color(.plugOffline, bundle: nil)

@@ -346,6 +346,8 @@ public extension String {
     static let historyStatusPaid: String = "historyStatusPaid"
     static let historyStatusPaidAndBilled: String = "historyStatusPaidAndBilled"
     static let historyStatusToProcess: String = "historyStatusToProcess"
+    static let chargerWithProblemsViewBackgroundColor: String = "chargerWithProblemsViewBackgroundColor"
+    static let chargerWithProblemsViewTextColor: String = "chargerWithProblemsViewTextColor"
     static let plugFree: String = "plugFree"
     static let plugOccupied: String = "plugOccupied"
     static let plugOffline: String = "plugOffline"

@@ -189,26 +189,23 @@ public extension EVIOCharger {
             if self.isInternal(plug, contract: contract) {
                 let internalToken = contract.networks?.first(where: { $0.network == .´internal´})?.tokens?.first(where: { $0.tokenType == .appUser})
                 return internalToken?.idTagDEC ?? internalToken?.idTagHexa ?? .empty
-            } else {
-                let evioToken = contract.networks?.first(where: {return $0.network == .evio})?.tokens?.first(where: {return $0.tokenType == .appUser})
-                return evioToken?.idTagDEC ?? evioToken?.idTagHexa ?? .empty
             }
+            let evioToken = contract.networks?.first(where: {return $0.network == .evio})?.tokens?.first(where: {return $0.tokenType == .appUser})
+            return evioToken?.idTagDEC ?? evioToken?.idTagHexa ?? .empty
         } else if self.isGoCharge {
             if self.isInternal(plug, contract: contract) {
                 let internalToken = contract.networks?.first(where: { $0.network == .´internal´})?.tokens?.first(where: { $0.tokenType == .appUser})
                 return internalToken?.idTagDEC ?? internalToken?.idTagHexa ?? .empty
-            } else {
-                let goChargeToken = contract.networks?.first(where: { $0.network == .goCharge})?.tokens?.first(where: { $0.tokenType == .appUser})
-                return goChargeToken?.idTagDEC ?? goChargeToken?.idTagHexa ?? .empty
             }
+            let goChargeToken = contract.networks?.first(where: { $0.network == .goCharge})?.tokens?.first(where: { $0.tokenType == .appUser})
+            return goChargeToken?.idTagDEC ?? goChargeToken?.idTagHexa ?? .empty
         } else if self.isHyundai {
             if self.isInternal(plug, contract: contract) {
                 let internalToken = contract.networks?.first(where: { $0.network == .´internal´})?.tokens?.first(where: { $0.tokenType == .appUser})
                 return internalToken?.idTagDEC ?? internalToken?.idTagHexa ?? .empty
-            } else {
-                let hyundaiToken = contract.networks?.first(where: { $0.network == .hyundai})?.tokens?.first(where: { $0.tokenType == .appUser})
-                return hyundaiToken?.idTagDEC ?? hyundaiToken?.idTagHexa ?? .empty
             }
+            let hyundaiToken = contract.networks?.first(where: { $0.network == .hyundai})?.tokens?.first(where: { $0.tokenType == .appUser})
+            return hyundaiToken?.idTagDEC ?? hyundaiToken?.idTagHexa ?? .empty
         } else if self.isMobie, let mobieToken = contract.networks?.first(where: {return $0.network == .mobie})?.tokens?.first(where: {return $0.tokenType == .appUser}) {
             return mobieToken.idTagDEC ?? mobieToken.idTagHexa ?? .empty
         } else if self.isGireve, let gireveToken = contract.networks?.first(where: {return $0.network == .gireve})?.tokens?.first(where: {return $0.tokenType == .other}) {

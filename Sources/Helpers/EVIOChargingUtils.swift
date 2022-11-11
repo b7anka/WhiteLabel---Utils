@@ -274,37 +274,7 @@ public final class EVIOChargingUtils: EVIOChargingUtilsWebServiceDelegate {
             return
         }
         
-        var tagId = ""
-        
-        if charger.isEvio {
-            if charger.isInternal(self.selectedEV) {
-                let internalToken = contract.networks?.first(where: { $0.network == .´internal´})?.tokens?.first(where: { $0.tokenType == .appUser})
-                tagId = internalToken?.idTagDEC ?? internalToken?.idTagHexa ?? .empty
-            } else {
-                let evioToken = contract.networks?.first(where: {return $0.network == .evio})?.tokens?.first(where: {return $0.tokenType == .appUser})
-                tagId = evioToken?.idTagDEC ?? evioToken?.idTagHexa ?? .empty
-            }
-        } else if charger.isGoCharge {
-            if charger.isInternal(self.selectedEV) {
-                let internalToken = contract.networks?.first(where: { $0.network == .´internal´})?.tokens?.first(where: { $0.tokenType == .appUser})
-                tagId = internalToken?.idTagDEC ?? internalToken?.idTagHexa ?? .empty
-            } else {
-                let goChargeToken = contract.networks?.first(where: { $0.network == .goCharge})?.tokens?.first(where: { $0.tokenType == .appUser})
-                tagId = goChargeToken?.idTagDEC ?? goChargeToken?.idTagHexa ?? .empty
-            }
-        } else if charger.isHyundai {
-            if charger.isInternal(self.selectedEV) {
-                let internalToken = contract.networks?.first(where: { $0.network == .´internal´})?.tokens?.first(where: { $0.tokenType == .appUser})
-                tagId = internalToken?.idTagDEC ?? internalToken?.idTagHexa ?? .empty
-            } else {
-                let hyundaiToken = contract.networks?.first(where: { $0.network == .hyundai})?.tokens?.first(where: { $0.tokenType == .appUser})
-                tagId = hyundaiToken?.idTagDEC ?? hyundaiToken?.idTagHexa ?? .empty
-            }
-        } else if charger.isMobie, let mobieToken = contract.networks?.first(where: {return $0.network == .mobie})?.tokens?.first(where: {return $0.tokenType == .appUser}) {
-            tagId = mobieToken.idTagDEC ?? mobieToken.idTagHexa ?? .empty
-        } else if charger.isGireve, let gireveToken = contract.networks?.first(where: {return $0.network == .gireve})?.tokens?.first(where: {return $0.tokenType == .other}) {
-            tagId = gireveToken.idTagDEC ?? gireveToken.idTagHexa ?? .empty
-        }
+        var tagId = charger.getIdTag(plug: self.selectedPlug, contract: contract) ?? .empty
         
         if charger.isMobie && self.adHocActivated ?? false {
             tagId = "-1"

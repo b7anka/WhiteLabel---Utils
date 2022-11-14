@@ -13,7 +13,7 @@ public struct EVIOBadgeView<Content: View>: View {
     private let color: Color
     private let content: Content
     
-    public init(numberToShow: Binding<Int>, color: Color = .qrCodeMapButtonColor, @ViewBuilder content: @escaping () -> Content) {
+    public init(numberToShow: Binding<Int>, color: Color = .notificationBadgeColor, @ViewBuilder content: @escaping () -> Content) {
         self._numberToShow = numberToShow
         self.color = color
         self.content = content()

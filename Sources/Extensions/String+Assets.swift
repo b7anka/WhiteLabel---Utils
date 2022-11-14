@@ -356,6 +356,9 @@ public extension String {
     static let _CED6ED: String = "CED6ED"
     static let _E1E6F3: String = "E1E6F3"
     static let otherComponentsColor: String = "otherComponentsColor"
+    static let notificationBadgeColor: String = "notificationBadgeColor"
+    static let passwordViewCorrectColor: String = "passwordViewCorrectColor"
+    static let passwordViewWrongColor: String = "passwordViewWrongColor"
     
     // MARK: - ACTIVATION PAGE
     static let checkmarkIcon: String = "checkmarkIcon"

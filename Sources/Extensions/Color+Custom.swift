@@ -98,6 +98,10 @@ public extension Color {
     static let transparent: Color = .black.opacity(0.0001)
     static let alternativeTransparent: Color = Color(.sRGB, red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, opacity: 0.35)
     
+    static let notificationBadgeColor: Color = Color(.notificationBadgeColor, bundle: nil)
+    static let passwordViewCorrectColor: Color = Color(.passwordViewCorrectColor, bundle: nil)
+    static let passwordViewWrongColor: Color = Color(.passwordViewWrongColor, bundle: nil)
+    
     static func colorFor(status: EVIOStatus) -> Color {
         switch status {
         case .free:

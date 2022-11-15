@@ -20,7 +20,7 @@ public extension String {
         #if DEBUG
         return "https://pre-idgo.go-evio.com/user/registration/response"
         #else
-        return "https://pre-idgo.go-evio.com/user/registration/response" //"https://idgo.go-evio.com/user/registration/response"
+        return "https://idgo.go-evio.com/user/registration/response"
         #endif
     }
     static var logoutReturnUrl: String {

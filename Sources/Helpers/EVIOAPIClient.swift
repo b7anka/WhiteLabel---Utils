@@ -34,7 +34,7 @@ public final class EVIOAPIClient: ObservableObject {
     }
     #else
     // the server url being used in production
-    public var serverUrl: EVIOServerAddresses = .pre {
+    public var serverUrl: EVIOServerAddresses = .prod {
         didSet {
             // once this variable is set we ask the root view model to update the server url property
             self.serverInUse = self.serverUrl.description

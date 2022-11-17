@@ -14,10 +14,11 @@ public struct EVIONetwork: Codable {
     public var network: EVIONetworkType?
     public var paymentMethodInfo: EVIOPaymentMethodInfo?
     public var networkStatus: EVIOContractStatus?
+    public var isVisible: Bool = true
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
-        case name, tokens, network, networkName, paymentMethod, paymentMethodInfo, networkStatus = "status"
+        case name, tokens, network, networkName, paymentMethod, paymentMethodInfo, networkStatus = "status", isVisible
     }
     
 }

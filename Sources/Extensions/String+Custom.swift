@@ -128,5 +128,6 @@ public extension String {
     static let userInvalid: String = "userInvalid"
     static let userNeedsToUpdateApp: String = "userNeedsToUpdateApp"
     static let ´default´: String = "default"
+    static let contractSelectedAndEvSelected: String = "contractSelectedAndEvSelected"
     
 }

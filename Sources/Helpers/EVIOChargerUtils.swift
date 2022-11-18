@@ -13,6 +13,13 @@ public struct EVIOChargerUtils {
     
     public init() { }
     
+    public func checkIfSelectedEvIsCompatibleWithSelectedContractAndCharger(contract: EVIOContract?, ev: EVIOEv?) -> Bool {
+        if contract?.contractType == .user && ev?.userID == EVIOStorageManager.shared.getUserProfile()?.id {
+            return true
+        }
+        return ev?.id == contract?.evId
+    }
+    
     public func getDefaultContractForCharger(charger: EVIOCharger) -> EVIOContract? {
         let user: EVIOUser? = EVIOStorageManager.shared.getUserProfile()
         if charger.isMobie {

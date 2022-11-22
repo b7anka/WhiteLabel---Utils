@@ -16,6 +16,8 @@ public struct EVIOPlan: Codable {
     public var createdAt, updatedAt: String?
     public var v: Int?
     public var visivel: Bool?
+    public var activationFee: EVIOCurrency?
+    public var activationFeeAdHoc: EVIOCurrency?
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
@@ -23,10 +25,10 @@ public struct EVIOPlan: Codable {
         case ceme = "CEME"
         case tariffType, cycleType, planName, tariff, createdAt, updatedAt
         case v = "__v"
-        case visivel
+        case visivel, activationFeeAdHoc, activationFee
     }
     
-    public init(id: String?, country: String?, ceme: String?, tariffType: EVIOTariffType?, planName: String?, cycleType: EVIOCycleType?, tariff: [EVIOPlanTariff] = [], createdAt: String?, updatedAt: String?, v: Int?, visivel: Bool?) {
+    public init(id: String?, country: String?, ceme: String?, tariffType: EVIOTariffType?, planName: String?, cycleType: EVIOCycleType?, tariff: [EVIOPlanTariff] = [], createdAt: String?, updatedAt: String?, v: Int?, visivel: Bool?, activationFee: EVIOCurrency? = nil, activationFeeAdHoc: EVIOCurrency? = nil) {
         self.id = id
         self.country = country
         self.ceme = ceme
@@ -38,6 +40,8 @@ public struct EVIOPlan: Codable {
         self.updatedAt = updatedAt
         self.v = v
         self.visivel = visivel
+        self.activationFee = activationFee
+        self.activationFeeAdHoc = activationFeeAdHoc
     }
     
 }

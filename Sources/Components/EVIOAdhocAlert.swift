@@ -18,8 +18,17 @@ public struct EVIOAdHocAlert: View {
     public var completion: ((EVIOAdHocAlertType) -> Void)
     private let languageManager: EVIOLanguage
     public let feedbackGenerator: UIImpactFeedbackGenerator
+    public var selectedContract: EVIOContract?
     
-    public init(completion: @escaping (EVIOAdHocAlertType) -> Void) {
+    private var adhocText: String {
+        guard let plan = EVIOStorageManager.shared.getDefaulEvioCemeTariff()?.plan ?? selectedContract?.tariffInfo?.plan, let currency: String = plan.activationFeeAdHoc?.currency, let value: Double = plan.activationFeeAdHoc?.value, let activationAdhocValue: String = NumberFormatter.formatCurrencyFor(with: value, and: currency), let valueOfContractTariff: Double = selectedContract?.tariffInfo?.plan?.tariff?.first(where: { $0.tariffType == .serverOutEmpty })?.price ?? EVIOStorageManager.shared.getUserContracts()?.first(where: { $0.contractType == .user })?.tariffInfo?.plan?.tariff?.first(where: { $0.tariffType == .serverOutEmpty })?.price ?? EVIOStorageManager.shared.getDefaulEvioCemeTariff()?.plan?.tariff?.first(where: { $0.tariffType == .serverOutEmpty })?.price, let contractTariff = NumberFormatter.formatCurrencyFor(with: valueOfContractTariff, and: currency) else {
+            return .empty
+        }
+        return self.languageManager.validationMessageAdhocInfoNewGeneric.replacingOccurrences(of: "XX", with: activationAdhocValue).replacingOccurrences(of: "YY", with: contractTariff)
+    }
+    
+    public init(selectedContract: EVIOContract?, completion: @escaping (EVIOAdHocAlertType) -> Void) {
+        self.selectedContract = selectedContract
         self.completion = completion
         self.languageManager = EVIOLanguageManager.shared.language
         self.feedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
@@ -96,10 +105,12 @@ public struct EVIOAdHocAlert: View {
 
 private extension EVIOAdHocAlert {
     private func getMiddleText() -> Text {
-        let value: Double = Double(EVIOLanguageManager.shared.getTranslationFor(key: "estimatedCost_evioActivationValue")) ?? .zero
+        guard let plan = selectedContract?.tariffInfo?.plan ?? EVIOStorageManager.shared.getDefaulEvioCemeTariff()?.plan ?? EVIOStorageManager.shared.getUserCemeTariffs()?.first?.tariffInfo?.plan, let currency: String = plan.activationFee?.currency, let value: Double = plan.activationFee?.value, let activationValue: String = NumberFormatter.formatCurrencyFor(with: value, and: currency) else {
+            return Text(String.empty)
+        }
         let text = Text(self.languageManager.validationMessageAdhocInfo2iOS)
             .font(.custom(.appFont, size: 14))
-        + Text(String(format: "%.\(value.numberOfDecimalPlaces(maxPlaces: 2))f€", locale: Locale.current, value))
+        + Text(activationValue)
             .font(.custom(.appFont, size: 14))
             .bold()
         return text

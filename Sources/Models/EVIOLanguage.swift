@@ -373,6 +373,14 @@ public struct EVIOLanguage: Codable {
     public let validationMessageAdhocInfoNew: String
     public let validationMessageAdhocFooterNote: String
     public let validationMessageAdhocFooterNoteUnderline: String
+    public let validationMessageAdhocFooterNoteGeneric: String
+    public let validationMessageAdhocFooterNoteGenericUnderline: String
+    public let validationMessageAdhocInfoGeneric: String
+    public let validationMessageAdhocInfo2GenericAndroid: String
+    public let validationMessageAdhocInfo2GenericBoldAndroid: String
+    public let validationMessageAdhocInfoNewGeneric: String
+    public let validationMessageAdhocInfoNewV2Generic: String
+
     // MARK: - REPORT ISSUE PAGE KEYS PROPERTIES
     public let reportIssueTitle: String
     public let reportIssueBtSend: String
@@ -1124,6 +1132,13 @@ public struct EVIOLanguage: Codable {
         case validationMessageAdhocInfoNew = "validationMessage_adhocInfoNew"
         case validationMessageAdhocFooterNote = "validationMessage_adhocFooterNote"
         case validationMessageAdhocFooterNoteUnderline = "validationMessage_adhocFooterNote_underline"
+        case validationMessageAdhocFooterNoteGeneric = "validationMessage_adhocFooterNote_generic"
+        case validationMessageAdhocFooterNoteGenericUnderline = "validationMessage_adhocFooterNote_generic_underline"
+        case validationMessageAdhocInfoGeneric = "validationMessage_adhocInfo_generic"
+        case validationMessageAdhocInfo2GenericAndroid = "validationMessage_adhocInfo2_generic_android"
+        case validationMessageAdhocInfo2GenericBoldAndroid = "validationMessage_adhocInfo2_generic_bold_android"
+        case validationMessageAdhocInfoNewGeneric = "validationMessage_adhocInfoNew_generic"
+        case validationMessageAdhocInfoNewV2Generic = "validationMessage_adhocInfoNewV2_generic"
         // MARK: - REPORT ISSUE PAGE CODING KEYS PROPERTIES
         case reportIssueTitle = "reportIssue_title"
         case reportIssueBtSend = "reportIssue_btSend"
@@ -1876,6 +1891,13 @@ public struct EVIOLanguage: Codable {
         self.validationMessageAdhocInfoNew = try container.decodeIfPresent(String.self, forKey: .validationMessageAdhocInfoNew) ?? NSLocalizedString(CodingKeys.validationMessageAdhocInfoNew.rawValue, comment: "")
         self.validationMessageAdhocFooterNote = try container.decodeIfPresent(String.self, forKey: .validationMessageAdhocFooterNote) ?? NSLocalizedString(CodingKeys.validationMessageAdhocFooterNote.rawValue, comment: "")
         self.validationMessageAdhocFooterNoteUnderline = try container.decodeIfPresent(String.self, forKey: .validationMessageAdhocFooterNoteUnderline) ?? NSLocalizedString(CodingKeys.validationMessageAdhocFooterNoteUnderline.rawValue, comment: "")
+        self.validationMessageAdhocFooterNoteGeneric = try container.decodeIfPresent(String.self, forKey: .validationMessageAdhocFooterNoteGeneric) ?? NSLocalizedString(CodingKeys.validationMessageAdhocFooterNoteGeneric.rawValue, comment: "")
+        self.validationMessageAdhocFooterNoteGenericUnderline = try container.decodeIfPresent(String.self, forKey: .validationMessageAdhocFooterNoteGenericUnderline) ?? NSLocalizedString(CodingKeys.validationMessageAdhocFooterNoteGenericUnderline.rawValue, comment: "")
+        self.validationMessageAdhocInfoGeneric = try container.decodeIfPresent(String.self, forKey: .validationMessageAdhocInfoGeneric) ?? NSLocalizedString(CodingKeys.validationMessageAdhocInfoGeneric.rawValue, comment: "")
+        self.validationMessageAdhocInfo2GenericAndroid = try container.decodeIfPresent(String.self, forKey: .validationMessageAdhocInfo2GenericAndroid) ?? NSLocalizedString(CodingKeys.validationMessageAdhocInfo2GenericAndroid.rawValue, comment: "")
+        self.validationMessageAdhocInfo2GenericBoldAndroid = try container.decodeIfPresent(String.self, forKey: .validationMessageAdhocInfo2GenericBoldAndroid) ?? NSLocalizedString(CodingKeys.validationMessageAdhocInfo2GenericBoldAndroid.rawValue, comment: "")
+        self.validationMessageAdhocInfoNewGeneric = try container.decodeIfPresent(String.self, forKey: .validationMessageAdhocInfoNewGeneric) ?? NSLocalizedString(CodingKeys.validationMessageAdhocInfoNewGeneric.rawValue, comment: "")
+        self.validationMessageAdhocInfoNewV2Generic = try container.decodeIfPresent(String.self, forKey: .validationMessageAdhocInfoNewV2Generic) ?? NSLocalizedString(CodingKeys.validationMessageAdhocInfoNewV2Generic.rawValue, comment: "")
         // MARK: - REPORT MESSAGE PAGE KEYS
         self.reportIssueTitle = try container.decodeIfPresent(String.self, forKey: .reportIssueTitle) ?? NSLocalizedString(CodingKeys.reportIssueTitle.rawValue, comment: "")
         self.reportIssueBtSend = try container.decodeIfPresent(String.self, forKey: .reportIssueBtSend) ?? NSLocalizedString(CodingKeys.reportIssueBtSend.rawValue, comment: "")
@@ -2627,6 +2649,13 @@ public struct EVIOLanguage: Codable {
         self.validationMessageAdhocInfoNew = NSLocalizedString(CodingKeys.validationMessageAdhocInfoNew.rawValue, comment: "")
         self.validationMessageAdhocFooterNote = NSLocalizedString(CodingKeys.validationMessageAdhocFooterNote.rawValue, comment: "")
         self.validationMessageAdhocFooterNoteUnderline = NSLocalizedString(CodingKeys.validationMessageAdhocFooterNoteUnderline.rawValue, comment: "")
+        self.validationMessageAdhocFooterNoteGeneric = NSLocalizedString(CodingKeys.validationMessageAdhocFooterNoteGeneric.rawValue, comment: "")
+        self.validationMessageAdhocFooterNoteGenericUnderline = NSLocalizedString(CodingKeys.validationMessageAdhocFooterNoteGenericUnderline.rawValue, comment: "")
+        self.validationMessageAdhocInfoGeneric = NSLocalizedString(CodingKeys.validationMessageAdhocInfoGeneric.rawValue, comment: "")
+        self.validationMessageAdhocInfo2GenericAndroid = NSLocalizedString(CodingKeys.validationMessageAdhocInfo2GenericAndroid.rawValue, comment: "")
+        self.validationMessageAdhocInfo2GenericBoldAndroid = NSLocalizedString(CodingKeys.validationMessageAdhocInfo2GenericBoldAndroid.rawValue, comment: "")
+        self.validationMessageAdhocInfoNewGeneric = NSLocalizedString(CodingKeys.validationMessageAdhocInfoNewGeneric.rawValue, comment: "")
+        self.validationMessageAdhocInfoNewV2Generic = NSLocalizedString(CodingKeys.validationMessageAdhocInfoNewV2Generic.rawValue, comment: "")
         // MARK: - REPORT ISSUE PAGE DEFAULT KEYS
         self.reportIssueTitle = NSLocalizedString(CodingKeys.reportIssueTitle.rawValue, comment: "")
         self.reportIssueBtSend = NSLocalizedString(CodingKeys.reportIssueBtSend.rawValue, comment: "")

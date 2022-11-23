@@ -73,9 +73,9 @@ public struct EVIOAdHocAlert: View {
                             self.completion(.contracts)
                         }
                     }, label: {
-                        Text("\(self.languageManager.validationMessageAdhocFooterNote.replacingOccurrences(of: self.languageManager.validationMessageAdhocFooterNoteUnderline, with: "")) ")
+                        Text("\(self.languageManager.validationMessageAdhocFooterNoteGeneric.replacingOccurrences(of: self.languageManager.validationMessageAdhocFooterNoteGenericUnderline, with: "")) ")
                             .font(.custom(.appFont, size: 13))
-                            .foregroundColor(.primaryTextColor) + Text(self.languageManager.validationMessageAdhocFooterNoteUnderline)
+                            .foregroundColor(.primaryTextColor) + Text(self.languageManager.validationMessageAdhocFooterNoteGenericUnderline)
                             .font(.custom(.appFont, size: 13))
                             .foregroundColor(.primaryTextColor)
                             .underline(true, color: .primaryTextColor)

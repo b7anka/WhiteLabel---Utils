@@ -45,6 +45,7 @@ public struct EVIOSession: Codable {
     public var rating: Double?
     public var sessionPrice: Double?
     public var finalPrice: Double?
+    public var tariffCEME: EVIOPlan?
 
     enum CodingKeys: String, CodingKey {
         case fees, totalPower, estimatedPrice, batteryCharged, timeCharged, timeLeft
@@ -68,7 +69,7 @@ public struct EVIOSession: Codable {
         case costDetails, downtime, totalPrice, uptime
         case serviceCost
         case stopDate, bookingId
-        case rating, sessionPrice, finalPrice
+        case rating, sessionPrice, finalPrice, tariffCEME
     }
     
     public init(from decoder: Decoder) throws {
@@ -113,6 +114,7 @@ public struct EVIOSession: Codable {
         self.model = try container.decodeIfPresent(String.self, forKey: .model)
         self.updatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt)
         self.serviceCost = try container.decodeIfPresent(EVIOServiceCost.self, forKey: .serviceCost)
+        self.tariffCEME = try container.decodeIfPresent(EVIOPlan.self, forKey: .tariffCEME)
         if let sessionId = try? container.decodeIfPresent(String.self, forKey: .sessionID) {
             self.sessionID = sessionId
         } else if let sessionId = try? container.decodeIfPresent(Double.self, forKey: .sessionID) {

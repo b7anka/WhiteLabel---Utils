@@ -211,12 +211,12 @@ public final class EVIOStorageManager {
         self.defaults.set(value, forKey: .firebaseToken)
     }
     
-    public func saveUserSelectedEv(ev: EVIOEv) {
+    public func saveUserSelectedEv(ev: EVIOEv?) {
         let data: Data? = try? JSONEncoder().encode(ev)
         self.defaults.set(data, forKey: .userSelectedEv)
     }
     
-    public func saveUserSelectedContract(contract: EVIOContract) {
+    public func saveUserSelectedContract(contract: EVIOContract?) {
         let data: Data? = try? JSONEncoder().encode(contract)
         self.defaults.set(data, forKey: .userSelectedContract)
     }

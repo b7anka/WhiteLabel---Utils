@@ -32,5 +32,7 @@ public extension String {
     static let appWasReinstalled: String = "appWasReinstalled"
     static let chargingSessionDataUpdateNotification: String = "chargingSessionDataUpdateNotification"
     static let firebaseToken: String = "firebaseToken"
+    static let userSelectedEv: String = "userSelectedEv"
+    static let userSelectedContract: String = "userSelectedContract"
     
 }

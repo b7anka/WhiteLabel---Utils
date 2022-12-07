@@ -211,6 +211,16 @@ public final class EVIOStorageManager {
         self.defaults.set(value, forKey: .firebaseToken)
     }
     
+    public func saveUserSelectedEv(ev: EVIOEv) {
+        let data: Data? = try? JSONEncoder().encode(ev)
+        self.defaults.set(data, forKey: .userSelectedEv)
+    }
+    
+    public func saveUserSelectedContract(contract: EVIOContract) {
+        let data: Data? = try? JSONEncoder().encode(contract)
+        self.defaults.set(data, forKey: .userSelectedContract)
+    }
+    
     // MARK: - RETRIEVING
     
     /// # METHOD TO RETRIEVE THE USER'S SESSION TOKEN
@@ -354,6 +364,16 @@ public final class EVIOStorageManager {
         return self.defaults.string(forKey: .firebaseToken)
     }
     
+    public func getUserSelectedEv() -> EVIOEv? {
+        guard let data: Data = self.defaults.data(forKey: .userSelectedEv), let ev: EVIOEv = try? JSONDecoder().decode(EVIOEv.self, from: data) else { return nil }
+        return ev
+    }
+    
+    public func getUserSelectedContract() -> EVIOContract? {
+        guard let data: Data = self.defaults.data(forKey: .userSelectedContract), let contract: EVIOContract = try? JSONDecoder().decode(EVIOContract.self, from: data) else { return nil }
+        return contract
+    }
+    
     // MARK: - DELETING
     /// # METHOD THAT DELETES ALL USER DATA FROM THE USER DEFAULTS (DEVICE STORAGE)
     public func deleteAllUserData() {
@@ -369,6 +389,8 @@ public final class EVIOStorageManager {
         self.defaults.set(nil, forKey: .userFilter)
         self.defaults.set(nil, forKey: .userActivation)
         self.defaults.set(nil, forKey: .firebaseToken)
+        self.defaults.set(nil, forKey: .userSelectedEv)
+        self.defaults.set(nil, forKey: .userSelectedContract)
     }
     
     /// # METHOD THAT DELETES THE USER AUTHENTICATION DATA

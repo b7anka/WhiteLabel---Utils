@@ -13,6 +13,7 @@ public struct EVIOServiceCost: Codable {
     public var costByTime: [EVIOCostByTime]?
     public var costByPower: EVIOCostByPower?
     public var elements: [EVIOOCPIPriceElement]?
+    public var detailedTariff: EVIOChargingStationPriceDetailsCPO?
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -24,6 +25,7 @@ public struct EVIOServiceCost: Codable {
         self.costByTime = try container.decodeIfPresent([EVIOCostByTime].self, forKey: .costByTime)
         self.costByPower = try container.decodeIfPresent(EVIOCostByPower.self, forKey: .costByPower)
         self.elements = try container.decodeIfPresent([EVIOOCPIPriceElement].self, forKey: .elements)
+        self.detailedTariff = try container.decodeIfPresent(EVIOChargingStationPriceDetailsCPO.self, forKey: .detailedTariff)
     }
     
 }

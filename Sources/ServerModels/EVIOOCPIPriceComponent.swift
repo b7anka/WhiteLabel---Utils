@@ -9,7 +9,7 @@ import Foundation
 
 public struct EVIOOCPIPriceComponent: Codable {
     
-    public var type: String?
+    public var type: EVIORoamingTariffDetailsType?
     public var price: Double?
     public var stepSize: Double?
     public var vat: Double?

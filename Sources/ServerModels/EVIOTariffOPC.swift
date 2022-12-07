@@ -15,7 +15,7 @@ public struct EVIOTariffOPC: Codable {
     public var elements: [EVIOOCPIPriceElement]?
     public var startDateTime: String?
     public var endDateTime: String?
-    public var type: EVIORoamingTariffDetailsType?
+    public var type: String?
     
     private enum CodingKeys: String, CodingKey {
         case countryCode = "country_code", currency, id = "_id"

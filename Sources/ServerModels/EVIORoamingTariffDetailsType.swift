@@ -7,7 +7,7 @@ public enum EVIORoamingTariffDetailsType: String, Codable {
     case time
     
     public init?(rawValue: String) {
-        switch rawValue {
+        switch rawValue.lowercased() {
         case "energy":
             self = .energy
         case "flat":

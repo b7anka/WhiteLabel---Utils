@@ -51,7 +51,7 @@ public struct EVIOAdHocAlert: View {
                 .frame(width: UIScreen.main.bounds.width * 0.92, height: 40)
                 ScrollView(.vertical, showsIndicators: false, content: {
                     HStack {
-                        Text(self.languageManager.validationMessageAdhocInfoNew)
+                        Text(self.adhocText)
                             .modifier(EVIOAlertTitleModifier(lineLimit: nil))
                             .multilineTextAlignment(.center)
                     }

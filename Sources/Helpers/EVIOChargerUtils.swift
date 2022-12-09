@@ -14,8 +14,14 @@ public struct EVIOChargerUtils {
     public init() { }
     
     public func checkIfSelectedEvIsCompatibleWithSelectedContractAndCharger(contract: EVIOContract?, ev: EVIOEv?) -> Bool {
-        if contract?.contractType == .user && ev?.userID == EVIOStorageManager.shared.getUserProfile()?.id {
-            return true
+        if contract?.contractType == .user {
+            let user: EVIOUser? = EVIOStorageManager.shared.getUserProfile()
+            let driver = ev?.listOfDrivers?.first(where: {return $0.userId == user?.id})
+            let groupDriver = ev?.listOfGroupDrivers?.filter({return $0.listOfDrivers?.first(where: {return $0.driverId == user?.id}) != nil}).first
+            if ev?.userID == user?.id || driver?.paymentBy == .driver || groupDriver?.paymentBy == .driver {
+                return true
+            }
+            return false
         }
         return ev?.id == contract?.evId
     }

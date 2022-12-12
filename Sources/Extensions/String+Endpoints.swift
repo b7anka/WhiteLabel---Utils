@@ -72,6 +72,7 @@ public extension String {
     static let addOrEditReferencePlacesEndpoint: EVIOEndpoints = "/private/users/referencePlaces"
     static let userNotificationsSettings: EVIOEndpoints = "/private/notificationsSettings"
     static let activateRoamingNetwork: EVIOEndpoints = "/private/contracts/activeInternationalNetwork"
+    static let activateNetwork: EVIOEndpoints = "/private/contracts/activeNetworks"
     static let joinMobieNetworkEndpoint: EVIOEndpoints = "/private/contracts/activeMobiENetwork"
     static let activateCardEndpoint: EVIOEndpoints = "/private/contracts/validateCard"
     static let getUserFleets: EVIOEndpoints = "/private/fleets"

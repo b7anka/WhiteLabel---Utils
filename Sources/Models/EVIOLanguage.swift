@@ -409,6 +409,8 @@ public struct EVIOLanguage: Codable {
     public let signUpLicenseServices: String
     public let signUpLicenseProducts: String
     public let signUpGoChargeSuccess: String
+    public let signUpAcpCardNumber: String
+    public let signUpAcpMemberNumber: String
     // MARK: - LOGIN PAGE KEYS PROPERTIES
     public let loginButtonTitle: String
     public let loginForgotPassword: String
@@ -1167,6 +1169,8 @@ public struct EVIOLanguage: Codable {
         case signUpLicenseServices = "signUp_licenseServices"
         case signUpLicenseProducts = "signUp_licenseProducts"
         case signUpGoChargeSuccess = "goChargeLogin_register_ok"
+        case signUpAcpCardNumber = "signUpAcpCardNumber"
+        case signUpAcpMemberNumber = "signUpAcpMemberNumber"
         // MARK: - LOGIN PAGE CODING KEYS PROPERTIES
         case loginButtonTitle = "login_buttonTitle"
         case loginForgotPassword = "login_forgotPassword"
@@ -1926,6 +1930,8 @@ public struct EVIOLanguage: Codable {
         self.signUpLicenseServices = try container.decodeIfPresent(String.self, forKey: .signUpLicenseServices) ?? NSLocalizedString(CodingKeys.signUpLicenseServices.rawValue, comment: "")
         self.signUpLicenseProducts = try container.decodeIfPresent(String.self, forKey: .signUpLicenseProducts) ?? NSLocalizedString(CodingKeys.signUpLicenseProducts.rawValue, comment: "")
         self.signUpGoChargeSuccess = try container.decodeIfPresent(String.self, forKey: .signUpGoChargeSuccess) ?? NSLocalizedString(CodingKeys.signUpGoChargeSuccess.rawValue, comment: "")
+        self.signUpAcpCardNumber = try container.decodeIfPresent(String.self, forKey: .signUpAcpCardNumber) ?? NSLocalizedString(CodingKeys.signUpAcpCardNumber.rawValue, comment: "")
+        self.signUpAcpMemberNumber = try container.decodeIfPresent(String.self, forKey: .signUpAcpMemberNumber) ?? NSLocalizedString(CodingKeys.signUpAcpMemberNumber.rawValue, comment: "")
         // MARK: - LOGIN PAGE KEYS
         self.loginButtonTitle = try container.decodeIfPresent(String.self, forKey: .loginButtonTitle) ?? NSLocalizedString(CodingKeys.loginButtonTitle.rawValue, comment: "")
         self.loginForgotPassword = try container.decodeIfPresent(String.self, forKey: .loginForgotPassword) ?? NSLocalizedString(CodingKeys.loginForgotPassword.rawValue, comment: "")
@@ -2684,6 +2690,8 @@ public struct EVIOLanguage: Codable {
         self.signUpLicenseServices = NSLocalizedString(CodingKeys.signUpLicenseServices.rawValue, comment: "")
         self.signUpLicenseProducts = NSLocalizedString(CodingKeys.signUpLicenseProducts.rawValue, comment: "")
         self.signUpGoChargeSuccess = NSLocalizedString(CodingKeys.signUpGoChargeSuccess.rawValue, comment: "")
+        self.signUpAcpCardNumber = NSLocalizedString(CodingKeys.signUpAcpCardNumber.rawValue, comment: "")
+        self.signUpAcpMemberNumber = NSLocalizedString(CodingKeys.signUpAcpMemberNumber.rawValue, comment: "")
         // MARK: - LOGIN PAGE DEFAULT KEYS
         self.loginButtonTitle = NSLocalizedString(CodingKeys.loginButtonTitle.rawValue, comment: "")
         self.loginForgotPassword = NSLocalizedString(CodingKeys.loginForgotPassword.rawValue, comment: "")

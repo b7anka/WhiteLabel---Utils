@@ -1055,7 +1055,7 @@ public struct EVIOLanguage: Codable {
         // MARK: - AVALABILITY CODING KEYS PROPERTIES
         case availabilityTo = "availability_to"
         // MARK: - CONTRACTS PAGE CODING KEYS PROPERTIES
-        case contractsTitle = "contracts_title"
+        case contractsTitle = "contracts_newTitle"
         case contractsRoamingNotActive = "contracts_roamingNotActive"
         case contractsMyContracts = "contracts_myContracts"
         case contractsOtherContracts = "contracts_otherContracts"

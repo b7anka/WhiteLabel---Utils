@@ -329,6 +329,7 @@ public struct EVIOLanguage: Codable {
     public let contractsClientIdentification: String
     public let contractsCardActivatedSuccessfully: String
     public let contractsPaymentMethod: String
+    public let contractsMessageInfoActivationMobie: String
     // MARK: - EVS KEYS PROPERTIES
     public let evsSelectEvTitle: String
     public let evsMyEvs: String
@@ -1090,6 +1091,7 @@ public struct EVIOLanguage: Codable {
         case contractsClientIdentification = "contracts_clientIdentification"
         case contractsCardActivatedSuccessfully = "contracts_cardActivatedSuccessfully"
         case contractsPaymentMethod = "contracts_paymentMethod"
+        case contractsMessageInfoActivationMobie = "contracts_messageInfoActivationMobie"
         // MARK: - EVS PAGE CODING KEYS PROPERTIES
         case evsSelectEvTitle = "evs_selectEvTitle"
         case evsMyEvs = "evs_myEvs"
@@ -1851,6 +1853,7 @@ public struct EVIOLanguage: Codable {
         self.contractsClientIdentification = try container.decodeIfPresent(String.self, forKey: .contractsClientIdentification) ?? NSLocalizedString(CodingKeys.contractsClientIdentification.rawValue, comment: "")
         self.contractsCardActivatedSuccessfully = try container.decodeIfPresent(String.self, forKey: .contractsCardActivatedSuccessfully) ?? NSLocalizedString(CodingKeys.contractsCardActivatedSuccessfully.rawValue, comment: "")
         self.contractsPaymentMethod = try container.decodeIfPresent(String.self, forKey: .contractsPaymentMethod) ?? NSLocalizedString(CodingKeys.contractsPaymentMethod.rawValue, comment: "")
+        self.contractsMessageInfoActivationMobie = try container.decodeIfPresent(String.self, forKey: .contractsMessageInfoActivationMobie) ?? NSLocalizedString(CodingKeys.contractsMessageInfoActivationMobie.rawValue, comment: "")
         // MARK: - EVS PAGE KEYS
         self.evsSelectEvTitle = try container.decodeIfPresent(String.self, forKey: .evsSelectEvTitle) ?? NSLocalizedString(CodingKeys.evsSelectEvTitle.rawValue, comment: "")
         self.evsMyEvs = try container.decodeIfPresent(String.self, forKey: .evsMyEvs) ?? NSLocalizedString(CodingKeys.evsMyEvs.rawValue, comment: "")
@@ -2611,6 +2614,7 @@ public struct EVIOLanguage: Codable {
         self.contractsClientIdentification = NSLocalizedString(CodingKeys.contractsClientIdentification.rawValue, comment: "")
         self.contractsCardActivatedSuccessfully = NSLocalizedString(CodingKeys.contractsCardActivatedSuccessfully.rawValue, comment: "")
         self.contractsPaymentMethod = NSLocalizedString(CodingKeys.contractsPaymentMethod.rawValue, comment: "")
+        self.contractsMessageInfoActivationMobie = NSLocalizedString(CodingKeys.contractsMessageInfoActivationMobie.rawValue, comment: "")
         // MARK: - EVS PAGE DEFAULT KEYS
         self.evsSelectEvTitle = NSLocalizedString(CodingKeys.evsSelectEvTitle.rawValue, comment: "")
         self.evsMyEvs = NSLocalizedString(CodingKeys.evsMyEvs.rawValue, comment: "")

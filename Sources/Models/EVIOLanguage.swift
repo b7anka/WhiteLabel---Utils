@@ -768,6 +768,9 @@ public struct EVIOLanguage: Codable {
     public let cancelCardOther: String
     public let cancelCardWantReplacement: String
     public let cancelCardSuccessCanceledMessage: String
+    // MARK: - ACTIVATE NETWORK VIEW PROPERTIES
+    public let activateNetworkGireve: String
+    public let activateNetworkMobie: String
     
     // MARK: - CODING KEYS
     private enum CodingKeys: String, CodingKey {
@@ -1529,6 +1532,9 @@ public struct EVIOLanguage: Codable {
         case cancelCardOther = "cancelCard_other"
         case cancelCardWantReplacement = "cancelCard_wantReplacement"
         case cancelCardSuccessCanceledMessage = "cancelCard_successCanceledMessage"
+        // MARK: - ACTIVATE NETWORK VIEW KEYS PROPERTIES
+        case activateNetworkGireve = "activateNetwork_gireve"
+        case activateNetworkMobie = "activateNetwork_mobie"
     }
     
     public init(from decoder: Decoder) throws {
@@ -2291,6 +2297,9 @@ public struct EVIOLanguage: Codable {
         self.cancelCardOther = try container.decodeIfPresent(String.self, forKey: .cancelCardOther) ?? NSLocalizedString(CodingKeys.cancelCardOther.rawValue, comment: "")
         self.cancelCardWantReplacement = try container.decodeIfPresent(String.self, forKey: .cancelCardWantReplacement) ?? NSLocalizedString(CodingKeys.cancelCardWantReplacement.rawValue, comment: "")
         self.cancelCardSuccessCanceledMessage = try container.decodeIfPresent(String.self, forKey: .cancelCardSuccessCanceledMessage) ?? NSLocalizedString(CodingKeys.cancelCardSuccessCanceledMessage.rawValue, comment: "")
+        // MARK: - ACTIVATE NETWORK VIEW KEYS PROPERTIES
+        self.activateNetworkGireve = try container.decodeIfPresent(String.self, forKey: .activateNetworkGireve) ?? NSLocalizedString(CodingKeys.activateNetworkGireve.rawValue, comment: "")
+        self.activateNetworkMobie = try container.decodeIfPresent(String.self, forKey: .activateNetworkMobie) ?? NSLocalizedString(CodingKeys.activateNetworkMobie.rawValue, comment: "")
     }
     
     public init() {
@@ -3052,6 +3061,9 @@ public struct EVIOLanguage: Codable {
         self.cancelCardOther = NSLocalizedString(CodingKeys.cancelCardOther.rawValue, comment: "")
         self.cancelCardWantReplacement = NSLocalizedString(CodingKeys.cancelCardWantReplacement.rawValue, comment: "")
         self.cancelCardSuccessCanceledMessage = NSLocalizedString(CodingKeys.cancelCardSuccessCanceledMessage.rawValue, comment: "")
+        // MARK: - ACTIVATE NETWORK VIEW KEYS PROPERTIES
+        self.activateNetworkGireve = NSLocalizedString(CodingKeys.activateNetworkGireve.rawValue, comment: "")
+        self.activateNetworkMobie = NSLocalizedString(CodingKeys.activateNetworkMobie.rawValue, comment: "")
     }
     
 }

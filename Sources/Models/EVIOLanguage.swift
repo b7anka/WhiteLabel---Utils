@@ -1135,7 +1135,7 @@ public struct EVIOLanguage: Codable {
         case validationMessageProceedNowBt = "validationMessage_proceedNowBt"
         case validationMessageAdhocInfo2iOS = "validationMessage_adhocInfo2iOS"
         case validationMessageMessageInfoActivationOkGv = "validationMessage_messageInfoActivationOkGv"
-        case validationMessageNotHaveContractRoamingNote = "validationMessage_notHaveContractRoamingNote"
+        case validationMessageNotHaveContractRoamingNote = "validationMessage_notHaveContractRoamingNoteNew"
         case validationMessageAdhocInfoNew = "validationMessage_adhocInfoNew"
         case validationMessageAdhocFooterNote = "validationMessage_adhocFooterNote"
         case validationMessageAdhocFooterNoteUnderline = "validationMessage_adhocFooterNote_underline"

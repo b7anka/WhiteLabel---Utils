@@ -70,4 +70,5 @@ public extension Notification.Name {
     static let userInvalid: Notification.Name = Notification.Name(rawValue: .userInvalid)
     static let userNeedsToUpdateApp: Notification.Name = Notification.Name(rawValue: .userNeedsToUpdateApp)
     static let contractSelectedAndEvSelected: Notification.Name = Notification.Name(rawValue: .contractSelectedAndEvSelected)
+    static let automaticallyCloseCreateAccountPage: Notification.Name = Notification.Name(rawValue: .automaticallyCloseCreateAccountPage)
 }

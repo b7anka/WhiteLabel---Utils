@@ -129,5 +129,6 @@ public extension String {
     static let userNeedsToUpdateApp: String = "userNeedsToUpdateApp"
     static let ´default´: String = "default"
     static let contractSelectedAndEvSelected: String = "contractSelectedAndEvSelected"
+    static let automaticallyCloseCreateAccountPage: String = "automaticallyCloseCreateAccountPage"
     
 }

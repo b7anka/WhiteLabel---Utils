@@ -776,6 +776,9 @@ public struct EVIOLanguage: Codable {
     public let mapListRelevance: String
     public let mapListPrice: String
     public let mapListDistance: String
+    // MARK: - ACP ASSISTENCE VIEW PROPERTIES
+    public let acpAssistanceTitle: String
+    public let acpAssistancePhoneNumber: String
     
     // MARK: - CODING KEYS
     private enum CodingKeys: String, CodingKey {
@@ -1545,6 +1548,9 @@ public struct EVIOLanguage: Codable {
         case mapListRelevance = "mapList_relevance"
         case mapListPrice = "mapList_price"
         case mapListDistance = "mapList_distance"
+        // MARK: - ACP ASSISTENCE VIEW PROPERTIES
+        case acpAssistanceTitle = "acpAssistance_title"
+        case acpAssistancePhoneNumber = "acpAssistance_phoneNumber"
     }
     
     public init(from decoder: Decoder) throws {
@@ -2315,6 +2321,9 @@ public struct EVIOLanguage: Codable {
         self.mapListRelevance = try container.decodeIfPresent(String.self, forKey: .mapListRelevance) ?? NSLocalizedString(CodingKeys.mapListRelevance.rawValue, comment: "")
         self.mapListPrice = try container.decodeIfPresent(String.self, forKey: .mapListPrice) ?? NSLocalizedString(CodingKeys.mapListPrice.rawValue, comment: "")
         self.mapListDistance = try container.decodeIfPresent(String.self, forKey: .mapListDistance) ?? NSLocalizedString(CodingKeys.mapListDistance.rawValue, comment: "")
+        // MARK: - ACP ASSISTENCE VIEW PROPERTIES
+        self.acpAssistanceTitle = try container.decodeIfPresent(String.self, forKey: .acpAssistanceTitle) ?? NSLocalizedString(CodingKeys.acpAssistanceTitle.rawValue, comment: "")
+        self.acpAssistancePhoneNumber = try container.decodeIfPresent(String.self, forKey: .acpAssistancePhoneNumber) ?? NSLocalizedString(CodingKeys.acpAssistancePhoneNumber.rawValue, comment: "")
     }
     
     public init() {
@@ -3084,6 +3093,9 @@ public struct EVIOLanguage: Codable {
         self.mapListRelevance = NSLocalizedString(CodingKeys.mapListRelevance.rawValue, comment: "")
         self.mapListPrice = NSLocalizedString(CodingKeys.mapListPrice.rawValue, comment: "")
         self.mapListDistance = NSLocalizedString(CodingKeys.mapListDistance.rawValue, comment: "")
+        // MARK: - ACP ASSISTENCE VIEW PROPERTIES
+        self.acpAssistanceTitle = NSLocalizedString(CodingKeys.acpAssistanceTitle.rawValue, comment: "")
+        self.acpAssistancePhoneNumber = NSLocalizedString(CodingKeys.acpAssistancePhoneNumber.rawValue, comment: "")
     }
     
 }

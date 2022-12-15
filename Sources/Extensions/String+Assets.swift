@@ -46,6 +46,7 @@ public extension String {
     static let verticalEllipsis: String = "verticalEllipsis"
     static let imageSelectionButtonIcon: String = "imageSelectionButtonIcon"
     static let supportaddImage: String = "supportaddImage"
+    static let tripAssistanceIcon: String = "tripAssistanceIcon"
     
     // MARK: - CONNECTOR TYPE
     static let ccs1: String = "ccs1"

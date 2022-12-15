@@ -24,15 +24,6 @@ public final class EVIOAPIClient: ObservableObject {
     // MARK: - PUBLIC PROPERTIES
     // the headers used by the app
     public var headers: EVIOHeaders = EVIOHeaders(apiKey: nil, evioAppVersion: nil, mobileBrand: nil, mobileModel: nil, mobileVersion: nil, refreshToken: nil, token: nil)
-    #if DEBUG
-    // the server url being used in debug
-    public var serverUrl: EVIOServerAddresses = .pre {
-        didSet {
-            // once this variable is set we ask the root view model to update the server url property
-            self.serverInUse = self.serverUrl.description
-        }
-    }
-    #else
     // the server url being used in production
     public var serverUrl: EVIOServerAddresses = .prod {
         didSet {
@@ -40,7 +31,6 @@ public final class EVIOAPIClient: ObservableObject {
             self.serverInUse = self.serverUrl.description
         }
     }
-    #endif
     
     // MARK: - PRIVATE PROPERTIES
     #if DEBUG

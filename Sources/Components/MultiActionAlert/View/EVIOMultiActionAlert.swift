@@ -37,19 +37,6 @@ public struct EVIOMultiActionAlert: View {
                         .padding(self.viewModel.title == nil ? .all : .horizontal)
                 })
                 HStack {
-                    if self.viewModel.alertType == .twoActions {
-                        Spacer()
-                        Button(action: {
-                            self.feedbackGenerator.impactOccurred()
-                            withoutAnimation {
-                                self.presentationMode.wrappedValue.dismiss()
-                            }
-                            self.completion(.negative)
-                        }, label: {
-                            Text(self.viewModel.negativeActionTitle)
-                                .modifier(EVIOAlertTitleModifier())
-                        })
-                    }
                     Spacer()
                     Button(action: {
                         self.feedbackGenerator.impactOccurred()
@@ -62,6 +49,19 @@ public struct EVIOMultiActionAlert: View {
                             .modifier(EVIOAlertTitleModifier(color: .tertiaryBackground))
                     })
                     Spacer()
+                    if self.viewModel.alertType == .twoActions {
+                        Button(action: {
+                            self.feedbackGenerator.impactOccurred()
+                            withoutAnimation {
+                                self.presentationMode.wrappedValue.dismiss()
+                            }
+                            self.completion(.negative)
+                        }, label: {
+                            Text(self.viewModel.negativeActionTitle)
+                                .modifier(EVIOAlertTitleModifier())
+                        })
+                        Spacer()
+                    }
                 }.frame(width: UIScreen.main.bounds.width * 0.92, height: 56).padding(.horizontal)
             }
             .frame(width: UIScreen.main.bounds.width * 0.92, height: self.viewModel.height)

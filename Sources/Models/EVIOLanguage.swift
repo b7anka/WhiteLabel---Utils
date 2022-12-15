@@ -771,6 +771,11 @@ public struct EVIOLanguage: Codable {
     // MARK: - ACTIVATE NETWORK VIEW PROPERTIES
     public let activateNetworkGireve: String
     public let activateNetworkMobie: String
+    // MARK: - MAP LIST VIEW PROPERTIES
+    public let mapListTitle: String
+    public let mapListRelevance: String
+    public let mapListPrice: String
+    public let mapListDistance: String
     
     // MARK: - CODING KEYS
     private enum CodingKeys: String, CodingKey {
@@ -1535,6 +1540,11 @@ public struct EVIOLanguage: Codable {
         // MARK: - ACTIVATE NETWORK VIEW KEYS PROPERTIES
         case activateNetworkGireve = "activateNetwork_gireve"
         case activateNetworkMobie = "activateNetwork_mobie"
+        // MARK: - MAP LIST VIEW KEYS PROPERTIES
+        case mapListTitle = "mapList_title"
+        case mapListRelevance = "mapList_relevance"
+        case mapListPrice = "mapList_price"
+        case mapListDistance = "mapList_distance"
     }
     
     public init(from decoder: Decoder) throws {
@@ -2300,6 +2310,11 @@ public struct EVIOLanguage: Codable {
         // MARK: - ACTIVATE NETWORK VIEW KEYS PROPERTIES
         self.activateNetworkGireve = try container.decodeIfPresent(String.self, forKey: .activateNetworkGireve) ?? NSLocalizedString(CodingKeys.activateNetworkGireve.rawValue, comment: "")
         self.activateNetworkMobie = try container.decodeIfPresent(String.self, forKey: .activateNetworkMobie) ?? NSLocalizedString(CodingKeys.activateNetworkMobie.rawValue, comment: "")
+        // MARK: - MAP LIST VIEW KEYS PROPERTIES
+        self.mapListTitle = try container.decodeIfPresent(String.self, forKey: .mapListTitle) ?? NSLocalizedString(CodingKeys.mapListTitle.rawValue, comment: "")
+        self.mapListRelevance = try container.decodeIfPresent(String.self, forKey: .mapListRelevance) ?? NSLocalizedString(CodingKeys.mapListRelevance.rawValue, comment: "")
+        self.mapListPrice = try container.decodeIfPresent(String.self, forKey: .mapListPrice) ?? NSLocalizedString(CodingKeys.mapListPrice.rawValue, comment: "")
+        self.mapListDistance = try container.decodeIfPresent(String.self, forKey: .mapListDistance) ?? NSLocalizedString(CodingKeys.mapListDistance.rawValue, comment: "")
     }
     
     public init() {
@@ -3064,6 +3079,11 @@ public struct EVIOLanguage: Codable {
         // MARK: - ACTIVATE NETWORK VIEW KEYS PROPERTIES
         self.activateNetworkGireve = NSLocalizedString(CodingKeys.activateNetworkGireve.rawValue, comment: "")
         self.activateNetworkMobie = NSLocalizedString(CodingKeys.activateNetworkMobie.rawValue, comment: "")
+        // MARK: - MAP LIST VIEW KEYS PROPERTIES
+        self.mapListTitle = NSLocalizedString(CodingKeys.mapListTitle.rawValue, comment: "")
+        self.mapListRelevance = NSLocalizedString(CodingKeys.mapListRelevance.rawValue, comment: "")
+        self.mapListPrice = NSLocalizedString(CodingKeys.mapListPrice.rawValue, comment: "")
+        self.mapListDistance = NSLocalizedString(CodingKeys.mapListDistance.rawValue, comment: "")
     }
     
 }

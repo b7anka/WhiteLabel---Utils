@@ -214,4 +214,8 @@ public extension EVIOCharger {
         return nil
     }
     
+    func sortPlugsByPrice() {
+        self.plugs?.sort(by: { $0.price ?? -1 < $1.price ?? -1})
+    }
+    
 }

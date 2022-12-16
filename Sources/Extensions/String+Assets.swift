@@ -364,6 +364,7 @@ public extension String {
     static let mapChargersListBackgroundColor: String = "mapChargersListBackgroundColor"
     static let mapChargersListSelectedColor: String = "mapChargersListSelectedColor"
     static let mapChargersListTextColor: String = "mapChargersListTextColor"
+    static let _F0F2FA: String = "F0F2FA"
     
     // MARK: - ACTIVATION PAGE
     static let checkmarkIcon: String = "checkmarkIcon"

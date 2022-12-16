@@ -106,6 +106,8 @@ public extension Color {
     static let mapChargersListSelectedColor: Color = Color(.mapChargersListSelectedColor, bundle: nil)
     static let mapChargersListTextColor: Color = Color(.mapChargersListTextColor, bundle: nil)
     
+    static let _F0F2FA: Color = Color(._F0F2FA, bundle: nil)
+    
     static func colorFor(status: EVIOStatus) -> Color {
         switch status {
         case .free:

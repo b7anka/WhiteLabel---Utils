@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class EVIOPlug: Codable {
+public final class EVIOPlug: Codable, Hashable {
     
     public var status: EVIOStatus?
     public var id: String?
@@ -79,6 +79,10 @@ public final class EVIOPlug: Codable {
         self.selected = false
         self.tariffId = []
         self.price = nil
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(self.id)
     }
     
 }

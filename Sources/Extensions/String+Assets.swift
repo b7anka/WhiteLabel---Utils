@@ -277,6 +277,7 @@ public extension String {
     static let dollarSignCircleFill: String = "dollarsign.circle.fill"
     static let plusCircleFill: String = "plus.circle.fill"
     static let minusCircleFill: String = "minus.circle.fill"
+    static let listBullet: String = "list.bullet"
     
     // MARK: - COLORS
     static let primaryBackground: String = "primaryBackground"

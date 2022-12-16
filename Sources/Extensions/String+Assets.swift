@@ -278,6 +278,7 @@ public extension String {
     static let plusCircleFill: String = "plus.circle.fill"
     static let minusCircleFill: String = "minus.circle.fill"
     static let listBullet: String = "list.bullet"
+    static let arrowUpArrowDown: String = "arrow.up.arrow.down"
     
     // MARK: - COLORS
     static let primaryBackground: String = "primaryBackground"

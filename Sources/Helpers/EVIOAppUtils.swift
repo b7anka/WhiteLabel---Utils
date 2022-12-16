@@ -20,6 +20,7 @@ public struct EVIOAppUtils {
     public var weekDaysLong: [String]
     public var months: [String]
     public var monthsLong: [String]
+    public let request = MKDirections.Request()
     
     public init() {
         let dtFormatter = DateFormatter()
@@ -246,6 +247,22 @@ public struct EVIOAppUtils {
         } else {
             return self.getDefaultSliderSizeValues(maxPower: maxPower, maxValue: maxValue)
         }
+    }
+    
+    public func calculateDistance(sourceCoordinate: CLLocation, destinationCoordinate: CLLocation, completion: @escaping (MKRoute?) -> Void) {
+        let sourceP = CLLocationCoordinate2DMake(sourceCoordinate.coordinate.latitude, sourceCoordinate.coordinate.longitude)
+        let destP = CLLocationCoordinate2DMake(destinationCoordinate.coordinate.latitude, destinationCoordinate.coordinate.longitude)
+        let source = MKPlacemark(coordinate: sourceP)
+        let destination = MKPlacemark(coordinate: destP)
+        self.request.source      = MKMapItem(placemark: source)
+        self.request.destination = MKMapItem(placemark: destination)
+        self.request.transportType = MKDirectionsTransportType.automobile
+        self.request.requestsAlternateRoutes = true
+        let directions = MKDirections(request: request)
+        directions.calculate { (response, error) in
+            completion(response?.routes.first)
+        }
+        
     }
     
     public func saveDataToUserStorage(data: Data, filename: String, fileExtension: String, completion: @escaping (URL?) -> Void) {

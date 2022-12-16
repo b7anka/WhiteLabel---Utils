@@ -8,13 +8,13 @@
 
 import SwiftUI
 
-struct UIGrid<Content: View, T: Hashable>: View {
+public struct UIGrid<Content: View, T: Hashable>: View {
     
     private let columns: Int
     private var list: [[T]] = []
     private let content: (T) -> Content
     
-    init(columns: Int, list: [T], @ViewBuilder content: @escaping (T) -> Content) {
+    public init(columns: Int, list: [T], @ViewBuilder content: @escaping (T) -> Content) {
         self.columns = columns
         self.content = content
         self.setupList(list)
@@ -41,7 +41,7 @@ struct UIGrid<Content: View, T: Hashable>: View {
         }
     }
     
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading, spacing: .zero) {
             ForEach(0 ..< self.list.count, id: \.self) { i  in
                 HStack(alignment: .top, spacing: .zero) {

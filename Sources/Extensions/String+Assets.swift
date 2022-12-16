@@ -360,6 +360,9 @@ public extension String {
     static let notificationBadgeColor: String = "notificationBadgeColor"
     static let passwordViewCorrectColor: String = "passwordViewCorrectColor"
     static let passwordViewWrongColor: String = "passwordViewWrongColor"
+    static let mapChargersListBackgroundColor: String = "mapChargersListBackgroundColor"
+    static let mapChargersListSelectedColor: String = "mapChargersListSelectedColor"
+    static let mapChargersListTextColor: String = "mapChargersListTextColor"
     
     // MARK: - ACTIVATION PAGE
     static let checkmarkIcon: String = "checkmarkIcon"

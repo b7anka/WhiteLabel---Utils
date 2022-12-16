@@ -102,6 +102,10 @@ public extension Color {
     static let passwordViewCorrectColor: Color = Color(.passwordViewCorrectColor, bundle: nil)
     static let passwordViewWrongColor: Color = Color(.passwordViewWrongColor, bundle: nil)
     
+    static let mapChargersListBackgroundColor: Color = Color(.mapChargersListBackgroundColor, bundle: nil)
+    static let mapChargersListSelectedColor: Color = Color(.mapChargersListSelectedColor, bundle: nil)
+    static let mapChargersListTextColor: Color = Color(.mapChargersListTextColor, bundle: nil)
+    
     static func colorFor(status: EVIOStatus) -> Color {
         switch status {
         case .free:

@@ -11,12 +11,16 @@ public struct EVIOSearchBarButton: View {
     
     private let imageName: String
     private let action: (() -> Void)
+    private var useSystemImage: Bool
     private let feedbackGenerator: UIImpactFeedbackGenerator
+    @Binding private var systemImageColor: Color
     
-    public init(imageName: String, action: @escaping () -> Void) {
+    public init(systemImageColor: Binding<Color> = .constant(.secondaryTextColor), useSystemImage: Bool = false, imageName: String, action: @escaping () -> Void) {
+        self.useSystemImage = useSystemImage
         self.imageName = imageName
         self.action = action
         self.feedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
+        self._systemImageColor = systemImageColor
     }
     
     public var body: some View {
@@ -24,10 +28,18 @@ public struct EVIOSearchBarButton: View {
             self.feedbackGenerator.impactOccurred()
             self.action()
         }) {
-            Image(self.imageName)
-                .resizable()
-                .aspectRatio(nil, contentMode: .fit)
-                .frame(height: 22)
+            if self.useSystemImage {
+                Image(systemName: self.imageName)
+                    .resizable()
+                    .aspectRatio(nil, contentMode: .fit)
+                    .foregroundColor(self.systemImageColor)
+                    .frame(height: 22)
+            } else {
+                Image(self.imageName)
+                    .resizable()
+                    .aspectRatio(nil, contentMode: .fit)
+                    .frame(height: 22)
+            }
         }
     }
 }

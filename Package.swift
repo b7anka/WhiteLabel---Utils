@@ -25,7 +25,7 @@ let package = Package(
         .package(url: "https://github.com/danielgindi/Charts.git", from: "4.1.0"),
         .package(url: "https://github.com/evgenyneu/Cosmos.git", from: "23.0.0"),
         .package(url: "https://github.com/Mobilinked/MbSwiftUIFirstResponder", branch: "main"),
-        .package(url: "https://github.com/JWAutumn/ACarousel", branch: "main"),
+        .package(url: "https://github.com/b7anka/ACarousel", branch: "main"),
         .package(url: "https://github.com/kizitonwose/CountryPickerView.git", from: "3.3.0"),
         .package(url: "https://github.com/onevcat/Kingfisher.git", from: "7.3.1"),
         .package(url: "https://github.com/airbnb/lottie-ios.git", from: "3.4.1"),

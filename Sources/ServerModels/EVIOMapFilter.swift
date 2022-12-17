@@ -21,10 +21,16 @@ public struct EVIOMapFilter: Codable, Equatable {
     public var ev: EVIOEv?
     public var onlyAvailable: Bool
     public var tariffType: EVIOMapFilterTariffType?
+    public var evId: String?
+    public var contractId: String?
+    public var filterBy: String?
     
     public init(id: String = UUID().uuidString) {
         self.id = id
         self.availableStations = []
+        self.evId = nil
+        self.contractId = nil
+        self.filterBy = nil
         self.connectorType = []
         self.parkingType = []
         self.vehicles = []

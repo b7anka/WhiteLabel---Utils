@@ -33,7 +33,7 @@ public extension UIImage {
     /// - Returns: returns a new image with the scale factor provided or the original image if the cgImage could not be parsed from the original image
     func scaleImageWith(scaleFactor: CGFloat = .defaultScaleFactorForMapAnnotations) -> UIImage {
         guard let cgImage = self.cgImage else { return self }
-        return UIImage(cgImage: cgImage, scale: UIScreen.main.scale * scaleFactor, orientation: self.imageOrientation)
+        return UIImage(cgImage: cgImage, scale: self.scale * scaleFactor, orientation: self.imageOrientation)
     }
     
     /// # CREATES AN IMAGE OF A CIRCLE WITH THE PARAMETERS PROVIDED

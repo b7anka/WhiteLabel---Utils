@@ -47,5 +47,6 @@ public extension CGFloat {
     static let heightMarginForFiltersListItemView: CGFloat = 20
     // default height for resizing an image
     static let imageResizeHeight: CGFloat = 1000
+    static let insetForChargersListCard: CGFloat = 22
     
 }

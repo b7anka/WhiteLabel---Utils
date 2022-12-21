@@ -369,6 +369,8 @@ public extension String {
     static let comparatorListItemBackgroundColor: String = "comparatorListItemBackgroundColor"
     static let mapChargersListFilterIconSelectedColor: String = "mapChargersListFilterIconSelectedColor"
     static let mapChargersListFilterIconUnselectedColor: String = "mapChargersListFilterIconUnselectedColor"
+    static let comparatorListItemImageBackroundColor: String = "comparatorListItemImageBackroundColor"
+    static let comparatorListItemTextColor: String = "comparatorListItemTextColor"
     
     // MARK: - ACTIVATION PAGE
     static let checkmarkIcon: String = "checkmarkIcon"
@@ -429,5 +431,6 @@ public extension String {
     static let insightsAverageChargingTime: String = "insightsAverageChargingTime"
     static let insightsAverageEnergySuppliedIcon: String = "insightsAverageEnergySuppliedIcon"
     static let insightsMostUsedPlugIcon: String = "insightsMostUsedPlugIcon"
+    
     
 }

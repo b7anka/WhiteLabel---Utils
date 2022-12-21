@@ -97,19 +97,17 @@ public extension Color {
     static let alternativeSemiTransparent: Color = Color(.sRGB, red: 80.0/255.0, green: 85.0/255.0, blue: 100.0/255.0, opacity: 0.67)
     static let transparent: Color = .black.opacity(0.0001)
     static let alternativeTransparent: Color = Color(.sRGB, red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, opacity: 0.35)
-    
     static let notificationBadgeColor: Color = Color(.notificationBadgeColor, bundle: nil)
     static let passwordViewCorrectColor: Color = Color(.passwordViewCorrectColor, bundle: nil)
     static let passwordViewWrongColor: Color = Color(.passwordViewWrongColor, bundle: nil)
-    
     static let mapChargersListBackgroundColor: Color = Color(.mapChargersListBackgroundColor, bundle: nil)
     static let mapChargersListSelectedColor: Color = Color(.mapChargersListSelectedColor, bundle: nil)
     static let mapChargersListTextColor: Color = Color(.mapChargersListTextColor, bundle: nil)
-    
     static let mapChargersListFilterIconSelectedColor: Color = Color(.mapChargersListFilterIconSelectedColor, bundle: nil)
     static let mapChargersListFilterIconUnselectedColor: Color = Color(.mapChargersListFilterIconUnselectedColor, bundle: nil)
-    
     static let comparatorListItemBackgroundColor: Color = Color(.comparatorListItemBackgroundColor, bundle: nil)
+    static let comparatorListItemTextColor: Color = Color(.comparatorListItemTextColor, bundle: nil)
+    static let comparatorListItemImageBackroundColor: Color = Color(.comparatorListItemImageBackroundColor, bundle: nil)
     
     static let _F0F2FA: Color = Color(._F0F2FA, bundle: nil)
     

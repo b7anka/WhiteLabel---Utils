@@ -109,6 +109,8 @@ public extension Color {
     static let mapChargersListFilterIconSelectedColor: Color = Color(.mapChargersListFilterIconSelectedColor, bundle: nil)
     static let mapChargersListFilterIconUnselectedColor: Color = Color(.mapChargersListFilterIconUnselectedColor, bundle: nil)
     
+    static let comparatorListItemBackgroundColor: Color = Color(.comparatorListItemBackgroundColor, bundle: nil)
+    
     static let _F0F2FA: Color = Color(._F0F2FA, bundle: nil)
     
     static func colorFor(status: EVIOStatus) -> Color {

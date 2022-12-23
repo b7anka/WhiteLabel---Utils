@@ -25,13 +25,15 @@ public struct EVIOUser: Codable {
     public var v: Int?
     public var userPackage: EVIOUserPackage?
     public var evioCommission: EVIOCommission?
+    public var cardNumber: String?
+    public var memberNumber: String?
 
     enum CodingKeys: String, CodingKey {
         case active, validated, licenseAgreement, licenseMarketing, licenseServices, licenseProducts, country, language, internationalPrefix, accessType, devUser, blocked, paymentPeriod, needChangePassword, isBankTransferEnabled, isMBRefEnabled, changedEmail
         case id = "_id"
         case name, email, username, mobile, imageContent, createDate, favorites, referencePlaces, createdAt, updatedAt
         case v = "__v"
-        case userPackage, evioCommission
+        case userPackage, evioCommission, cardNumber, memberNumber
     }
     
 }

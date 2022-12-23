@@ -260,7 +260,13 @@ public struct EVIOAppUtils {
         self.request.requestsAlternateRoutes = true
         let directions = MKDirections(request: request)
         directions.calculate { (response, error) in
-            completion(response?.routes.first)
+            var routeToSend: MKRoute?
+            for route in response?.routes ?? [] {
+                if routeToSend == nil || route.distance < routeToSend?.distance ?? -1 {
+                    routeToSend = route
+                }
+            }
+            completion(routeToSend)
         }
         
     }

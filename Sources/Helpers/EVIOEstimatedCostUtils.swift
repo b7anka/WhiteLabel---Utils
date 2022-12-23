@@ -24,7 +24,7 @@ public struct EVIOEstimatedCostUtils {
         } else if charger.isTesla {
             maxBatteryCapacity = EVIOEv.teslaModelS.evInfo?.maxBatteryCapacity ?? .zero
         } else {
-            maxBatteryCapacity = EVIOEv.renaultZoe.evInfo?.maxBatteryCapacity ?? .zero
+            maxBatteryCapacity = EVIOEv.id3.evInfo?.maxBatteryCapacity ?? .zero
         }
         
         var maxBatteryChargingCapacity: Double = 0.0
@@ -304,7 +304,7 @@ public struct EVIOEstimatedCostUtils {
     }
     
     private func getDefaultEvForEstimatedCost(charger: EVIOCharger) -> EVIOEv {
-        return charger.isTesla ? EVIOEv.teslaModelS : EVIOEv.renaultZoe
+        return charger.isTesla ? EVIOEv.teslaModelS : EVIOEv.id3
     }
     
     private func calculateEVIOCost(charger: EVIOCharger, plug: EVIOPlug, estimateTime: Double, consumption: Double, ceme: EVIOCemeTariff, duration: Double, ev: EVIOEv?, contract: EVIOContract?) -> EVIOEstimatedCost? {

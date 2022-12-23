@@ -262,7 +262,7 @@ public struct EVIOAppUtils {
         directions.calculate { (response, error) in
             var routeToSend: MKRoute?
             for route in response?.routes ?? [] {
-                if routeToSend == nil || route.distance < routeToSend?.distance ?? -1 {
+                if routeToSend == nil || route.expectedTravelTime < routeToSend?.expectedTravelTime ?? -1 {
                     routeToSend = route
                 }
             }

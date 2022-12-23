@@ -246,6 +246,7 @@ public struct EVIOLanguage: Codable {
     public let chargerPointFullDetailsChargingTimeMinimumDuration: String
     public let chargerDetailsGoToPaymentMethods: String
     public let chargerDetailsGoToBillingProfile: String
+    public let chargerDetailsInfoEstimatedPrice30min: String
     // MARK: - PLUG STATUS KEYS PROPERTIES
     public let plugStatusAvailable: String
     public let plugStatusBlocked: String
@@ -1021,6 +1022,7 @@ public struct EVIOLanguage: Codable {
         case chargerPointFullDetailsChargingTimeMinimumDuration = "chargerPointFullDetails_chargingTimeMinimumDuration"
         case chargerDetailsGoToPaymentMethods = "chargerDetails_goToPaymentMethods"
         case chargerDetailsGoToBillingProfile = "chargerDetails_goToBillingProfile"
+        case chargerDetailsInfoEstimatedPrice30min = "chargerDetails_infoEstimatedPrice30min"
         // MARK: - PLUG STATUS CODING KEYS PROPERTIES
         case plugStatusAvailable = "plugStatus_available"
         case plugStatusBlocked = "plugStatus_blocked"
@@ -1796,6 +1798,7 @@ public struct EVIOLanguage: Codable {
         self.chargerPointFullDetailsChargingTimeMinimumDuration = try container.decodeIfPresent(String.self, forKey: .chargerPointFullDetailsChargingTimeMinimumDuration) ?? NSLocalizedString(CodingKeys.chargerPointFullDetailsChargingTimeMinimumDuration.rawValue, comment: .empty)
         self.chargerDetailsGoToPaymentMethods = try container.decodeIfPresent(String.self, forKey: .chargerDetailsGoToPaymentMethods) ?? NSLocalizedString(CodingKeys.chargerDetailsGoToPaymentMethods.rawValue, comment: .empty)
         self.chargerDetailsGoToBillingProfile = try container.decodeIfPresent(String.self, forKey: .chargerDetailsGoToBillingProfile) ?? NSLocalizedString(CodingKeys.chargerDetailsGoToBillingProfile.rawValue, comment: .empty)
+        self.chargerDetailsInfoEstimatedPrice30min = try container.decodeIfPresent(String.self, forKey: .chargerDetailsInfoEstimatedPrice30min) ?? NSLocalizedString(CodingKeys.chargerDetailsInfoEstimatedPrice30min.rawValue, comment: .empty)
         // MARK: - PLUG STATUS KEYS
         self.plugStatusAvailable = try container.decodeIfPresent(String.self, forKey: .plugStatusAvailable) ?? NSLocalizedString(CodingKeys.plugStatusAvailable.rawValue, comment: .empty)
         self.plugStatusBlocked = try container.decodeIfPresent(String.self, forKey: .plugStatusBlocked) ?? NSLocalizedString(CodingKeys.plugStatusBlocked.rawValue, comment: .empty)
@@ -2570,6 +2573,7 @@ public struct EVIOLanguage: Codable {
         self.chargerPointFullDetailsChargingTimeMinimumDuration = NSLocalizedString(CodingKeys.chargerPointFullDetailsChargingTimeMinimumDuration.rawValue, comment: .empty)
         self.chargerDetailsGoToPaymentMethods = NSLocalizedString(CodingKeys.chargerDetailsGoToPaymentMethods.rawValue, comment: .empty)
         self.chargerDetailsGoToBillingProfile = NSLocalizedString(CodingKeys.chargerDetailsGoToBillingProfile.rawValue, comment: .empty)
+        self.chargerDetailsInfoEstimatedPrice30min = NSLocalizedString(CodingKeys.chargerDetailsInfoEstimatedPrice30min.rawValue, comment: .empty)
         // MARK: - PLUG STATUS DEFAULT KEYS
         self.plugStatusAvailable = NSLocalizedString(CodingKeys.plugStatusAvailable.rawValue, comment: .empty)
         self.plugStatusBlocked = NSLocalizedString(CodingKeys.plugStatusBlocked.rawValue, comment: .empty)

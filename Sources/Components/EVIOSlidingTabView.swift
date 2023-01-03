@@ -73,7 +73,7 @@ public struct EVIOSlidingTabView : View {
                             Spacer()
                         }
                     }
-                    .padding(.vertical, 10)
+                    .padding(.vertical, self.tabs.count == 1 ? .zero : 10)
                         .accentColor(
                             self.isSelected(tabIdentifier: tab.title)
                                 ? self.activeAccentColor

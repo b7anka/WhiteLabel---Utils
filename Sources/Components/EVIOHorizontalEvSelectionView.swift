@@ -13,14 +13,14 @@ public struct EVIOHorizontalEvSelectionView: View {
     @Binding var resetComponent: Bool
     @StateObject private var viewModel: EVIOHorizontalEvSelectionViewViewModel
     
-    public init(selectedEv: EVIOEv?, resetComponent: Binding<Bool>, completion: @escaping (EVIOEv?) -> Void, popUpAction: (() -> Void)? = nil, allowAnonymous: Bool = false) {
+    public init(selectedEv: EVIOEv?, resetComponent: Binding<Bool>, showToggleButton: Bool = true, completion: @escaping (EVIOEv?) -> Void, popUpAction: (() -> Void)? = nil, allowAnonymous: Bool = false) {
         self._resetComponent = resetComponent
-        self._viewModel = StateObject(wrappedValue: EVIOHorizontalEvSelectionViewViewModel(selectedEv: selectedEv, allowAnonymous: allowAnonymous, completion: completion, popUpAction: popUpAction))
+        self._viewModel = StateObject(wrappedValue: EVIOHorizontalEvSelectionViewViewModel(selectedEv: selectedEv, allowAnonymous: allowAnonymous, showToggleButton: showToggleButton, completion: completion, popUpAction: popUpAction))
     }
     
     public var body: some View {
         VStack(spacing: self.viewModel.isExpanded ? 5 : .zero) {
-            EVIOToggle(isOn: self.$viewModel.isExpanded, title: self.viewModel.languageManager.evsSelectEvTitle)
+            EVIOToggle(isOn: self.$viewModel.isExpanded, title: self.viewModel.languageManager.evsSelectEvTitle, showToggleButton: self.viewModel.showToggleButton)
             if self.viewModel.isExpanded {
                 EVIOHorizontalEVSelectionViewListView(evs: self.$viewModel.evs, viewModel: self.viewModel)
             }
@@ -49,14 +49,16 @@ public final class EVIOHorizontalEvSelectionViewViewModel: ObservableObject {
     public let languageManager: EVIOLanguage
     public var popUpAction: (() -> Void)?
     private let allowAnonymous: Bool
+    public var showToggleButton: Bool
     
-    public init(selectedEv: EVIOEv?, allowAnonymous: Bool, completion: @escaping (EVIOEv?) -> Void, popUpAction: (() -> Void)? = nil) {
+    public init(selectedEv: EVIOEv?, allowAnonymous: Bool, showToggleButton: Bool, completion: @escaping (EVIOEv?) -> Void, popUpAction: (() -> Void)? = nil) {
+        self.showToggleButton = showToggleButton
         self.allowAnonymous = allowAnonymous
         self.popUpAction = popUpAction
         self.selectedEv = selectedEv
         self.evs = []
         self.completion = completion
-        self.isExpanded = false
+        self.isExpanded = !showToggleButton
         self.languageManager = EVIOLanguageManager.shared.language
         self.getEvs()
     }

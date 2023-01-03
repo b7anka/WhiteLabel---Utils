@@ -14,7 +14,7 @@ public struct EVIOToggle: View {
     public let action: (() -> Void)?
     public let showToggleButton: Bool
     
-    public init(isOn: Binding<Bool>, title: String? = nil, showToggleButton: Bool, action: (() -> Void)? = nil) {
+    public init(isOn: Binding<Bool>, title: String? = nil, showToggleButton: Bool = true, action: (() -> Void)? = nil) {
         self._isOn = isOn
         self.title = title
         self.action = action

@@ -30,8 +30,10 @@ public struct EVIOTabBarItem: Identifiable, Equatable {
     public let underbarHidden: Bool
     public let hidden: Bool
     public let disabled: Bool
+    public let isMainTitle: Bool
     
-    public init(title: String, hidden: Bool = false, disabled: Bool = false, underbarHidden: Bool = false) {
+    public init(title: String, hidden: Bool = false, disabled: Bool = false, underbarHidden: Bool = false, isMainTitle: Bool = false) {
+        self.isMainTitle = isMainTitle
         self.title = title
         self.hidden = hidden
         self.disabled = disabled

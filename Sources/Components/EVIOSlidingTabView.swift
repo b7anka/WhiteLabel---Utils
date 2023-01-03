@@ -49,7 +49,6 @@ public struct EVIOSlidingTabView : View {
     // MARK: - View Construction
     
     public var body: some View {
-        assert(tabs.count > 1, "Must have at least 2 tabs")
         
         return VStack(alignment: .leading, spacing: 0) {
             HStack(spacing: 0) {

@@ -28,9 +28,10 @@ public struct EVIOOCPITariffPriceRequest: Codable {
     public var roamingPlanId: String?
     public var voltageLevel: EVIOVoltageLevel?
     public var planId: String?
+    public var address: EVIOAddress?
     
     private enum CodingKeys: String, CodingKey {
-        case elements, sessionStartDate, sessionStopDate, offset, power, totalEnergy = "total_energy", totalChargingTime = "total_charging_time", totalParkingTime = "total_parking_time", timeZone, countryCode, latitude, longitude, source, partyId, evseGroup, voltageLevel, planId
+        case elements, sessionStartDate, sessionStopDate, offset, power, totalEnergy = "total_energy", totalChargingTime = "total_charging_time", totalParkingTime = "total_parking_time", timeZone, countryCode, latitude, longitude, source, partyId, evseGroup, voltageLevel, planId, address
     }
     
     public init(from decoder: Decoder) throws {
@@ -52,9 +53,10 @@ public struct EVIOOCPITariffPriceRequest: Codable {
         self.evseGroup = try container.decodeIfPresent(String.self, forKey: .evseGroup)
         self.voltageLevel = try container.decodeIfPresent(EVIOVoltageLevel.self, forKey: .voltageLevel)
         self.planId = try container.decodeIfPresent(String.self, forKey: .planId)
+        self.address = try container.decodeIfPresent(EVIOAddress.self, forKey: .address)
     }
     
-    public init(power: Double?, elements: [EVIOOCPIPriceElement]?, startDate: String?, stopDate: String?, offset: Double?, totalEnergy: Double?, totalChargingTime: Double?, totalParkingTime: Double? = 0.0, timeZone: String?, partyId: String?, source: String?, countryCode: String?, latitude: Double?, longitude: Double?, evseGroup: String?, roamingPlanId: String?, voltageLevel: EVIOVoltageLevel?, planId: String?) {
+    public init(power: Double?, elements: [EVIOOCPIPriceElement]?, startDate: String?, stopDate: String?, offset: Double?, totalEnergy: Double?, totalChargingTime: Double?, totalParkingTime: Double? = 0.0, timeZone: String?, partyId: String?, source: String?, countryCode: String?, latitude: Double?, longitude: Double?, evseGroup: String?, roamingPlanId: String?, voltageLevel: EVIOVoltageLevel?, planId: String?, address: EVIOAddress?) {
         self.planId = planId
         self.power = power
         self.elements = elements ?? []
@@ -73,6 +75,7 @@ public struct EVIOOCPITariffPriceRequest: Codable {
         self.evseGroup = evseGroup
         self.roamingPlanId = roamingPlanId
         self.voltageLevel = voltageLevel
+        self.address = address
     }
     
     public func toDictionary() -> [String: Any] {

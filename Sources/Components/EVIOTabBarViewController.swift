@@ -33,9 +33,9 @@ public struct EVIOTabBarViewController<Content: View>: View {
             }
             .padding(.horizontal, 34)
             EVIOTabBarView(currentSelection: self.$selectedTab, tabs: self.tabs)
-                .padding(.top, 10)
+                .padding(.top, self.tabs.count == 1 ? .zero : 10)
             self.content
-                .padding(.top, 15)
+                .padding(.top, self.tabs.count == 1 ? .zero : 15)
                 .onSwipeGesture(perform: { swipe in
                     guard self.allowSwipeToChangeTabs else { return }
                     self.feedbackGenerator.impactOccurred()

@@ -241,6 +241,20 @@ public struct EVIOEstimatedCostUtils {
         return [CGFloat(1), CGFloat(halfHour)]
     }
     
+    public func preSelectHour(charger: EVIOCharger?, ev: EVIOEv?, timeToFindInSeconds: Double, sliderViewModel: EVIOMultisliderViewModel) {
+        guard let hour = self.preSelectHour(charger: charger, ev: ev, timeToFindInSeconds: timeToFindInSeconds) else { return }
+        sliderViewModel.value = hour
+    }
+    
+    public func preSelectHour(charger: EVIOCharger?, ev: EVIOEv?, timeToFindInSeconds: Double) -> [CGFloat]? {
+        guard let charger = charger else {
+            return nil
+        }
+        let selectedPlug = charger.plugs?.first(where: { $0.selected })
+        let hour = self.findHourValue(value: 100, timeToFindInSeconds: timeToFindInSeconds, plug: selectedPlug, ev: ev)
+        return [CGFloat(1), CGFloat(hour)]
+    }
+    
     private func findHalfHourValue(value: CGFloat, plug: EVIOPlug?, ev: EVIOEv?) -> CGFloat {
         let maxValue = value
         guard let plug = plug, let ev = ev else { return 0.0 }
@@ -248,6 +262,16 @@ public struct EVIOEstimatedCostUtils {
         let timeTo: CGFloat = EVIOAppUtils.shared.getValueForSliderBarSize(plug: plug, ev: ev, maxPower: maxPower, maxValue: maxValue)
         let maxSeekTime = timeTo
         let valueToReturn = ((1800 * 100) / maxSeekTime)
+        return valueToReturn
+    }
+    
+    private func findHourValue(value: CGFloat, timeToFindInSeconds: Double, plug: EVIOPlug?, ev: EVIOEv?) -> CGFloat {
+        let maxValue = value
+        guard let plug = plug, let ev = ev else { return .zero }
+        let maxPower = (plug.power ?? .zero > .zero ? plug.power : 1) ?? 1
+        let timeTo: CGFloat = EVIOAppUtils.shared.getValueForSliderBarSize(plug: plug, ev: ev, maxPower: maxPower, maxValue: maxValue)
+        let maxSeekTime = timeTo
+        let valueToReturn = ((timeToFindInSeconds * 100) / maxSeekTime)
         return valueToReturn
     }
     

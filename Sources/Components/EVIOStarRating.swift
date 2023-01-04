@@ -36,7 +36,7 @@ public final class EVIOStarRating: CosmosView {
         self.cancellables = []
         super.init(frame: .zero, settings: settings)
         self.didTouchCosmos = self.didUpdateRating
-        self.didFinishTouchingCosmos = self.didUpdateRating
+        //self.didFinishTouchingCosmos = self.didUpdateRating
         self.isUserInteractionEnabled = !disabled
         self.rating = rating
         self.setupViewModelListeners()

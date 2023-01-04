@@ -1484,7 +1484,7 @@ public struct EVIOLanguage: Codable {
         case comparatorChargingPoint = "comparator_chargingPoint"
         case comparatorPlugPower = "comparator_plugPower"
         case comparatorChargingDuration = "comparator_chargingDuration"
-        case comparatorTotalCost = "comparator_totalCost"
+        case comparatorTotalCost = "comparator_total"
         case comparatorAverageCost = "comparator_averageCost"
         case comparatorMyChargers = "comparator_myChargers"
         case comparatorOtherChargers = "comparator_otherChargers"

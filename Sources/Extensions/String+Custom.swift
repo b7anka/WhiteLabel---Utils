@@ -130,7 +130,14 @@ public extension String {
     static let ´default´: String = "default"
     static let contractSelectedAndEvSelected: String = "contractSelectedAndEvSelected"
     static let automaticallyCloseCreateAccountPage: String = "automaticallyCloseCreateAccountPage"
+    static let comparatorAddedRemovedCharger: String = "comparatorAddedRemovedCharger"
     static let cellNameForChargersList: String = "chargersListCell"
-    static let defaultCurrency: String = "EUR"
+    static var defaultCurrencyCode: String {
+        if #available(iOS 16.0, *) {
+            return Locale.current.currency?.identifier ?? "EUR"
+        }
+        return EVIOAppUtils.shared.getCurrencyCodeFor() ?? "EUR"
+    }
+    static let defaultCurrencySymbol: String = Locale.current.currencySymbol ?? "€"
     
 }

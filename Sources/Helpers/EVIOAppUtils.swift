@@ -215,6 +215,11 @@ public struct EVIOAppUtils {
         return locale.displayName(forKey: NSLocale.Key.currencySymbol, value: code)
     }
     
+    public func getCurrencyCodeFor(locale: Locale = Locale.current) -> String? {
+        let locale = NSLocale(localeIdentifier: locale.identifier)
+        return locale.displayName(forKey: NSLocale.Key.currencyCode, value: locale.localeIdentifier)
+    }
+    
     public func buttonTitleForRedirect(redirect: EVIOAlertRedirectType) -> String {
         let languageManager: EVIOLanguage = EVIOLanguageManager.shared.language
         switch redirect {

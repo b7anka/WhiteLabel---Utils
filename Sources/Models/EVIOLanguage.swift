@@ -718,6 +718,7 @@ public struct EVIOLanguage: Codable {
     public let comparatorChoosePlugToCompare: String
     public let comparatorPlugAlreadyBeingCompared: String
     public let comparatorEnergy: String
+    public let comparatorCheckTariff: String
     // MARK: - HISTORY VIEW PROPERTIES
     public let historyPaymentBillingInfoPaid: String
     public let historyPaymentBillingInfoPaidAndBilled: String
@@ -1494,6 +1495,7 @@ public struct EVIOLanguage: Codable {
         case comparatorChoosePlugToCompare = "comparator_choosePlugToCompare"
         case comparatorPlugAlreadyBeingCompared = "comparator_plugAlreadyBeingCompared"
         case comparatorEnergy = "comparator_energy"
+        case comparatorCheckTariff = "comparator_checkTariff"
         // MARK: - HISTORY VIEW KEYS PROPERTIES
         case historyPaymentBillingInfoPaid = "historyPaymentBillingInfo_paid"
         case historyPaymentBillingInfoPaidAndBilled = "historyPaymentBillingInfo_paidAndBilled"
@@ -2271,6 +2273,7 @@ public struct EVIOLanguage: Codable {
         self.comparatorChoosePlugToCompare = try container.decodeIfPresent(String.self, forKey: .comparatorChoosePlugToCompare) ?? NSLocalizedString(CodingKeys.comparatorChoosePlugToCompare.rawValue, comment: .empty)
         self.comparatorPlugAlreadyBeingCompared = try container.decodeIfPresent(String.self, forKey: .comparatorPlugAlreadyBeingCompared) ?? NSLocalizedString(CodingKeys.comparatorPlugAlreadyBeingCompared.rawValue, comment: .empty)
         self.comparatorEnergy = try container.decodeIfPresent(String.self, forKey: .comparatorEnergy) ?? NSLocalizedString(CodingKeys.comparatorEnergy.rawValue, comment: .empty)
+        self.comparatorCheckTariff = try container.decodeIfPresent(String.self, forKey: .comparatorCheckTariff) ?? NSLocalizedString(CodingKeys.comparatorCheckTariff.rawValue, comment: .empty)
         // MARK: - HISTORY VIEW KEYS
         self.historyPaymentBillingInfoPaid = try container.decodeIfPresent(String.self, forKey: .historyPaymentBillingInfoPaid) ?? NSLocalizedString(CodingKeys.historyPaymentBillingInfoPaid.rawValue, comment: .empty)
         self.historyPaymentBillingInfoPaidAndBilled = try container.decodeIfPresent(String.self, forKey: .historyPaymentBillingInfoPaidAndBilled) ?? NSLocalizedString(CodingKeys.historyPaymentBillingInfoPaidAndBilled.rawValue, comment: .empty)
@@ -3046,6 +3049,7 @@ public struct EVIOLanguage: Codable {
         self.comparatorCompareButton = NSLocalizedString(CodingKeys.comparatorCompareButton.rawValue, comment: .empty)
         self.comparatorChoosePlugToCompare = NSLocalizedString(CodingKeys.comparatorChoosePlugToCompare.rawValue, comment: .empty)
         self.comparatorPlugAlreadyBeingCompared = NSLocalizedString(CodingKeys.comparatorPlugAlreadyBeingCompared.rawValue, comment: .empty)
+        self.comparatorCheckTariff = NSLocalizedString(CodingKeys.comparatorCheckTariff.rawValue, comment: .empty)
         // MARK: - HISTORY VIEW DEFAULT KEYS
         self.historyPaymentBillingInfoPaid = NSLocalizedString(CodingKeys.historyPaymentBillingInfoPaid.rawValue, comment: .empty)
         self.historyPaymentBillingInfoPaidAndBilled = NSLocalizedString(CodingKeys.historyPaymentBillingInfoPaidAndBilled.rawValue, comment: .empty)

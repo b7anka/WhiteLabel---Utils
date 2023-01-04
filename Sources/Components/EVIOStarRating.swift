@@ -29,6 +29,7 @@ public final class EVIOStarRating: CosmosView {
         settings.starMargin = starMargin
         settings.fillMode = fillMode
         settings.updateOnTouch = true
+        settings.passTouchesToSuperview = false
         settings.minTouchRating = .zero
         settings.filledImage = UIImage(named: .filledStar)
         settings.emptyImage = UIImage(named: .emptyStar)

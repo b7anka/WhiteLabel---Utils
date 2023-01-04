@@ -131,5 +131,6 @@ public extension String {
     static let contractSelectedAndEvSelected: String = "contractSelectedAndEvSelected"
     static let automaticallyCloseCreateAccountPage: String = "automaticallyCloseCreateAccountPage"
     static let cellNameForChargersList: String = "chargersListCell"
+    static let defaultCurrency: String = "EUR"
     
 }

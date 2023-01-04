@@ -29,14 +29,12 @@ public final class EVIOStarRating: CosmosView {
         settings.starMargin = starMargin
         settings.fillMode = fillMode
         settings.updateOnTouch = true
-        settings.passTouchesToSuperview = false
         settings.minTouchRating = .zero
         settings.filledImage = UIImage(named: .filledStar)
         settings.emptyImage = UIImage(named: .emptyStar)
         self.cancellables = []
         super.init(frame: .zero, settings: settings)
-        //self.didTouchCosmos = self.didUpdateRating
-        //self.didFinishTouchingCosmos = self.didUpdateRating
+        self.didFinishTouchingCosmos = self.didUpdateRating
         self.isUserInteractionEnabled = !disabled
         self.rating = rating
         self.setupViewModelListeners()

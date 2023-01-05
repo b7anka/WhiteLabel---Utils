@@ -47,6 +47,7 @@ public extension String {
     static let imageSelectionButtonIcon: String = "imageSelectionButtonIcon"
     static let supportaddImage: String = "supportaddImage"
     static let tripAssistanceIcon: String = "tripAssistanceIcon"
+    static let comparatorChooseFromMapImage: String = "comparatorChooseFromMapImage"
     
     // MARK: - CONNECTOR TYPE
     static let ccs1: String = "ccs1"

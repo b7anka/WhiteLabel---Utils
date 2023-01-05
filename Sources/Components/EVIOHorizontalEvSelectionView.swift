@@ -66,9 +66,9 @@ public final class EVIOHorizontalEvSelectionViewViewModel: ObservableObject {
     public func getEvs() {
         self.evs = []
         if self.allowAnonymous {
-            self.evs.insert(SelectEv(ev: EVIOEv.anonymous), at: .zero)
+            self.evs.insert(SelectEv(isSelected: self.selectedEv?.id == EVIOEv.anonymous.id, ev: EVIOEv.anonymous), at: .zero)
         }
-        self.evs.append(contentsOf: (EVIOStorageManager.shared.getUserEvs() ?? []).map({ SelectEv(isSelected: selectedEv?.id == $0.id, ev: $0) }))
+        self.evs.append(contentsOf: (EVIOStorageManager.shared.getUserEvs() ?? []).map({ SelectEv(isSelected: self.selectedEv?.id == $0.id, ev: $0) }))
     }
     
     public func evSelected(_ ev: SelectEv) {

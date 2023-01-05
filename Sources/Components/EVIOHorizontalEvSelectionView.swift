@@ -64,10 +64,11 @@ public final class EVIOHorizontalEvSelectionViewViewModel: ObservableObject {
     }
     
     public func getEvs() {
-        self.evs = (EVIOStorageManager.shared.getUserEvs() ?? []).map({ SelectEv(isSelected: selectedEv?.id == $0.id, ev: $0) })
+        self.evs = []
         if self.allowAnonymous {
             self.evs.insert(SelectEv(ev: EVIOEv.anonymous), at: .zero)
         }
+        self.evs.append(contentsOf: (EVIOStorageManager.shared.getUserEvs() ?? []).map({ SelectEv(isSelected: selectedEv?.id == $0.id, ev: $0) }))
     }
     
     public func evSelected(_ ev: SelectEv) {

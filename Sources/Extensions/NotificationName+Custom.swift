@@ -72,4 +72,5 @@ public extension Notification.Name {
     static let contractSelectedAndEvSelected: Notification.Name = Notification.Name(rawValue: .contractSelectedAndEvSelected)
     static let automaticallyCloseCreateAccountPage: Notification.Name = Notification.Name(rawValue: .automaticallyCloseCreateAccountPage)
     static let comparatorAddedRemovedCharger: Notification.Name = Notification.Name(rawValue: .comparatorAddedRemovedCharger)
+    static let comparatorAddedRemovedFavourite: Notification.Name = Notification.Name(rawValue: .comparatorAddedRemovedFavourite)
 }

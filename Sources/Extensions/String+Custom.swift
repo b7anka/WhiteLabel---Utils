@@ -131,6 +131,7 @@ public extension String {
     static let contractSelectedAndEvSelected: String = "contractSelectedAndEvSelected"
     static let automaticallyCloseCreateAccountPage: String = "automaticallyCloseCreateAccountPage"
     static let comparatorAddedRemovedCharger: String = "comparatorAddedRemovedCharger"
+    static let comparatorAddedRemovedFavourite: String = "comparatorAddedRemovedFavourite"
     static let cellNameForChargersList: String = "chargersListCell"
     static var defaultCurrencyCode: String {
         if #available(iOS 16.0, *) {

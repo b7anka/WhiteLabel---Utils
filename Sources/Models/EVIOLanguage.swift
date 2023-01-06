@@ -1016,7 +1016,7 @@ public struct EVIOLanguage: Codable {
         case chargerDetailsChargerIdentifier = "chargerDetails_chargerIdentifier"
         case chargerDetailsChargerManufacturer = "chargerDetails_chargerManufacturer"
         case chargerDetailsChargersModel = "chargerDetails_chargersModel"
-        case chargerDetailsChargerOccupiediOSPart1 = "chargerDetails_chargerOccupiediOSPart1"
+        case chargerDetailsChargerOccupiediOSPart1 = "chargerDetails_chargerOccupiediOSPart1New"
         case chargerDetailsChargerOccupiediOSPart2 = "chargerDetails_chargerOccupiediOSPart2"
         case chargerDetailsChargerOccupiediOSBoldPart = "chargerDetails_chargerOccupiediOSBoldPart"
         case chargerDetailsCemeTariff = "chargerDetails_cemeTariff"

@@ -74,6 +74,114 @@ public extension EVIOCharger {
         return self.network?.rawValue ?? .noValue
     }
     
+    func getTariffInUse(plug: EVIOPlug?, contract: EVIOContract?) -> EVIOTariff? {
+        guard self.isEvio || self.isGoCharge || self.isHyundai, let plug = plug else { return nil }
+        let user: EVIOUser? = EVIOStorageManager.shared.getUserProfile()
+            if self.accessType != .private {
+                if self.createUser == user?.id {
+                    return nil
+                } else {
+                    if let contract = contract {
+                        if contract.contractType == .user {
+                            if plug.tariff?.isEmpty ?? true {
+                                return nil
+                            } else {
+                                var selectedTariff: EVIOTariff!
+                                if plug.tariff?.count == 1 {
+                                    selectedTariff = plug.tariff?[0]
+                                } else {
+                                    var indexOfPublicTariff:Int!
+                                    for t in plug.tariff ?? [] {
+                                        if t.groupName != .publicGroupName {
+                                            var groupId: String?
+                                            self.listOfGroups?.forEach { (ls) in
+                                                ls.listOfUsers?.forEach { (lu) in
+                                                    if lu.userId == user?.id {
+                                                        groupId = ls.groupId
+                                                    }
+                                                }
+                                            }
+                                            if groupId != nil {
+                                                plug.tariff?.forEach { (t) in
+                                                    if t.groupId == groupId! {
+                                                        selectedTariff = t
+                                                    }
+                                                }
+                                            }
+                                        } else {
+                                            indexOfPublicTariff = plug.tariff?.firstIndex(of: t) ?? -1
+                                        }
+                                    }
+                                    if selectedTariff == nil {
+                                        if indexOfPublicTariff != nil {
+                                            if indexOfPublicTariff > -1 {
+                                                selectedTariff = plug.tariff?[indexOfPublicTariff]
+                                            }
+                                        }
+                                    }
+                                }
+                                if selectedTariff != nil {
+                                    return selectedTariff
+                                }
+                                return nil
+                            }
+                        } else {
+                            var tariffId = plug.tariff?.first(where: {return $0.fleetId == contract.fleetId})?.tariffId
+                            if tariffId == nil && self.accessType == .public {
+                                tariffId = plug.tariff?.first(where: {return $0.groupName == .publicGroupName})?.tariffId
+                                let tariff = plug.tariff?.first(where: { $0.tariffId == tariffId })
+                                return tariff
+                            }
+                        }
+                    } else {
+                        if plug.tariff?.isEmpty ?? true {
+                            return nil
+                        } else {
+                            var selectedTariff: EVIOTariff!
+                            if plug.tariff?.count == 1 {
+                                selectedTariff = plug.tariff?[0]
+                            } else {
+                                var indexOfPublicTariff:Int!
+                                for t in plug.tariff ?? [] {
+                                    if t.groupName != .publicGroupName {
+                                        var groupId: String?
+                                        self.listOfGroups?.forEach { (ls) in
+                                            ls.listOfUsers?.forEach { (lu) in
+                                                if lu.userId == user?.id {
+                                                    groupId = ls.groupId
+                                                }
+                                            }
+                                        }
+                                        if groupId != nil {
+                                            plug.tariff?.forEach { (t) in
+                                                if t.groupId == groupId! {
+                                                    selectedTariff = t
+                                                }
+                                            }
+                                        }
+                                    } else {
+                                        indexOfPublicTariff = plug.tariff?.firstIndex(of: t) ?? -1
+                                    }
+                                }
+                                if selectedTariff == nil {
+                                    if indexOfPublicTariff != nil {
+                                        if indexOfPublicTariff > -1 {
+                                            selectedTariff = plug.tariff?[indexOfPublicTariff]
+                                        }
+                                    }
+                                }
+                            }
+                            if selectedTariff != nil {
+                                return selectedTariff
+                            }
+                            return nil
+                        }
+                    }
+                }
+            }
+            return nil
+    }
+    
     func isInternal(_ plug: EVIOPlug?, contract: EVIOContract?) -> Bool {
         guard let plug = plug else { return false }
         let user: EVIOUser? = EVIOStorageManager.shared.getUserProfile()

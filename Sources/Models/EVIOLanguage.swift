@@ -243,6 +243,7 @@ public struct EVIOLanguage: Codable {
     public let chargerDetailsTariff: String
     public let chargerDetailsChargerPlugInfoFree: String
     public let chargerDetailsChargerPlugInfoOccupied: String
+    public let chargerDetailsChargerInfoOffline: String
     public let chargerPointFullDetailsThanksForTheImageMessage: String
     public let chargerPointFullDetailsStopDateShouldBeAfterStartDate: String
     public let chargerPointFullDetailsChargingTimeMinimumDuration: String
@@ -1026,6 +1027,7 @@ public struct EVIOLanguage: Codable {
         case chargerDetailsTariff = "chargerDetails_tariff"
         case chargerDetailsChargerPlugInfoFree = "chargerDetails_chargerPlugInfoFree"
         case chargerDetailsChargerPlugInfoOccupied = "chargerDetails_chargerPlugInfoOccupied"
+        case chargerDetailsChargerInfoOffline = "chargerDetails_chargerInfoOffline"
         case chargerPointFullDetailsThanksForTheImageMessage = "chargerPointFullDetails_thanksForTheImageMessage"
         case chargerPointFullDetailsStopDateShouldBeAfterStartDate = "chargerPointFullDetails_stopDateShouldBeAfterStartDate"
         case chargerPointFullDetailsChargingTimeMinimumDuration = "chargerPointFullDetails_chargingTimeMinimumDuration"
@@ -1809,6 +1811,7 @@ public struct EVIOLanguage: Codable {
         self.chargerDetailsTariff = try container.decodeIfPresent(String.self, forKey: .chargerDetailsTariff) ?? NSLocalizedString(CodingKeys.chargerDetailsTariff.rawValue, comment: .empty)
         self.chargerDetailsChargerPlugInfoFree = try container.decodeIfPresent(String.self, forKey: .chargerDetailsChargerPlugInfoFree) ?? NSLocalizedString(CodingKeys.chargerDetailsChargerPlugInfoFree.rawValue, comment: .empty)
         self.chargerDetailsChargerPlugInfoOccupied = try container.decodeIfPresent(String.self, forKey: .chargerDetailsChargerPlugInfoOccupied) ?? NSLocalizedString(CodingKeys.chargerDetailsChargerPlugInfoOccupied.rawValue, comment: .empty)
+        self.chargerDetailsChargerInfoOffline = try container.decodeIfPresent(String.self, forKey: .chargerDetailsChargerInfoOffline) ?? NSLocalizedString(CodingKeys.chargerDetailsChargerInfoOffline.rawValue, comment: .empty)
         self.chargerPointFullDetailsThanksForTheImageMessage = try container.decodeIfPresent(String.self, forKey: .chargerPointFullDetailsThanksForTheImageMessage) ?? NSLocalizedString(CodingKeys.chargerPointFullDetailsThanksForTheImageMessage.rawValue, comment: .empty)
         self.chargerPointFullDetailsStopDateShouldBeAfterStartDate = try container.decodeIfPresent(String.self, forKey: .chargerPointFullDetailsStopDateShouldBeAfterStartDate) ?? NSLocalizedString(CodingKeys.chargerPointFullDetailsStopDateShouldBeAfterStartDate.rawValue, comment: .empty)
         self.chargerPointFullDetailsChargingTimeMinimumDuration = try container.decodeIfPresent(String.self, forKey: .chargerPointFullDetailsChargingTimeMinimumDuration) ?? NSLocalizedString(CodingKeys.chargerPointFullDetailsChargingTimeMinimumDuration.rawValue, comment: .empty)
@@ -2593,6 +2596,7 @@ public struct EVIOLanguage: Codable {
         self.chargerDetailsChargerPlugInfoFree = NSLocalizedString(CodingKeys.chargerDetailsChargerPlugInfoFree.rawValue, comment: .empty)
         self.chargerDetailsChargerPlugInfoOccupied = NSLocalizedString(CodingKeys.chargerDetailsChargerPlugInfoOccupied.rawValue, comment: .empty)
         self.chargerPointFullDetailsStopDateShouldBeAfterStartDate = NSLocalizedString(CodingKeys.chargerPointFullDetailsStopDateShouldBeAfterStartDate.rawValue, comment: .empty)
+        self.chargerDetailsChargerInfoOffline = NSLocalizedString(CodingKeys.chargerDetailsChargerInfoOffline.rawValue, comment: .empty)
         self.chargerPointFullDetailsChargingTimeMinimumDuration = NSLocalizedString(CodingKeys.chargerPointFullDetailsChargingTimeMinimumDuration.rawValue, comment: .empty)
         self.chargerDetailsGoToPaymentMethods = NSLocalizedString(CodingKeys.chargerDetailsGoToPaymentMethods.rawValue, comment: .empty)
         self.chargerDetailsGoToBillingProfile = NSLocalizedString(CodingKeys.chargerDetailsGoToBillingProfile.rawValue, comment: .empty)

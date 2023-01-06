@@ -85,7 +85,7 @@ public extension EVIOOCPIResponsePrice {
     }
     
     var simulationTotal: String {
-        guard let total = self.total else { return .noValue }
+        guard let total = self.total?.inclVat else { return .noValue }
         return NumberFormatter.formatCurrencyFor(with: total, and: self.currency) ?? .noValue
     }
     

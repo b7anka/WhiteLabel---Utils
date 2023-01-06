@@ -20,10 +20,29 @@ public struct EVIOOCPIResponsePrice: Codable {
     public var opc: Double?
     public var ceme: Double?
     public var fees: Double?
-    public var total: Double?
+    public var total: EVIOTotalPrice?
     
     private enum CodingKeys: String, CodingKey {
         case flat, energy, time, parking, vat, totalCost = "total_cost", currency, opc, ceme, fees, total
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.flat = try container.decodeIfPresent(EVIOOCPIPriceResponseItem.self, forKey: .flat)
+        self.energy = try container.decodeIfPresent(EVIOOCPIPriceResponseItem.self, forKey: .energy)
+        self.time = try container.decodeIfPresent(EVIOOCPIPriceResponseItem.self, forKey: .time)
+        self.parking = try container.decodeIfPresent(EVIOOCPIPriceResponseItem.self, forKey: .parking)
+        self.vat = try container.decodeIfPresent(EVIOVat.self, forKey: .vat)
+        self.totalCost = try container.decodeIfPresent(EVIOTotalPrice.self, forKey: .totalCost)
+        self.currency = try container.decodeIfPresent(String.self, forKey: .currency)
+        self.opc = try container.decodeIfPresent(Double.self, forKey: .opc)
+        self.ceme = try container.decodeIfPresent(Double.self, forKey: .ceme)
+        self.fees = try container.decodeIfPresent(Double.self, forKey: .fees)
+        if let total = try? container.decodeIfPresent(Double.self, forKey: .total) {
+            self.total = EVIOTotalPrice(inclVat: total)
+        } else {
+            self.total = try container.decodeIfPresent(EVIOTotalPrice.self, forKey: .total)
+        }
     }
     
 }

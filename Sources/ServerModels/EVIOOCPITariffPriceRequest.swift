@@ -29,9 +29,10 @@ public struct EVIOOCPITariffPriceRequest: Codable {
     public var voltageLevel: EVIOVoltageLevel?
     public var planId: String?
     public var address: EVIOAddress?
+    public var tariff: EVIOTariff?
     
     private enum CodingKeys: String, CodingKey {
-        case elements, sessionStartDate, sessionStopDate, offset, power, totalEnergy = "total_energy", totalChargingTime = "total_charging_time", totalParkingTime = "total_parking_time", timeZone, countryCode, latitude, longitude, source, partyId, evseGroup, voltageLevel, planId, address
+        case elements, sessionStartDate, sessionStopDate, offset, power, totalEnergy = "total_energy", totalChargingTime = "total_charging_time", totalParkingTime = "total_parking_time", timeZone, countryCode, latitude, longitude, source, partyId, evseGroup, voltageLevel, planId, address, tariff
     }
     
     public init(from decoder: Decoder) throws {
@@ -54,9 +55,11 @@ public struct EVIOOCPITariffPriceRequest: Codable {
         self.voltageLevel = try container.decodeIfPresent(EVIOVoltageLevel.self, forKey: .voltageLevel)
         self.planId = try container.decodeIfPresent(String.self, forKey: .planId)
         self.address = try container.decodeIfPresent(EVIOAddress.self, forKey: .address)
+        self.tariff = try container.decodeIfPresent(EVIOTariff.self, forKey: .tariff)
     }
     
-    public init(power: Double?, elements: [EVIOOCPIPriceElement]?, startDate: String?, stopDate: String?, offset: Double?, totalEnergy: Double?, totalChargingTime: Double?, totalParkingTime: Double? = 0.0, timeZone: String?, partyId: String?, source: String?, countryCode: String?, latitude: Double?, longitude: Double?, evseGroup: String?, roamingPlanId: String?, voltageLevel: EVIOVoltageLevel?, planId: String?, address: EVIOAddress?) {
+    public init(power: Double?, elements: [EVIOOCPIPriceElement]?, startDate: String?, stopDate: String?, offset: Double?, totalEnergy: Double?, totalChargingTime: Double?, totalParkingTime: Double? = 0.0, timeZone: String?, partyId: String?, source: String?, countryCode: String?, latitude: Double?, longitude: Double?, evseGroup: String?, roamingPlanId: String?, voltageLevel: EVIOVoltageLevel?, planId: String?, address: EVIOAddress?, tariff: EVIOTariff?) {
+        self.tariff = tariff
         self.planId = planId
         self.power = power
         self.elements = elements ?? []

@@ -25,13 +25,14 @@ public final class EVIOPlug: Codable, Hashable {
     public var mySession: String?
     public var serviceCost: EVIOServiceCost?
     public var subStatus: EVIOPlugSubSatus?
+    public var statusTime: Double?
     public var selected: Bool
     public var evseGroup: String?
     public var tariffId: [String?]
     public var price: Double?
     
     public enum CodingKeys: String, CodingKey {
-        case status, id = "_id", plugId, active, amperage, connectorType, power, voltage, tariff, canBeNotified, canBeAutomaticallyBooked, session, qrCodeId, mySession, serviceCost, subStatus, selected, evseGroup, tariffId, price
+        case status, id = "_id", plugId, active, amperage, connectorType, power, voltage, tariff, canBeNotified, canBeAutomaticallyBooked, session, qrCodeId, mySession, serviceCost, subStatus, selected, evseGroup, tariffId, price, statusTime
     }
     
     public init(from decoder: Decoder) throws {
@@ -56,6 +57,7 @@ public final class EVIOPlug: Codable, Hashable {
         self.selected = try container.decodeIfPresent(Bool.self, forKey: .selected) ?? false
         self.tariffId = try container.decodeIfPresent([String?].self, forKey: .tariffId)?.filter({ $0 != nil }) ?? []
         self.price = try container.decodeIfPresent(Double.self, forKey: .price)
+        self.statusTime = try container.decodeIfPresent(Double.self, forKey: .statusTime)
     }
     
     public init(id: String?, connectorType: String?, power: Double?) {
@@ -77,6 +79,7 @@ public final class EVIOPlug: Codable, Hashable {
         self.subStatus = nil
         self.evseGroup = nil
         self.selected = false
+        self.statusTime = nil
         self.tariffId = []
         self.price = nil
     }

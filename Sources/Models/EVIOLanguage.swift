@@ -241,6 +241,8 @@ public struct EVIOLanguage: Codable {
     public let chargerDetailsAlways: String
     public let chargerDetailsWrongBehaviorStation: String
     public let chargerDetailsTariff: String
+    public let chargerDetailsChargerPlugInfoFree: String
+    public let chargerDetailsChargerPlugInfoOccupied: String
     public let chargerPointFullDetailsThanksForTheImageMessage: String
     public let chargerPointFullDetailsStopDateShouldBeAfterStartDate: String
     public let chargerPointFullDetailsChargingTimeMinimumDuration: String
@@ -1022,6 +1024,8 @@ public struct EVIOLanguage: Codable {
         case chargerDetailsAlways = "chargerDetails_always"
         case chargerDetailsWrongBehaviorStation = "chargerDetails_wrongBehaviorStation"
         case chargerDetailsTariff = "chargerDetails_tariff"
+        case chargerDetailsChargerPlugInfoFree = "chargerDetails_chargerPlugInfoFree"
+        case chargerDetailsChargerPlugInfoOccupied = "chargerDetails_chargerPlugInfoOccupied"
         case chargerPointFullDetailsThanksForTheImageMessage = "chargerPointFullDetails_thanksForTheImageMessage"
         case chargerPointFullDetailsStopDateShouldBeAfterStartDate = "chargerPointFullDetails_stopDateShouldBeAfterStartDate"
         case chargerPointFullDetailsChargingTimeMinimumDuration = "chargerPointFullDetails_chargingTimeMinimumDuration"
@@ -1484,7 +1488,7 @@ public struct EVIOLanguage: Codable {
         case blockedViewTextInfo = "blockedView_textInfo"
         case blockedViewPaymentError = "blockedView_paymentError"
         // MARK: - COMPARATOR VIEW KEYS PROPERTIES
-        case comparatorTitle = "comparator_title"
+        case comparatorTitle = "comparator_newTitle"
         case comparatorChargingPoint = "comparator_chargingPoint"
         case comparatorPlugPower = "comparator_plugPower"
         case comparatorChargingDuration = "comparator_chargingDuration"
@@ -1803,6 +1807,8 @@ public struct EVIOLanguage: Codable {
         self.chargerDetailsLimited = try container.decodeIfPresent(String.self, forKey: .chargerDetailsLimited) ?? NSLocalizedString(CodingKeys.chargerDetailsLimited.rawValue, comment: .empty)
         self.chargerDetailsWrongBehaviorStation = try container.decodeIfPresent(String.self, forKey: .chargerDetailsWrongBehaviorStation) ?? NSLocalizedString(CodingKeys.chargerDetailsWrongBehaviorStation.rawValue, comment: .empty)
         self.chargerDetailsTariff = try container.decodeIfPresent(String.self, forKey: .chargerDetailsTariff) ?? NSLocalizedString(CodingKeys.chargerDetailsTariff.rawValue, comment: .empty)
+        self.chargerDetailsChargerPlugInfoFree = try container.decodeIfPresent(String.self, forKey: .chargerDetailsChargerPlugInfoFree) ?? NSLocalizedString(CodingKeys.chargerDetailsChargerPlugInfoFree.rawValue, comment: .empty)
+        self.chargerDetailsChargerPlugInfoOccupied = try container.decodeIfPresent(String.self, forKey: .chargerDetailsChargerPlugInfoOccupied) ?? NSLocalizedString(CodingKeys.chargerDetailsChargerPlugInfoOccupied.rawValue, comment: .empty)
         self.chargerPointFullDetailsThanksForTheImageMessage = try container.decodeIfPresent(String.self, forKey: .chargerPointFullDetailsThanksForTheImageMessage) ?? NSLocalizedString(CodingKeys.chargerPointFullDetailsThanksForTheImageMessage.rawValue, comment: .empty)
         self.chargerPointFullDetailsStopDateShouldBeAfterStartDate = try container.decodeIfPresent(String.self, forKey: .chargerPointFullDetailsStopDateShouldBeAfterStartDate) ?? NSLocalizedString(CodingKeys.chargerPointFullDetailsStopDateShouldBeAfterStartDate.rawValue, comment: .empty)
         self.chargerPointFullDetailsChargingTimeMinimumDuration = try container.decodeIfPresent(String.self, forKey: .chargerPointFullDetailsChargingTimeMinimumDuration) ?? NSLocalizedString(CodingKeys.chargerPointFullDetailsChargingTimeMinimumDuration.rawValue, comment: .empty)
@@ -2584,6 +2590,8 @@ public struct EVIOLanguage: Codable {
         self.chargerPointFullDetailsThanksForTheImageMessage = NSLocalizedString(CodingKeys.chargerPointFullDetailsThanksForTheImageMessage.rawValue, comment: .empty)
         self.chargerDetailsWrongBehaviorStation = NSLocalizedString(CodingKeys.chargerDetailsWrongBehaviorStation.rawValue, comment: .empty)
         self.chargerDetailsTariff = NSLocalizedString(CodingKeys.chargerDetailsTariff.rawValue, comment: .empty)
+        self.chargerDetailsChargerPlugInfoFree = NSLocalizedString(CodingKeys.chargerDetailsChargerPlugInfoFree.rawValue, comment: .empty)
+        self.chargerDetailsChargerPlugInfoOccupied = NSLocalizedString(CodingKeys.chargerDetailsChargerPlugInfoOccupied.rawValue, comment: .empty)
         self.chargerPointFullDetailsStopDateShouldBeAfterStartDate = NSLocalizedString(CodingKeys.chargerPointFullDetailsStopDateShouldBeAfterStartDate.rawValue, comment: .empty)
         self.chargerPointFullDetailsChargingTimeMinimumDuration = NSLocalizedString(CodingKeys.chargerPointFullDetailsChargingTimeMinimumDuration.rawValue, comment: .empty)
         self.chargerDetailsGoToPaymentMethods = NSLocalizedString(CodingKeys.chargerDetailsGoToPaymentMethods.rawValue, comment: .empty)

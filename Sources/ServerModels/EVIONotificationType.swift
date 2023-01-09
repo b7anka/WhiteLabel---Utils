@@ -20,6 +20,38 @@ public enum EVIONotificationType: String, Codable {
     case accountSuspention = "ACCOUNT_SUSPENSION"
     case accountReactivation = "ACCOUNT_REACTIVATION"
     case lowBalance = "ACCOUNT_LOW_BALANCE"
+    case accountBalance = "ACCOUNT_VALID_PARTNER"
     case news = "NEWS"
+    
+    public init?(rawValue: String) {
+        switch rawValue.uppercased() {
+        case Self.chargingSessionStart.rawValue:
+            self = .chargingSessionStart
+        case Self.chargingSessionStop.rawValue:
+            self = .chargingSessionStop
+        case Self.chargingSessionData.rawValue:
+            self = .chargingSessionData
+        case Self.myChargersChargingSessionStart.rawValue:
+            self = .myChargersChargingSessionStart
+        case Self.myChargersChargingSessionStop.rawValue:
+            self = .myChargersChargingSessionStop
+        case Self.chargingSessionStopMissingPayment.rawValue:
+            self = .chargingSessionStopMissingPayment
+        case Self.chargerAvailableNotifyMe.rawValue:
+            self = .chargerAvailableNotifyMe
+        case Self.chargingSessionEnergyConsumptionEnding.rawValue:
+            self = .chargingSessionEnergyConsumptionEnding
+        case Self.accountSuspention.rawValue:
+            self = .accountSuspention
+        case Self.accountReactivation.rawValue:
+            self = .accountReactivation
+        case Self.lowBalance.rawValue:
+            self = .lowBalance
+        case Self.accountBalance.rawValue:
+            self = .accountBalance
+        default:
+            self = .news
+        }
+    }
     
 }

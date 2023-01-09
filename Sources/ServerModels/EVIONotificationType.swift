@@ -20,7 +20,7 @@ public enum EVIONotificationType: String, Codable {
     case accountSuspention = "ACCOUNT_SUSPENSION"
     case accountReactivation = "ACCOUNT_REACTIVATION"
     case lowBalance = "ACCOUNT_LOW_BALANCE"
-    case accountBalance = "ACCOUNT_VALID_PARTNER"
+    case accountValidPartner = "ACCOUNT_VALID_PARTNER"
     case news = "NEWS"
     
     public init?(rawValue: String) {
@@ -47,8 +47,8 @@ public enum EVIONotificationType: String, Codable {
             self = .accountReactivation
         case Self.lowBalance.rawValue:
             self = .lowBalance
-        case Self.accountBalance.rawValue:
-            self = .accountBalance
+        case Self.accountValidPartner.rawValue:
+            self = .accountValidPartner
         default:
             self = .news
         }

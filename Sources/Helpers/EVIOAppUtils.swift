@@ -234,6 +234,42 @@ public struct EVIOAppUtils {
         return year + .currentBaseYear
     }
     
+    public func setNavControllerWith(viewController: UIViewController?) -> UINavigationController {
+        let navigationCont = UINavigationController()
+        navigationCont.isToolbarHidden = true
+        navigationCont.isNavigationBarHidden = true
+        navigationCont.modalPresentationStyle = .overFullScreen
+        if let viewController = viewController {
+            navigationCont.setViewControllers([viewController], animated: false)
+        }
+        return navigationCont
+    }
+    
+    public func getTopMostViewController(window: UIWindow?) -> UIViewController? {
+        guard let window = window else {return nil}
+        let vc = window.rootViewController
+        if let viewController = vc as? UINavigationController,
+           let visibleController = viewController.visibleViewController  {
+            return visibleController
+        } else if let tabBarController = vc as? UITabBarController,
+                  let selectedTabController = tabBarController.selectedViewController {
+            return selectedTabController
+        } else {
+            if var topController = vc?.presentedViewController {
+                while let presentedViewController = topController.presentedViewController {
+                    topController = presentedViewController
+                }
+                return topController
+            }
+            return vc
+        }
+    }
+    
+    public func getTopMostView(window: UIWindow?) -> UIView? {
+        guard let topViewController = self.getTopMostViewController(window: window) else {return nil}
+        return topViewController.view
+    }
+    
     public func getValueForSliderBarSize(plug: EVIOPlug, ev: EVIOEv, maxPower: CGFloat, maxValue: CGFloat) -> CGFloat {
         let plugName = EVIOConnectorTypeHelper.shared.nameFor(plug: plug)
         if plugName == "CCS 1" || plugName == "CCS 2" || plugName == "CHAdeMO" {

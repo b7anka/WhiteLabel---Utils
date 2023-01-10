@@ -14,11 +14,24 @@ public struct EVIONetwork: Codable {
     public var network: EVIONetworkType?
     public var paymentMethodInfo: EVIOPaymentMethodInfo?
     public var networkStatus: EVIOContractStatus?
-    public var isVisible: Bool = true
-
+    public var isVisible: Bool
+    
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case name, tokens, network, networkName, paymentMethod, paymentMethodInfo, networkStatus = "status", isVisible
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decodeIfPresent(String.self, forKey: .id)
+        self.name = try container.decodeIfPresent(String.self, forKey: .name)
+        self.tokens = try container.decodeIfPresent([EVIONetworkToken].self, forKey: .tokens)
+        self.network = try container.decodeIfPresent(EVIONetworkType.self, forKey: .network)
+        self.networkName = try container.decodeIfPresent(String.self, forKey: .networkName)
+        self.paymentMethod = try container.decodeIfPresent(String.self, forKey: .paymentMethod)
+        self.paymentMethodInfo = try container.decodeIfPresent(EVIOPaymentMethodInfo.self, forKey: .paymentMethodInfo)
+        self.networkStatus = try container.decodeIfPresent(EVIOContractStatus.self, forKey: .networkStatus)
+        self.isVisible = try container.decodeIfPresent(Bool.self, forKey: .isVisible) ?? true
     }
     
 }

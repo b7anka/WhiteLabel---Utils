@@ -1193,7 +1193,7 @@ public struct EVIOLanguage: Codable {
         case signUpTermAndCondIAgreeTermsTermCond = "signUpTermAndCond_iAgreeTerms_termCond"
         case signUpTermAndCondIAgreeTermsPriPol = "signUpTermAndCond_iAgreeTerms_priPol"
         case signUpTermAndCondDetailsPassword = "signUpTermAndCond_detailsPassword"
-        case signUpTermAndCondLicenseMarketing = "signUpTermAndCond_licenseMarketing"
+        case signUpTermAndCondLicenseMarketing = "signUpTermAndCond_licenseMarketingGeneric"
         case signUpLicenseServices = "signUp_licenseServices"
         case signUpLicenseProducts = "signUp_licenseProducts"
         case signUpGoChargeSuccess = "goChargeLogin_register_ok"

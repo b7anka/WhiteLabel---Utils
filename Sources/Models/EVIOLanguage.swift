@@ -233,6 +233,7 @@ public struct EVIOLanguage: Codable {
     public let chargerDetailsChargerIdentifier: String
     public let chargerDetailsChargerManufacturer: String
     public let chargerDetailsChargersModel: String
+    public let chargerDetailsChargerOccupiediOSPart1Alt: String
     public let chargerDetailsChargerOccupiediOSPart1: String
     public let chargerDetailsChargerOccupiediOSPart2: String
     public let chargerDetailsChargerOccupiediOSBoldPart: String
@@ -1017,6 +1018,7 @@ public struct EVIOLanguage: Codable {
         case chargerDetailsChargerIdentifier = "chargerDetails_chargerIdentifier"
         case chargerDetailsChargerManufacturer = "chargerDetails_chargerManufacturer"
         case chargerDetailsChargersModel = "chargerDetails_chargersModel"
+        case chargerDetailsChargerOccupiediOSPart1Alt = "chargerDetails_chargerOccupiediOSPart1"
         case chargerDetailsChargerOccupiediOSPart1 = "chargerDetails_chargerOccupiediOSPart1New"
         case chargerDetailsChargerOccupiediOSPart2 = "chargerDetails_chargerOccupiediOSPart2"
         case chargerDetailsChargerOccupiediOSBoldPart = "chargerDetails_chargerOccupiediOSBoldPart"
@@ -1801,6 +1803,7 @@ public struct EVIOLanguage: Codable {
         self.chargerDetailsChargerIdentifier = try container.decodeIfPresent(String.self, forKey: .chargerDetailsChargerIdentifier) ?? NSLocalizedString(CodingKeys.chargerDetailsChargerIdentifier.rawValue, comment: .empty)
         self.chargerDetailsChargerManufacturer = try container.decodeIfPresent(String.self, forKey: .chargerDetailsChargerManufacturer) ?? NSLocalizedString(CodingKeys.chargerDetailsChargerManufacturer.rawValue, comment: .empty)
         self.chargerDetailsChargersModel = try container.decodeIfPresent(String.self, forKey: .chargerDetailsChargersModel) ?? NSLocalizedString(CodingKeys.chargerDetailsChargersModel.rawValue, comment: .empty)
+        self.chargerDetailsChargerOccupiediOSPart1Alt = try container.decodeIfPresent(String.self, forKey: .chargerDetailsChargerOccupiediOSPart1Alt) ?? NSLocalizedString(CodingKeys.chargerDetailsChargerOccupiediOSPart1Alt.rawValue, comment: .empty)
         self.chargerDetailsChargerOccupiediOSPart1 = try container.decodeIfPresent(String.self, forKey: .chargerDetailsChargerOccupiediOSPart1) ?? NSLocalizedString(CodingKeys.chargerDetailsChargerOccupiediOSPart1.rawValue, comment: .empty)
         self.chargerDetailsChargerOccupiediOSPart2 = try container.decodeIfPresent(String.self, forKey: .chargerDetailsChargerOccupiediOSPart2) ?? NSLocalizedString(CodingKeys.chargerDetailsChargerOccupiediOSPart2.rawValue, comment: .empty)
         self.chargerDetailsChargerOccupiediOSBoldPart = try container.decodeIfPresent(String.self, forKey: .chargerDetailsChargerOccupiediOSBoldPart) ?? NSLocalizedString(CodingKeys.chargerDetailsChargerOccupiediOSBoldPart.rawValue, comment: .empty)
@@ -2584,6 +2587,7 @@ public struct EVIOLanguage: Codable {
         self.chargerDetailsChargerIdentifier = NSLocalizedString(CodingKeys.chargerDetailsChargerIdentifier.rawValue, comment: .empty)
         self.chargerDetailsChargerManufacturer = NSLocalizedString(CodingKeys.chargerDetailsChargerManufacturer.rawValue, comment: .empty)
         self.chargerDetailsChargersModel = NSLocalizedString(CodingKeys.chargerDetailsChargersModel.rawValue, comment: .empty)
+        self.chargerDetailsChargerOccupiediOSPart1Alt = NSLocalizedString(CodingKeys.chargerDetailsChargerOccupiediOSPart1Alt.rawValue, comment: .empty)
         self.chargerDetailsChargerOccupiediOSPart1 = NSLocalizedString(CodingKeys.chargerDetailsChargerOccupiediOSPart1.rawValue, comment: .empty)
         self.chargerDetailsChargerOccupiediOSPart2 = NSLocalizedString(CodingKeys.chargerDetailsChargerOccupiediOSPart2.rawValue, comment: .empty)
         self.chargerDetailsChargerOccupiediOSBoldPart = NSLocalizedString(CodingKeys.chargerDetailsChargerOccupiediOSBoldPart.rawValue, comment: .empty)
